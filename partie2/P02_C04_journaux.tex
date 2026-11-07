@@ -1,0 +1,223 @@
+% ============================================================================
+% Fichier  : partie2/P02_C04_journaux.tex
+% Titre    : Les Journaux
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% ============================================================================
+% Sources : RFC 3227 ; NIST SP 800-92 (gestion des journaux) ; loi 2010/012.
+% ============================================================================
+
+\chapter{Les Journaux}
+\label{chap:journaux}
+\chaptermark{Les journaux}
+
+\epigraph{%
+    « Un journal que l'on ne collecte pas est une mémoire que l'on efface. »%
+}{Principe du cours}
+
+\niveauChapitre{Fondamental}{Chapitre~\ref{chap:pourquoi}~; notions de
+systèmes et de réseaux.}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Identifier les sources de journaux utiles à la détection.
+    \item Comprendre la normalisation et l'horodatage.
+    \item Fixer une politique de collecte et de conservation.
+    \item Relier la journalisation aux obligations légales.
+    \item Repérer les angles morts d'une journalisation partielle.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : parmi tous les journaux de LiZbiZ, lesquels auraient révélé l'intrusion~?}
+% ============================================================================
+
+L'attaque a laissé des traces~: une connexion anormale d'un compte de
+service, une création de compte, un service installé à distance. Encore
+fallait-il que ces journaux existent, soient collectés et conservés. Ce
+chapitre recense les sources, leur normalisation et leur conservation.
+
+\medskip
+\textbf{Plan du chapitre.}
+\begin{enumerate}
+    \item Les sources de journaux (section~\ref{sec:c04-sources}).
+    \item Normaliser et horodater (section~\ref{sec:c04-normaliser}).
+    \item Collecter et conserver (section~\ref{sec:c04-conserver}).
+    \item L'obligation de conservation (section~\ref{sec:c04-obligation}).
+    \item Les angles morts (section~\ref{sec:c04-angles}).
+\end{enumerate}
+
+\separateur
+
+% ============================================================================
+\section{Les Sources de Journaux}
+\label{sec:c04-sources}
+% ============================================================================
+
+\begin{tableaucours}{L{3.6cm}L{8.6cm}}{%
+    \tableauHeader{Source} &
+    \tableauHeader{Ce qu'elle révèle}
+}
+Journaux du domaine (Windows) & Connexions, créations de comptes, services, tâches \\
+Journaux système (Linux) & Authentifications, sudo, démons, cron \\
+Pare-feu et mandataire & Connexions, flux refusés, destinations \\
+Serveurs d'application & Accès, erreurs, requêtes \\
+Messagerie & Courriels reçus, pièces jointes, signalements \\
+Équipements (imprimantes, bornes) & Accès d'administration \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~4.1. Sources de journaux utiles à la détection}\end{center}
+
+% ============================================================================
+\section{Normaliser et Horodater}
+\label{sec:c04-normaliser}
+% ============================================================================
+
+Des journaux hétérogènes ne se corrèlent que s'ils sont \termecle{normalisés}
+(ramenés à un format commun~: qui, quoi, quand, où) et surtout
+\termecle{horodatés} de façon cohérente. Une source d'horloge commune (NTP)
+est indispensable~: sans elle, impossible de reconstituer une chronologie,
+et la preuve perd sa fiabilité.
+
+\begin{boxCRO}
+\textbf{Analyse CRO de l'horodatage.} Un horodatage fiable et synchronisé
+sert la \cro{0}{+}{+}~: il ne change rien à la confidentialité, améliore la
+fiabilité de la trace et son opposabilité devant un tiers. Un horodatage
+incohérent ruine l'opposabilité d'une chronologie, même exacte.
+\end{boxCRO}
+
+% ============================================================================
+\section{Collecter et Conserver}
+\label{sec:c04-conserver}
+% ============================================================================
+
+\begin{boxprocedure}
+\textbf{Politique de collecte des journaux}
+\begin{enumerate}
+    \item Lister les sources et leur criticité.
+    \item Centraliser les journaux hors des machines surveillées (un
+          attaquant efface les journaux locaux).
+    \item Protéger l'intégrité (accès restreint, écriture seule, condensats).
+    \item Synchroniser les horloges (NTP).
+    \item Fixer une durée de conservation conforme au droit et aux besoins.
+\end{enumerate}
+\end{boxprocedure}
+
+% ============================================================================
+\section{L'Obligation de Conservation}
+\label{sec:c04-obligation}
+% ============================================================================
+
+\begin{boxjuris}
+La loi n°~2010/012 et la loi n°~2010/013 sur les communications électroniques
+imposent aux opérateurs et aux entreprises la conservation des données de
+connexion et leur mise à disposition des autorités. Les durées et modalités
+précises se lisent dans le texte publié~; le cours en retient le principe~:
+des journaux fiables, conservés, sont une obligation autant qu'un outil.
+\end{boxjuris}
+
+% ============================================================================
+\section{Les Angles Morts}
+\label{sec:c04-angles}
+% ============================================================================
+
+\begin{boxscenario}{Opération BÉNOUÉ. Ce qui n'était pas journalisé}
+\textbf{Constatation.} Les contrôleurs de domaine journalisaient les
+connexions, mais le serveur de fichiers \texttt{FS-01} n'envoyait rien au
+central, et l'horloge d'un poste de Garoua avançait de 40~minutes.
+
+\medskip
+\textbf{Analyse} (confiance élevée). L'intrusion a laissé des traces
+visibles sur le domaine, mais l'exfiltration depuis \texttt{FS-01} est restée
+invisible faute de collecte, et l'écart d'horloge a brouillé la chronologie.
+Deux angles morts à combler en priorité.
+\end{boxscenario}
+
+\begin{boxmetier}{Analyste SOC}
+\textbf{Cartographier avant de corréler.} L'analyste tient à jour la carte
+des sources journalisées et de leurs manques~: une détection n'est fiable que
+sur un périmètre connu. Ce qui n'est pas collecté doit être dit, non ignoré.
+\end{boxmetier}
+
+\separateur
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{Les sources}~: domaine, système, pare-feu, applications,
+          messagerie, équipements.
+    \item \textbf{Normaliser et horodater} conditionnent la corrélation.
+    \item \textbf{Centraliser et protéger} les journaux hors des machines
+          surveillées.
+    \item \textbf{Conserver} est une obligation légale.
+    \item \textbf{Les angles morts} (sources non collectées, horloges
+          dérivées) sont des priorités.
+\end{itemize}
+\end{boxresume}
+
+\begin{boxinfo}
+\textbf{Points de contrôle de l'élève.} Je sais~: citer les sources de
+journaux~; expliquer normalisation et horodatage~; rédiger une politique de
+collecte~; rappeler l'obligation~; repérer un angle mort.
+\end{boxinfo}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~4.1. Sources \niveaubase}]
+Quelle source journalise la création d'un compte~? L'exfiltration depuis un
+partage de fichiers~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~4.2. Horloge \niveaubase}]
+Pourquoi une horloge commune (NTP) est-elle indispensable~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~4.3. Centraliser \niveaubase}]
+Pourquoi centraliser les journaux hors des machines surveillées~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~4.4. Normaliser \niveaumoyen}]
+Qu'apporte la normalisation à la corrélation de journaux hétérogènes~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~4.5. CRO \niveaumoyen}]
+Expliquez l'analyse CRO de l'horodatage de l'opération BÉNOUÉ.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~4.6. Angle mort \niveaumoyen}]
+Pourquoi l'exfiltration depuis \texttt{FS-01} est-elle restée invisible~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~4.7. Conservation \niveaumoyen}]
+Quels critères fixent la durée de conservation des journaux~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~4.8. Intégrité \niveaumoyen}]
+Comment garantir qu'un attaquant ne puisse pas effacer les journaux
+centralisés~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~4.9. Politique \niveauexpert}]
+Rédigez la politique de journalisation de LiZbiZ~: sources, centralisation,
+intégrité, conservation, responsabilités.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~4.10. Plan de comblement \niveauexpert}]
+À partir des angles morts de BÉNOUÉ, proposez un plan de comblement priorisé.
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Pour aller plus loin.}
+\begin{itemize}
+    \item RFC~3227~\cite{rfc3227}~; loi 2010/012~\cite{loi2010012} et
+          2010/013~\cite{loi2010013}.
+\end{itemize}
+\end{boxinfo}
+
+\begin{boxinfo}
+\textbf{Transition.} Collecter ne suffit pas~; il faut corréler~: le
+Chapitre~\ref{chap:siem} traite du SIEM.
+\end{boxinfo}

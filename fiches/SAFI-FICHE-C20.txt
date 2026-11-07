@@ -1,0 +1,233 @@
+NDAP SUKULU · SAFI · fiche SAFI-FICHE-C20
+Chapitre 20 : Mesurer la supervision et la réponse
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. Un indicateur honnête est :
+      a) Le délai de détection
+      b) Le nombre d'outils
+      c) Le temps passé
+      d) La météo
+
+ 2. La couverture de détection mesure :
+      a) Le prix
+      b) La part des techniques qu'on verrait
+      c) La météo
+      d) La vente
+
+ 3. OUI signifie :
+      a) Réfuté
+      b) Indéterminé
+      c) Démontré avec preuve
+      d) Vendu
+
+ 4. NON signifie :
+      a) Démontré
+      b) Indéterminé
+      c) Chiffré
+      d) Réfuté avec preuve
+
+ 5. NEK signifie :
+      a) Non
+      b) Oui
+      c) Indéterminé
+      d) Vendu
+
+ 6. Ce qui n'a pas été éprouvé reste :
+      a) OUI
+      b) NEK
+      c) NON
+      d) Vendu
+
+ 7. « Aucun incident ce mois-ci » peut signifier :
+      a) Système sûr
+      b) Succès
+      c) Rien détecté
+      d) Vente
+
+ 8. Le nombre d'outils :
+      a) Mesure la détection
+      b) Chiffre
+      c) Vend
+      d) N'est pas la détection
+
+ 9. Le test suivant repart des :
+      a) NEK et zones non couvertes
+      b) Ventes
+      c) Prix
+      d) Météo
+
+10. L'exercice d'équipe a joué :
+      a) 18 techniques
+      b) 30 techniques
+      c) 7 techniques
+      d) Zéro
+
+11. Combien détectées ?
+      a) 30
+      b) 7
+      c) 18
+      d) 0
+
+12. Le NEK est une exigence d' :
+      a) Audace
+      b) Vitesse
+      c) Vente
+      d) Honnêteté
+
+13. Un volume d'alertes mesure :
+      a) Les règles, pas le risque
+      b) Le risque
+      c) La météo
+      d) La vente
+
+14. « Le paiement a résisté dans MBAM » serait :
+      a) NON
+      b) OUI
+      c) NEK
+      d) Vendu
+
+15. « Résisterait-on à un attaquant plus patient ? » est souvent :
+      a) OUI
+      b) NON
+      c) NEK
+      d) Vendu
+
+16. La phase violette nourrit :
+      a) La vente
+      b) La paie
+      c) La météo
+      d) La détection
+
+17. Le taux de correction des actions RETEX mesure :
+      a) La capacité à apprendre
+      b) Le prix
+      c) La météo
+      d) La vente
+
+18. Conclure OUI faute d'avoir éprouvé est :
+      a) Correct
+      b) Une faute
+      c) Un succès
+      d) Neutre
+
+19. Les 12 techniques non détectées étaient :
+      a) Des OUI
+      b) Des NON
+      c) Des NEK
+      d) Vendues
+
+20. Un test mesure la résistance d'un périmètre :
+      a) Pour toujours
+      b) Jamais
+      c) À la vente
+      d) À un moment donné
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. NEK signifie que la propriété est pleinement démontrée.
+      Vrai / Faux
+
+22. Ce qui n'a pas été éprouvé peut être conclu OUI.
+      Vrai / Faux
+
+23. « Aucun incident ce mois-ci » prouve toujours que le système est sûr.
+      Vrai / Faux
+
+24. Le test suivant repart des NEK et des zones non couvertes.
+      Vrai / Faux
+
+25. L'exercice a joué 30 techniques, 18 détectées.
+      Vrai / Faux
+
+26. Le NEK est une exigence d'honnêteté.
+      Vrai / Faux
+
+27. Le nombre d'outils mesure la détection.
+      Vrai / Faux
+
+28. Conclure OUI faute d'avoir éprouvé est une faute.
+      Vrai / Faux
+
+29. La phase violette nourrit la détection.
+      Vrai / Faux
+
+30. L'absence d'incident prouve la préparation.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. La réponse indéterminée se note ______.
+
+32. Ce qui n'a pas été éprouvé reste ______.
+
+33. L'exercice a joué ______ techniques.
+
+34. Sur 30 techniques, ______ ont été détectées.
+
+35. Le NEK est une exigence d'______.
+
+36. Le test suivant repart des ______.
+
+37. Le nombre d'______ n'est pas la détection.
+
+38. La phase violette nourrit la ______.
+
+39. La propriété démontrée avec preuve se note ______.
+
+40. Un test mesure la résistance à un ______ donné.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

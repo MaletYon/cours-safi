@@ -1,0 +1,207 @@
+% ============================================================================
+% Fichier  : partie2/P02_C07_regles_detection.tex
+% Titre    : Écrire et Éprouver une Règle de Détection
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% ============================================================================
+% Sources : MITRE ATT&CK ; pratiques d'ingénierie de détection.
+% ============================================================================
+
+\chapter{Écrire et Éprouver une Règle de Détection}
+\label{chap:regles}
+\chaptermark{Écrire une règle de détection}
+
+\epigraph{%
+    « Une bonne règle se juge à deux nombres~:\\
+    ce qu'elle attrape, et ce qu'elle dérange pour rien. »%
+}{Principe du cours}
+
+\niveauChapitre{Intermédiaire à expert}{Chapitres~\ref{chap:siem}
+et~\ref{chap:idsips}.}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Formuler une règle de détection en français avant de la coder.
+    \item Relier chaque règle à une technique ATT\&CK et à sa trace.
+    \item Éprouver une règle~: vrais positifs, faux positifs, faux négatifs.
+    \item Maintenir un catalogue de règles dans le temps.
+    \item Rédiger la fiche d'une règle.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : comment transformer « un compte de service anormal » en une alerte fiable~?}
+% ============================================================================
+
+L'idée d'une règle est simple~; la faire fonctionner sans noyer l'analyste
+l'est moins. Ce chapitre apprend à écrire une règle, à l'éprouver et à la
+maintenir, à partir des trois cas d'usage de l'opération BÉNOUÉ.
+
+\medskip
+\textbf{Plan du chapitre.}
+\begin{enumerate}
+    \item Énoncer avant de coder (section~\ref{sec:c07-enoncer}).
+    \item Relier à une technique et à sa trace (section~\ref{sec:c07-attack}).
+    \item Éprouver une règle (section~\ref{sec:c07-eprouver}).
+    \item Maintenir le catalogue (section~\ref{sec:c07-maintenir}).
+\end{enumerate}
+
+\separateur
+
+% ============================================================================
+\section{Énoncer avant de Coder}
+\label{sec:c07-enoncer}
+% ============================================================================
+
+\begin{boxprocedure}
+\textbf{Énoncer une règle}
+\begin{enumerate}
+    \item \textbf{Quoi}~: le comportement à détecter, en une phrase.
+    \item \textbf{Source}~: le ou les journaux concernés.
+    \item \textbf{Condition}~: ce qui déclenche (seuil, enchaînement, contexte).
+    \item \textbf{Exceptions}~: les cas légitimes à exclure.
+    \item \textbf{Réponse}~: priorité, action attendue de l'analyste.
+\end{enumerate}
+\end{boxprocedure}
+
+Exemple~: « Alerter si un compte de service ouvre une session interactive sur
+un poste de travail (source~: journaux du domaine, événement de connexion de
+type~2), hors des comptes et plages de maintenance déclarés. »
+
+% ============================================================================
+\section{Relier à une Technique et à sa Trace}
+\label{sec:c07-attack}
+% ============================================================================
+
+\begin{tableaucours}{L{4.4cm}L{4.2cm}L{3.6cm}}{%
+    \tableauHeader{Cas d'usage (BÉNOUÉ)} &
+    \tableauHeader{Technique ATT\&CK} &
+    \tableauHeader{Trace}
+}
+Compte de service sur un poste & Identifiants valides (usage) & Connexion du domaine \\
+Création de compte hors maintenance & Persistance & Événement de création de compte \\
+Service installé à distance & Mouvement latéral & Événement d'installation de service \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~7.1. Trois règles reliées à ATT\&CK~\cite{mitreattack}}\end{center}
+
+% ============================================================================
+\section{Éprouver une Règle}
+\label{sec:c07-eprouver}
+% ============================================================================
+
+\begin{boxdef}
+\termecle{Vrai positif}~: la règle alerte sur un vrai comportement visé.
+\termecle{Faux positif}~: elle alerte à tort. \termecle{Faux négatif}~: elle
+laisse passer le comportement visé. On éprouve une règle en la rejouant sur
+des journaux réels et sur un jeu de test (la technique jouée en laboratoire).
+\end{boxdef}
+
+\begin{boxCRO}
+\textbf{Analyse CRO d'une règle trop large.} Une règle qui collecte et
+inspecte un trafic très étendu « pour ne rien rater » dégrade la
+\cro{-}{+}{0}~: elle augmente la détection (fiabilité) mais expose davantage
+de données (confidentialité). On cible la règle sur ce qui est nécessaire.
+\end{boxCRO}
+
+% ============================================================================
+\section{Maintenir le Catalogue}
+\label{sec:c07-maintenir}
+% ============================================================================
+
+\begin{boxscenario}{Opération BÉNOUÉ. Du cas d'usage à la règle éprouvée}
+\textbf{Constatation.} La règle « compte de service sur un poste » alerte
+24~fois en une semaine de test~: 3~vrais positifs (comptes réellement mal
+utilisés), 21~faux positifs (un script de sauvegarde légitime).
+
+\medskip
+\textbf{Analyse} (confiance élevée). En excluant le compte du script de
+sauvegarde déclaré, les faux positifs tombent à zéro sans perdre les vrais
+positifs. Une règle n'est utile qu'une fois éprouvée et affinée.
+\end{boxscenario}
+
+\begin{boxmetier}{Analyste SOC / ingénierie de détection}
+\textbf{Une règle vit.} L'ingénieur de détection versionne ses règles, note
+leur technique ATT\&CK, mesure leur bruit et les révise après chaque
+incident. Un catalogue de règles est un actif à entretenir, pas une
+installation unique.
+\end{boxmetier}
+
+\separateur
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{Énoncer} en français~: quoi, source, condition, exceptions,
+          réponse.
+    \item \textbf{Relier} chaque règle à une technique ATT\&CK et à sa trace.
+    \item \textbf{Éprouver}~: vrais positifs, faux positifs, faux négatifs.
+    \item \textbf{Affiner} par les exceptions, sans perdre les vrais positifs.
+    \item \textbf{Maintenir} le catalogue dans le temps.
+\end{itemize}
+\end{boxresume}
+
+\begin{boxinfo}
+\textbf{Points de contrôle de l'élève.} Je sais~: énoncer une règle~; la
+relier à ATT\&CK~; distinguer les trois cas (VP, FP, FN)~; affiner par
+exceptions~; entretenir un catalogue.
+\end{boxinfo}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~7.1. Énoncer \niveaubase}]
+Énoncez en français la règle « service installé à distance hors maintenance ».
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~7.2. Trois cas \niveaubase}]
+Définissez vrai positif, faux positif, faux négatif.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~7.3. Technique \niveaubase}]
+À quelle tactique ATT\&CK relier « création de compte hors maintenance »~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~7.4. Affiner \niveaumoyen}]
+Comment ramener à zéro les 21~faux positifs sans perdre les 3~vrais positifs~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~7.5. Faux négatif \niveaumoyen}]
+Pourquoi un faux négatif est-il plus grave qu'un faux positif~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~7.6. CRO \niveaumoyen}]
+Expliquez l'analyse CRO d'une règle trop large.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~7.7. Jeu de test \niveaumoyen}]
+Comment constituer un jeu de test pour éprouver une règle~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~7.8. Fiche de règle \niveaumoyen}]
+Rédigez la fiche complète d'une des trois règles de BÉNOUÉ.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~7.9. Catalogue \niveauexpert}]
+Organisez un catalogue de règles~: versionnage, métadonnées, révision.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~7.10. Couverture \niveauexpert}]
+À partir d'ATT\&CK, proposez cinq règles qui augmenteraient la couverture de
+détection de LiZbiZ.
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Pour aller plus loin.}
+\begin{itemize}
+    \item MITRE ATT\&CK~\cite{mitreattack}~; NIST SP~800-61r2~\cite{nist80061r2}.
+\end{itemize}
+\end{boxinfo}
+
+\begin{boxinfo}
+\textbf{Transition.} La Partie~III pose le cadre normatif et juridique de
+tout ce qui précède~: le Chapitre~\ref{chap:normes} ouvre sur les normes de
+l'incident et de la preuve.
+\end{boxinfo}

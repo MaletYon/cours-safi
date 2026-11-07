@@ -1,0 +1,233 @@
+NDAP SUKULU · SAFI · fiche SAFI-FICHE-C07
+Chapitre 7 : Écrire et éprouver une règle de détection
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. On énonce une règle d'abord :
+      a) En français
+      b) En code
+      c) En chiffres
+      d) En anglais
+
+ 2. Une règle énonce quoi, source, condition, exceptions et :
+      a) Le prix
+      b) La réponse attendue
+      c) La météo
+      d) La vente
+
+ 3. Les exceptions d'une règle servent à :
+      a) Ajouter du bruit
+      b) Facturer
+      c) Exclure les cas légitimes
+      d) Chiffrer
+
+ 4. « Création de compte hors maintenance » relève de la tactique :
+      a) Impact
+      b) Exfiltration
+      c) Reconnaissance
+      d) Persistance
+
+ 5. « Compte de service sur un poste » relève de :
+      a) Accès aux identifiants
+      b) Persistance
+      c) Impact
+      d) Vente
+
+ 6. Un vrai positif est :
+      a) Une fausse alerte
+      b) Une alerte sur un vrai comportement visé
+      c) Un faux négatif
+      d) Une règle
+
+ 7. Un faux positif est :
+      a) Une faille réelle
+      b) Un vrai positif
+      c) Une alerte à tort
+      d) Une règle
+
+ 8. Un faux négatif est :
+      a) Une fausse alerte
+      b) Un vrai positif
+      c) Une règle
+      d) Un comportement visé laissé passer
+
+ 9. On éprouve une règle en la rejouant sur :
+      a) Des journaux réels et un jeu de test
+      b) La paie
+      c) La météo
+      d) Les ventes
+
+10. Une règle de détection :
+      a) Est figée
+      b) Vit, se versionne et se révise
+      c) Se vend
+      d) Se chiffre
+
+11. Le plus grave est :
+      a) Le faux positif
+      b) Le vrai positif
+      c) Le faux négatif
+      d) Le vrai négatif
+
+12. La règle « compte de service sur un poste » a produit combien de vrais positifs en test ?
+      a) 21
+      b) 24
+      c) 0
+      d) 3
+
+13. Combien de faux positifs ?
+      a) 21
+      b) 3
+      c) 0
+      d) 24
+
+14. La cause des faux positifs était :
+      a) Un vrai attaquant
+      b) Un script de sauvegarde légitime
+      c) La météo
+      d) Le prix
+
+15. On note pour chaque règle :
+      a) Le prix
+      b) La météo
+      c) Sa technique ATT&CK
+      d) La vente
+
+16. Une règle trop large dégrade :
+      a) Rien
+      b) Le prix
+      c) La météo
+      d) La confidentialité (plus de données inspectées)
+
+17. Avant de coder, on énonce la règle pour :
+      a) La clarifier
+      b) Facturer
+      c) Chiffrer
+      d) Vendre
+
+18. On affine une règle en ajoutant :
+      a) Du bruit
+      b) Des exceptions
+      c) La paie
+      d) La météo
+
+19. On révise les règles :
+      a) Jamais
+      b) Au hasard
+      c) Après chaque incident
+      d) À la vente
+
+20. « Service installé à distance » relève de :
+      a) Mouvement latéral
+      b) Météo
+      c) Paie
+      d) Vente
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. On code directement une règle sans jamais l'énoncer.
+      Vrai / Faux
+
+22. Un faux négatif est une alerte émise à tort.
+      Vrai / Faux
+
+23. Un faux négatif est moins grave qu'un faux positif.
+      Vrai / Faux
+
+24. La règle a produit 3 vrais positifs et 21 faux positifs en test.
+      Vrai / Faux
+
+25. Une règle de détection est figée une fois pour toutes.
+      Vrai / Faux
+
+26. On affine une règle en ajoutant des exceptions.
+      Vrai / Faux
+
+27. « Création de compte hors maintenance » relève de la persistance.
+      Vrai / Faux
+
+28. Une règle trop large n'a aucun effet sur la confidentialité.
+      Vrai / Faux
+
+29. On révise les règles après chaque incident.
+      Vrai / Faux
+
+30. Les faux positifs venaient d'un script de sauvegarde légitime.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. On énonce une règle d'abord en ______.
+
+32. Une alerte à tort est un faux ______.
+
+33. Un comportement visé laissé passer est un faux ______.
+
+34. La règle a produit ______ vrais positifs en test.
+
+35. La règle a produit ______ faux positifs en test.
+
+36. On affine une règle en ajoutant des ______.
+
+37. « Création de compte hors maintenance » relève de la ______.
+
+38. On ______ les règles après chaque incident.
+
+39. Une règle énonce quoi, source, condition, exceptions et ______.
+
+40. Une règle trop large dégrade la ______.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

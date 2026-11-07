@@ -1,0 +1,206 @@
+% ============================================================================
+% Fichier  : partie6/P06_C19_retex_amelioration.tex
+% Titre    : Retour d'Expérience et Amélioration Continue
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% ============================================================================
+% Sources : ISO/IEC 27035 (phase d'enseignements) ; culture juste. Op. MAYO.
+% ============================================================================
+
+\chapter{Retour d'Expérience et Amélioration Continue}
+\label{chap:retex}
+\chaptermark{Retour d'expérience}
+
+\epigraph{%
+    « Un incident dont on ne tire pas de leçon\\
+    est un incident que l'on paiera deux fois. »%
+}{Principe du cours}
+
+\niveauChapitre{Fondamental}{Partie~V.}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Conduire un retour d'expérience utile et sans procès.
+    \item Distinguer causes immédiates et causes profondes.
+    \item Transformer les leçons en actions suivies.
+    \item Comprendre la culture juste.
+    \item Boucler sur la supervision et la détection.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : qu'a appris LiZbiZ, et comment éviter que cela se reproduise~?}
+% ============================================================================
+
+Une fois le service rétabli, la tentation est de tourner la page. C'est
+l'erreur~: la phase d'enseignements de l'ISO 27035 est celle qui fait
+progresser. Ce chapitre conduit le RETEX et le transforme en actions.
+
+\medskip
+\textbf{Plan du chapitre.}
+\begin{enumerate}
+    \item Conduire un RETEX (section~\ref{sec:c19-conduire}).
+    \item Causes immédiates et profondes (section~\ref{sec:c19-causes}).
+    \item Des leçons aux actions (section~\ref{sec:c19-actions}).
+    \item La culture juste (section~\ref{sec:c19-culture}).
+\end{enumerate}
+
+\separateur
+
+% ============================================================================
+\section{Conduire un RETEX}
+\label{sec:c19-conduire}
+% ============================================================================
+
+\begin{boxprocedure}
+\textbf{Conduire un retour d'expérience}
+\begin{enumerate}
+    \item Réunir les acteurs dans les 72~heures, à partir de la main
+          courante.
+    \item Reconstituer la chronologie des faits (pas des responsabilités).
+    \item Identifier ce qui a bien et mal fonctionné.
+    \item Remonter aux causes profondes, au-delà du symptôme.
+    \item Décider des actions, avec responsable et échéance.
+\end{enumerate}
+\end{boxprocedure}
+
+% ============================================================================
+\section{Causes Immédiates et Profondes}
+\label{sec:c19-causes}
+% ============================================================================
+
+\begin{tableaucours}{L{4.4cm}L{7.8cm}}{%
+    \tableauHeader{Niveau} &
+    \tableauHeader{Exemple (LOGONE)}
+}
+Cause immédiate & Un compte de service à mot de passe faible compromis \\
+Cause intermédiaire & Pas de supervision, journaux non lus \\
+Cause profonde & Absence de fonction de détection et de gouvernance de la
+sécurité \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~19.1. Remonter aux causes profondes}\end{center}
+
+\begin{boxalert}
+\textbf{Erreur fréquente.} S'arrêter à la cause immédiate (« le mot de passe
+était faible ») et sanctionner.
+
+\smallskip
+\textbf{Règle~:} corriger la seule cause immédiate laisse la cause profonde
+intacte~; l'incident reviendra sous une autre forme. On traite les trois
+niveaux.
+\end{boxalert}
+
+% ============================================================================
+\section{Des Leçons aux Actions}
+\label{sec:c19-actions}
+% ============================================================================
+
+\begin{boxscenario}{Opération MAYO. Le plan d'action}
+\textbf{Constatation.} Le RETEX de LiZbiZ débouche sur~: mettre en place une
+supervision (SOC hybride), journaliser \texttt{FS-01}, durcir les comptes de
+service, sauvegarder hors ligne, écrire des playbooks, former le personnel.
+Chaque action a un responsable et une échéance.
+
+\medskip
+\textbf{Analyse} (confiance élevée). Les actions traitent les trois niveaux
+de causes. Le RETEX n'est utile que si ses actions sont suivies~: LiZbiZ les
+inscrit dans un plan revu chaque trimestre.
+\end{boxscenario}
+
+% ============================================================================
+\section{La Culture Juste}
+\label{sec:c19-culture}
+% ============================================================================
+
+\begin{boxdef}
+\termecle{Culture juste}~: culture où l'on signale les erreurs et les
+quasi-incidents sans crainte de sanction injuste. Elle distingue l'erreur
+honnête (que l'on analyse) de la faute délibérée (que l'on sanctionne). Sans
+elle, les incidents se cachent et ne s'apprennent pas.
+\end{boxdef}
+
+\begin{boxmetier}{RSSI}
+\textbf{Protéger ceux qui signalent.} Le RSSI fait du RETEX un espace sans
+procès~: le technicien qui a redémarré \texttt{FS-01} de bonne foi n'est pas
+sanctionné, il devient l'exemple qui fonde la consigne de première
+intervention. On apprend des erreurs, on ne les enterre pas.
+\end{boxmetier}
+
+\separateur
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{Le RETEX} se conduit à partir de la main courante, sans
+          procès.
+    \item \textbf{Trois niveaux de causes}~: immédiate, intermédiaire,
+          profonde.
+    \item \textbf{On traite les trois}, sinon l'incident revient.
+    \item \textbf{Des actions suivies}, avec responsable et échéance.
+    \item \textbf{La culture juste} fait remonter ce qu'il faut apprendre.
+\end{itemize}
+\end{boxresume}
+
+\begin{boxinfo}
+\textbf{Points de contrôle de l'élève.} Je sais~: conduire un RETEX~;
+distinguer les niveaux de causes~; transformer les leçons en actions~;
+expliquer la culture juste~; boucler sur la supervision.
+\end{boxinfo}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~19.1. Délai \niveaubase}]
+Dans quel délai conduire le RETEX~? À partir de quel document~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~19.2. Causes \niveaubase}]
+Distinguez cause immédiate et cause profonde dans LOGONE.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~19.3. Culture juste \niveaubase}]
+Qu'est-ce que la culture juste~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~19.4. Symptôme \niveaumoyen}]
+Pourquoi corriger la seule cause immédiate ne suffit-il pas~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~19.5. Actions \niveaumoyen}]
+Reliez chaque action du plan de MAYO à un niveau de cause.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~19.6. Sans procès \niveaumoyen}]
+Pourquoi le RETEX ne doit-il pas être un procès~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~19.7. Le technicien \niveaumoyen}]
+Comment traiter le cas du technicien qui a redémarré \texttt{FS-01}~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~19.8. Suivi \niveaumoyen}]
+Comment s'assurer que les actions du RETEX sont réellement suivies~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~19.9. Compte rendu de RETEX \niveauexpert}]
+Rédigez le compte rendu de RETEX de l'opération LOGONE.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~19.10. Plan d'amélioration \niveauexpert}]
+Construisez le plan d'amélioration trimestriel de LiZbiZ issu du RETEX.
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Pour aller plus loin.}
+\begin{itemize}
+    \item ISO/IEC 27035~\cite{iso27035}.
+\end{itemize}
+\end{boxinfo}
+
+\begin{boxinfo}
+\textbf{Transition.} Reste à mesurer tout cela~: le
+Chapitre~\ref{chap:mesurer} clôt le cours sur la mesure et la recherche.
+\end{boxinfo}

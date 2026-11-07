@@ -1,0 +1,208 @@
+% ============================================================================
+% Fichier  : partie3/P03_C10_admissibilite_preuve.tex
+% Titre    : L'Admissibilité de la Preuve Numérique
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% ============================================================================
+% Sources : ISO/IEC 27037 ; RFC 3227 ; loi 2010/012. Opération FARO : fictif.
+% ============================================================================
+
+\chapter{L'Admissibilité de la Preuve Numérique}
+\label{chap:preuve}
+\chaptermark{L'admissibilité de la preuve}
+
+\epigraph{%
+    « Une preuve que l'on ne peut pas défendre\\
+    ne vaut pas mieux qu'une preuve que l'on n'a pas. »%
+}{Principe du cours}
+
+\niveauChapitre{Intermédiaire}{Chapitres~\ref{chap:normes} et~\ref{chap:droit}.}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Définir l'admissibilité et ses conditions.
+    \item Comprendre l'intégrité, l'authenticité et la traçabilité.
+    \item Relier l'admissibilité au Trilemme CRO.
+    \item Reconnaître ce qui détruit une preuve.
+    \item Préparer une preuve opposable dès l'acquisition.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : la preuve recueillie chez LiZbiZ tiendrait-elle devant un tiers~?}
+% ============================================================================
+
+Recueillir une trace est une chose~; pouvoir s'en prévaloir devant la
+direction, l'ANTIC ou un juge en est une autre. Ce chapitre pose les
+conditions de l'admissibilité et montre comment une manipulation imprudente
+détruit une preuve pourtant exacte.
+
+\medskip
+\textbf{Plan du chapitre.}
+\begin{enumerate}
+    \item Qu'est-ce que l'admissibilité (section~\ref{sec:c10-definir}).
+    \item Intégrité, authenticité, traçabilité (section~\ref{sec:c10-conditions}).
+    \item Le Trilemme CRO appliqué (section~\ref{sec:c10-cro}).
+    \item Ce qui détruit une preuve (section~\ref{sec:c10-detruire}).
+\end{enumerate}
+
+\separateur
+
+% ============================================================================
+\section{Qu'est-ce que l'Admissibilité}
+\label{sec:c10-definir}
+% ============================================================================
+
+\begin{boxdef}
+\termecle{Admissibilité}~: aptitude d'une preuve à être reçue et prise en
+compte par un tiers (direction, autorité, juge). Elle ne tient pas à la seule
+exactitude de la trace, mais à la \emph{manière} dont elle a été recueillie,
+conservée et documentée.
+\end{boxdef}
+
+% ============================================================================
+\section{Intégrité, Authenticité, Traçabilité}
+\label{sec:c10-conditions}
+% ============================================================================
+
+\begin{tableaucours}{L{3.2cm}L{9.0cm}}{%
+    \tableauHeader{Condition} &
+    \tableauHeader{Ce qu'elle exige}
+}
+Intégrité & La preuve n'a pas été altérée depuis l'acquisition (condensat). \\
+Authenticité & La preuve est bien ce qu'elle prétend être, de la source déclarée. \\
+Traçabilité & Chaque manipulation est documentée (chaîne de custody). \\
+Licéité & La collecte respecte le droit (autorisation, proportionnalité). \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~10.1. Conditions de l'admissibilité}\end{center}
+
+% ============================================================================
+\section{Le Trilemme CRO Appliqué}
+\label{sec:c10-cro}
+% ============================================================================
+
+\begin{boxCRO}
+\textbf{L'admissibilité est l'opposabilité.} La dimension O du Trilemme est
+précisément l'admissibilité~: une preuve opposable est une preuve admissible.
+La F (fiabilité) recouvre l'intégrité et l'authenticité~; la C
+(confidentialité) impose de ne saisir que le nécessaire. Une bonne pratique
+vise \cro{0}{+}{+} à chaque acte.
+\end{boxCRO}
+
+% ============================================================================
+\section{Ce qui Détruit une Preuve}
+\label{sec:c10-detruire}
+% ============================================================================
+
+\begin{boxalert}
+\textbf{Violation typique.} Travailler directement sur l'original, sans
+condensat ni copie.
+
+\smallskip
+\textbf{Règle~:} on travaille sur une copie vérifiée par condensat, on
+documente chaque acte, on ne modifie jamais l'original. Une preuve manipulée
+sans trace est perdue, même si son contenu est exact.
+\end{boxalert}
+
+\begin{boxscenario}{Opération FARO. La preuve sauvée de justesse}
+\textbf{Constatation.} Un technicien de LiZbiZ, de bonne foi, avait
+redémarré le serveur \texttt{FS-01} et commencé à « nettoyer » avant
+l'arrivée de M.~BIKORO. La mémoire vive était perdue~; le disque, lui, n'avait
+pas encore été écrasé.
+
+\medskip
+\textbf{Analyse} (confiance élevée). Le redémarrage a détruit une preuve
+volatile (mémoire) et a failli compromettre le disque. M.~BIKORO a figé
+l'état restant, calculé les condensats et documenté la chaîne~: le disque
+reste opposable, la mémoire est perdue. La leçon~: ne rien toucher avant
+d'avoir figé.
+\end{boxscenario}
+
+\begin{boxmetier}{Analyste forensique}
+\textbf{Figer avant de comprendre.} L'analyste résiste à la tentation
+d'« aller voir » sur le système vivant~: chaque action non documentée dégrade
+l'opposabilité. On fige, on copie, on vérifie, puis on analyse la copie.
+\end{boxmetier}
+
+\separateur
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{L'admissibilité} tient à la manière, pas à la seule
+          exactitude.
+    \item \textbf{Intégrité, authenticité, traçabilité, licéité}~: les
+          conditions.
+    \item \textbf{L'opposabilité} du CRO \emph{est} l'admissibilité.
+    \item \textbf{Travailler sur l'original} détruit la preuve.
+    \item \textbf{Figer avant de comprendre.}
+\end{itemize}
+\end{boxresume}
+
+\begin{boxinfo}
+\textbf{Points de contrôle de l'élève.} Je sais~: définir l'admissibilité~;
+citer ses conditions~; la relier au CRO~; reconnaître ce qui détruit une
+preuve~; préparer une preuve opposable.
+\end{boxinfo}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~10.1. Définir \niveaubase}]
+L'admissibilité tient-elle à l'exactitude de la trace ou à la manière de la
+recueillir~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~10.2. Conditions \niveaubase}]
+Citez les quatre conditions de l'admissibilité.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~10.3. Condensat \niveaubase}]
+À quoi sert le condensat (empreinte) d'une preuve~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~10.4. CRO \niveaumoyen}]
+Pourquoi dit-on que l'opposabilité du CRO est l'admissibilité~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~10.5. FARO \niveaumoyen}]
+Quelle preuve le redémarrage a-t-il détruite~? Laquelle a été sauvée~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~10.6. L'original \niveaumoyen}]
+Pourquoi ne jamais travailler sur l'original~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~10.7. Bonne foi \niveaumoyen}]
+Le technicien était de bonne foi. Pourquoi son geste était-il néanmoins
+dommageable~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~10.8. Licéité \niveaumoyen}]
+En quoi une collecte illicite compromet-elle l'admissibilité~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~10.9. Note de première intervention \niveauexpert}]
+Rédigez la consigne de première intervention à afficher près des serveurs de
+LiZbiZ (« que faire, que ne pas faire »).
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~10.10. Dossier de preuve \niveauexpert}]
+Décrivez le dossier qui accompagne une preuve pour la rendre opposable.
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Pour aller plus loin.}
+\begin{itemize}
+    \item ISO/IEC 27037~\cite{iso27037}~; RFC~3227~\cite{rfc3227}.
+\end{itemize}
+\end{boxinfo}
+
+\begin{boxinfo}
+\textbf{Transition.} La Partie~IV entre dans la pratique de l'enquête~: le
+Chapitre~\ref{chap:fondements} pose les fondements du forensique et la chaîne
+de custody.
+\end{boxinfo}

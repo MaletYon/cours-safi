@@ -1,0 +1,221 @@
+% ============================================================================
+% Fichier  : partie1/P01_C03_gouvernance_indicateurs.tex
+% Titre    : Gouvernance et Indicateurs de la Supervision
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% ============================================================================
+% Sources : ISO/IEC 27004 (mesure) ; ISO/IEC 27035 ; CIS Controls v8.
+% ============================================================================
+
+\chapter{Gouvernance et Indicateurs de la Supervision}
+\label{chap:gouvernance}
+\chaptermark{Gouvernance et indicateurs}
+
+\epigraph{%
+    « Ce qui ne se mesure pas ne se pilote pas~;\\
+    ce qui ne se pilote pas se dégrade. »%
+}{Principe du cours}
+
+\niveauChapitre{Fondamental}{Chapitres~\ref{chap:pourquoi} et~\ref{chap:soc}.}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Définir la gouvernance d'un dispositif de supervision.
+    \item Distinguer indicateurs d'activité, de performance et de résultat.
+    \item Construire un tableau de bord utile et honnête.
+    \item Fixer des objectifs de délai (détection, réaction).
+    \item Rendre compte à la direction sans noyer sous la technique.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : comment savoir si la supervision de LiZbiZ s'améliore vraiment~?}
+% ============================================================================
+
+Après l'incident, LiZbiZ met en place une détection. Six mois plus tard,
+M.~ETEME demande~: « Sommes-nous mieux protégés~? » La réponse ne peut être
+ni « oui » vague ni une avalanche de courbes~: elle tient dans quelques
+indicateurs choisis et suivis dans le temps.
+
+\medskip
+\textbf{Plan du chapitre.}
+\begin{enumerate}
+    \item Gouverner la supervision (section~\ref{sec:c03-gouverner}).
+    \item Trois familles d'indicateurs (section~\ref{sec:c03-familles}).
+    \item Le tableau de bord (section~\ref{sec:c03-tdb}).
+    \item Les objectifs de délai (section~\ref{sec:c03-delais}).
+    \item Rendre compte (section~\ref{sec:c03-rendre}).
+\end{enumerate}
+
+\separateur
+
+% ============================================================================
+\section{Gouverner la Supervision}
+\label{sec:c03-gouverner}
+% ============================================================================
+
+\begin{boxdef}
+\termecle{Gouvernance de la supervision}~: ensemble des décisions qui fixent
+le périmètre surveillé, les priorités, les moyens, les responsabilités et les
+indicateurs, et qui en rendent compte à la direction. Elle relie la
+technique à la stratégie.
+\end{boxdef}
+
+% ============================================================================
+\section{Trois Familles d'Indicateurs}
+\label{sec:c03-familles}
+% ============================================================================
+
+\begin{tableaucours}{L{3.2cm}L{4.6cm}L{4.4cm}}{%
+    \tableauHeader{Famille} &
+    \tableauHeader{Question} &
+    \tableauHeader{Exemple}
+}
+Activité & Que fait-on~? & Nombre d'alertes traitées \\
+Performance & Le fait-on bien et vite~? & Délai moyen de détection \\
+Résultat & Est-on plus sûr~? & Part des techniques détectées, incidents évités \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~3.1. Trois familles d'indicateurs~\cite{iso27004}}\end{center}
+
+\begin{boxalert}
+\textbf{Erreur fréquente.} Ne suivre que l'activité (« nous avons traité
+3~000 alertes »).
+
+\smallskip
+\textbf{Règle~:} l'activité ne dit rien de l'efficacité. Un volume d'alertes
+élevé peut signaler de mauvaises règles, non une bonne détection. On
+privilégie la performance et le résultat.
+\end{boxalert}
+
+% ============================================================================
+\section{Le Tableau de Bord}
+\label{sec:c03-tdb}
+% ============================================================================
+
+\begin{boxprocedure}
+\textbf{Construire un tableau de bord de supervision}
+\begin{enumerate}
+    \item Choisir cinq à sept indicateurs, pas plus.
+    \item Au moins un de chaque famille (activité, performance, résultat).
+    \item Pour chacun~: définition, source, cible, tendance.
+    \item Montrer l'évolution, pas seulement la valeur du mois.
+    \item Dire honnêtement ce qui n'est pas couvert.
+\end{enumerate}
+\end{boxprocedure}
+
+% ============================================================================
+\section{Les Objectifs de Délai}
+\label{sec:c03-delais}
+% ============================================================================
+
+Les deux délais cardinaux sont le \termecle{délai de détection} et le
+\termecle{délai de réaction}. On les fixe par type d'incident~: un
+rançongiciel exige une détection en minutes et un confinement en moins d'une
+heure~; une anomalie mineure tolère un traitement en jours. Ces cibles
+guident le dimensionnement du SOC (Chapitre~\ref{chap:soc}).
+
+% ============================================================================
+\section{Rendre Compte}
+\label{sec:c03-rendre}
+% ============================================================================
+
+\begin{boxscenario}{Opération BÉNOUÉ. Six mois après}
+\textbf{Constatation.} Nouveau tableau de bord~: délai de détection médian
+ramené à 2~heures, couverture de journalisation portée à 85~\%, 40~\% des
+techniques ATT\&CK jouées en test désormais détectées.
+
+\medskip
+\textbf{Analyse} (confiance moyenne). Les chiffres montrent un progrès réel,
+mais la couverture reste partielle (15~\% des systèmes non journalisés) et la
+détection en direct limitée~: ce sont les NEK à traiter
+(Chapitre~\ref{chap:mesurer}). Rendre compte, c'est aussi dire cela.
+\end{boxscenario}
+
+\begin{boxmetier}{RSSI et analyste SOC}
+\textbf{Un tableau de bord par lecteur.} Le RSSI présente à la direction trois
+indicateurs de résultat~; l'analyste suit en interne le détail de la
+performance. Les deux disent la même vérité, à deux niveaux.
+\end{boxmetier}
+
+\separateur
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{Gouverner}, c'est relier la supervision à la stratégie.
+    \item \textbf{Activité, performance, résultat}~: trois familles.
+    \item \textbf{L'activité seule} trompe~; on vise performance et résultat.
+    \item \textbf{Cinq à sept indicateurs}, avec tendance et angles morts.
+    \item \textbf{Des objectifs de délai} par type d'incident.
+\end{itemize}
+\end{boxresume}
+
+\begin{boxinfo}
+\textbf{Points de contrôle de l'élève.} Je sais~: définir la gouvernance de
+la supervision~; classer un indicateur~; bâtir un tableau de bord~; fixer des
+délais cibles~; rendre compte à deux niveaux.
+\end{boxinfo}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~3.1. Familles \niveaubase}]
+Classez~: nombre d'alertes~; délai de détection~; part des techniques
+détectées.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~3.2. Activité trompeuse \niveaubase}]
+Pourquoi « 3~000 alertes traitées » ne prouve-t-il pas une bonne détection~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~3.3. Combien \niveaubase}]
+Combien d'indicateurs un tableau de bord devrait-il comporter, et pourquoi
+pas plus~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~3.4. Cibles \niveaumoyen}]
+Proposez des délais cibles de détection et de réaction pour un rançongiciel,
+et justifiez.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~3.5. Lire BÉNOUÉ \niveaumoyen}]
+Commentez les chiffres de l'opération BÉNOUÉ à six mois~: progrès et limites.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~3.6. Angles morts \niveaumoyen}]
+Pourquoi faut-il afficher ce qui n'est pas couvert dans un tableau de bord~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~3.7. Deux lecteurs \niveaumoyen}]
+Quels indicateurs montrez-vous à la direction~? Lesquels gardez-vous en
+interne~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~3.8. Tendance \niveaumoyen}]
+Pourquoi la tendance importe-t-elle plus que la valeur d'un mois isolé~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~3.9. Tableau de bord \niveauexpert}]
+Construisez le tableau de bord complet de supervision de LiZbiZ~: sept
+indicateurs, définition, source, cible.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~3.10. Présentation au comité \niveauexpert}]
+Rédigez la page que le RSSI présente au comité de direction pour répondre à
+« Sommes-nous mieux protégés~? ».
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Pour aller plus loin.}
+\begin{itemize}
+    \item ISO/IEC 27004~\cite{iso27004}~; ISO/IEC 27035~\cite{iso27035}.
+\end{itemize}
+\end{boxinfo}
+
+\begin{boxinfo}
+\textbf{Transition.} La supervision commence par les traces~: la Partie~II
+s'ouvre sur les journaux (Chapitre~\ref{chap:journaux}).
+\end{boxinfo}

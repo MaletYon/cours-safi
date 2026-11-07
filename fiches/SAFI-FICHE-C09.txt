@@ -1,0 +1,233 @@
+NDAP SUKULU · SAFI · fiche SAFI-FICHE-C09
+Chapitre 9 : Le cadre juridique
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. Le texte fondateur camerounais est la loi :
+      a) 2010/012
+      b) 2016/007
+      c) 2024/017
+      d) 2019/024
+
+ 2. La loi 2010/013 régit :
+      a) Les données personnelles
+      b) Les communications électroniques
+      c) La paie
+      d) La météo
+
+ 3. La loi 2024/017 régit :
+      a) La cybersécurité
+      b) Les télécoms
+      c) La protection des données personnelles
+      d) La météo
+
+ 4. L'ANTIC est :
+      a) Un opérateur télécom
+      b) Une banque
+      c) Une école
+      d) L'autorité de la sécurité électronique
+
+ 5. En cas d'incident, l'ANTIC :
+      a) Reçoit les signalements et coordonne
+      b) Paie
+      c) Vend
+      d) Chiffre
+
+ 6. La Convention de Malabo est de l'année :
+      a) 2001
+      b) 2014
+      c) 2024
+      d) 2010
+
+ 7. La Convention de Budapest porte sur :
+      a) La paie
+      b) La météo
+      c) La cybercriminalité et la preuve
+      d) Les ventes
+
+ 8. Les journaux fondent la preuve de :
+      a) La paie
+      b) La météo
+      c) La vente
+      d) La diligence
+
+ 9. Une fuite de données personnelles exige :
+      a) Information de l'autorité et des personnes
+      b) Rien
+      c) La paie
+      d) La météo
+
+10. L'accès frauduleux à un système est réprimé par :
+      a) 2024/017
+      b) 2010/012
+      c) Aucune loi
+      d) La météo
+
+11. L'ANTIC coopère avec :
+      a) La météo
+      b) La vente
+      c) Le parquet
+      d) La paie
+
+12. La Convention de Malabo est portée par :
+      a) L'ONU
+      b) L'OTAN
+      c) La CEMAC seule
+      d) L'Union africaine
+
+13. Sans journaux exploitables, LiZbiZ :
+      a) Affaiblit sa position
+      b) Est protégée
+      c) Gagne
+      d) Paie moins
+
+14. On prépare la liste des obligations :
+      a) En crise
+      b) À froid, avant l'incident
+      c) Jamais
+      d) Après le rapport
+
+15. La loi sur les communications électroniques est la :
+      a) 2010/012
+      b) 2024/017
+      c) 2010/013
+      d) 2016/007
+
+16. La Convention de Budapest facilite :
+      a) La paie
+      b) La météo
+      c) La vente
+      d) La coopération internationale
+
+17. Le CERT national camerounais est opéré par :
+      a) L'ANTIC
+      b) LiZbiZ
+      c) NYONG
+      d) La banque
+
+18. La règle du cours sur les données : ne consulter que le nécessaire, masquer et :
+      a) Publier
+      b) Détruire à la fin
+      c) Vendre
+      d) Conserver sans fin
+
+19. Les articles précis se lisent dans :
+      a) La presse
+      b) Un blog
+      c) Le texte publié au Journal officiel
+      d) La météo
+
+20. Le 6 mars, LiZbiZ doit notamment :
+      a) Payer
+      b) Vendre
+      c) Fermer
+      d) Conserver les journaux et signaler à l'ANTIC
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. Le texte fondateur camerounais est la loi 2016/007.
+      Vrai / Faux
+
+22. L'ANTIC est un simple opérateur de télécommunications.
+      Vrai / Faux
+
+23. La Convention de Malabo est de 2001.
+      Vrai / Faux
+
+24. Les journaux fondent la preuve de la diligence.
+      Vrai / Faux
+
+25. La loi 2024/017 régit les communications électroniques.
+      Vrai / Faux
+
+26. La Convention de Budapest facilite la coopération internationale.
+      Vrai / Faux
+
+27. On prépare la liste des obligations à froid, avant l'incident.
+      Vrai / Faux
+
+28. Le CERT national camerounais est opéré par LiZbiZ.
+      Vrai / Faux
+
+29. Sans journaux exploitables, LiZbiZ renforce sa position.
+      Vrai / Faux
+
+30. La loi 2010/013 régit les communications électroniques.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. Le texte fondateur camerounais est la loi 2010/______.
+
+32. La protection des données personnelles relève de la loi 2024/______.
+
+33. L'autorité camerounaise de la sécurité électronique est l'______.
+
+34. La Convention de Malabo est de l'année ______.
+
+35. La Convention de ______ porte sur la cybercriminalité.
+
+36. Les journaux fondent la preuve de la ______.
+
+37. Les communications électroniques relèvent de la loi 2010/______.
+
+38. Le ______ national camerounais est opéré par l'ANTIC.
+
+39. On prépare la liste des obligations ______ l'incident.
+
+40. La Convention de Malabo est portée par l'Union ______.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

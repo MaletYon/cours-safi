@@ -1,0 +1,230 @@
+% ============================================================================
+% Fichier  : partie6/P06_C20_mesurer_recherche.tex
+% Titre    : Mesurer la Supervision et la Réponse
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% ============================================================================
+% Sources : ISO/IEC 27004 ; cadre OUI/NON/NEK de l'auditologie (Minka). MBAM.
+% ============================================================================
+
+\chapter{Mesurer la Supervision et la Réponse}
+\label{chap:mesurer}
+\chaptermark{Mesurer et conclure}
+
+\epigraph{%
+    « Mesurer la sécurité, c'est aussi savoir dire ce que l'on ignore. »%
+}{Principe du cours}
+
+\niveauChapitre{Avancé}{L'ensemble du cours~; notions d'auditologie.}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Choisir des indicateurs de supervision et de réponse honnêtes.
+    \item Appliquer le verdict à trois valeurs OUI, NON, NEK.
+    \item Éviter les indicateurs trompeurs.
+    \item Inscrire la supervision dans un cycle d'amélioration.
+    \item Ouvrir sur la recherche en détection et réponse.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : LiZbiZ est-elle « prête » pour le prochain incident~?}
+% ============================================================================
+
+Six mois après, la question revient~: « Sommes-nous prêts~? » La réponse
+honnête n'est ni oui ni non en bloc, mais un ensemble de verdicts précis, et,
+pour ce qui n'a pu être éprouvé, un franc NEK. Ce chapitre clôt le cours sur
+la mesure.
+
+\medskip
+\textbf{Plan du chapitre.}
+\begin{enumerate}
+    \item Des indicateurs honnêtes (section~\ref{sec:c20-indicateurs}).
+    \item Le verdict à trois valeurs (section~\ref{sec:c20-verdict}).
+    \item Les indicateurs trompeurs (section~\ref{sec:c20-trompeurs}).
+    \item Le cycle et la recherche (section~\ref{sec:c20-cycle}).
+\end{enumerate}
+
+\separateur
+
+% ============================================================================
+\section{Des Indicateurs Honnêtes}
+\label{sec:c20-indicateurs}
+% ============================================================================
+
+\begin{tableaucours}{L{4.8cm}L{7.4cm}}{%
+    \tableauHeader{Indicateur} &
+    \tableauHeader{Ce qu'il dit}
+}
+Délai de détection, de réaction & Rapidité à voir et à contenir \\
+Couverture de journalisation & Part du parc réellement surveillé \\
+Couverture de détection (ATT\&CK) & Part des techniques que l'on verrait \\
+Taux de réussite des exercices & Préparation de la cellule \\
+Taux de correction des actions RETEX & Capacité à apprendre \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~20.1. Indicateurs de supervision et de réponse~\cite{iso27004}}\end{center}
+
+% ============================================================================
+\section{Le Verdict à Trois Valeurs}
+\label{sec:c20-verdict}
+% ============================================================================
+
+\begin{boxdef}
+\termecle{Verdict à trois valeurs}~: à chaque question de préparation, la
+réponse est \sigle{OUI} (démontré, avec preuve), \sigle{NON} (réfuté, avec
+preuve) ou \sigle{NEK} (indéterminé~: les preuves manquent pour trancher). Le
+NEK n'est pas un aveu de faiblesse~: c'est une exigence d'honnêteté qui
+désigne où porter l'effort.
+\end{boxdef}
+
+\begin{tableaucours}{L{2.0cm}L{4.8cm}L{5.4cm}}{%
+    \tableauHeader{Verdict} &
+    \tableauHeader{Question} &
+    \tableauHeader{Exemple (LiZbiZ)}
+}
+OUI & Détecte-t-on un compte de service anormal~? & Règle écrite et éprouvée \\
+NON & Détecte-t-on l'exfiltration depuis tout serveur~? & FS-01 journalisé, pas les autres \\
+NEK & Résisterait-on à un attaquant plus patient~? & Jamais éprouvé par un exercice \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~20.2. Le verdict OUI / NON / NEK appliqué~\cite{minka2026auditologie}}\end{center}
+
+\begin{boxalert}
+\textbf{Violation typique.} Conclure OUI (« nous sommes prêts ») faute d'avoir
+éprouvé.
+
+\smallskip
+\textbf{Règle~:} ce qui n'a pas été testé par un exercice reste NEK, pas OUI.
+L'absence d'incident n'est pas une preuve de préparation.
+\end{boxalert}
+
+% ============================================================================
+\section{Les Indicateurs Trompeurs}
+\label{sec:c20-trompeurs}
+% ============================================================================
+
+\begin{tableaucours}{L{4.4cm}L{7.8cm}}{%
+    \tableauHeader{Indicateur trompeur} &
+    \tableauHeader{Pourquoi il trompe}
+}
+Nombre d'alertes & Dépend des règles, pas du risque \\
+« Aucun incident ce mois-ci » & Peut signifier « rien détecté » \\
+Nombre d'outils déployés & L'outil n'est pas la détection \\
+Temps passé au SOC & Mesure l'effort, pas le résultat \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~20.3. Indicateurs à manier avec prudence}\end{center}
+
+% ============================================================================
+\section{Le Cycle et la Recherche}
+\label{sec:c20-cycle}
+% ============================================================================
+
+La supervision s'inscrit dans un cycle~: détecter, répondre, apprendre,
+améliorer la détection, éprouver par des exercices, repartir des NEK. La
+recherche prolonge ce cycle~: mesure de la couverture de détection,
+automatisation de la réponse, renseignement adapté au contexte
+d'Afrique centrale, et application du cadre de l'auditologie à la réduction
+de l'incertitude en supervision.
+
+\begin{boxscenario}{Opération MBAM. L'exercice qui lève des NEK}
+\textbf{Constatation.} Pour éprouver sa préparation, LiZbiZ participe à un
+exercice d'équipe (type équipe violette) avec NYONG SÉCURITÉ~: 30~techniques
+jouées, 18~détectées. Les 12~non détectées étaient des NEK~: on ne savait pas
+si on les verrait. Désormais, on sait que non, et on écrit les règles.
+
+\medskip
+\textbf{Analyse} (confiance élevée). L'exercice transforme des NEK en OUI ou
+en NON étayés. C'est le seul moyen honnête de répondre « sommes-nous
+prêts~? ».
+\end{boxscenario}
+
+\begin{boxmetier}{RSSI, analyste SOC, analyste forensique}
+\textbf{Dire le vrai, NEK compris.} Le professionnel ne cède pas au OUI
+rassurant~: il distingue ce qu'il a démontré, réfuté, et ce qu'il n'a pu
+trancher. C'est à ce triple langage qu'on reconnaît un bilan honnête.
+\end{boxmetier}
+
+\separateur
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{Des indicateurs} de délai, couverture, exercices,
+          correction.
+    \item \textbf{OUI, NON, NEK}~: le verdict honnête.
+    \item \textbf{L'absence d'incident} n'est pas une preuve de préparation.
+    \item \textbf{Les indicateurs d'activité} trompent.
+    \item \textbf{Les exercices} transforment les NEK en verdicts étayés.
+\end{itemize}
+\end{boxresume}
+
+\begin{boxinfo}
+\textbf{Points de contrôle de l'élève.} Je sais~: choisir des indicateurs
+honnêtes~; appliquer OUI/NON/NEK~; reconnaître un indicateur trompeur~;
+décrire le cycle~; situer les pistes de recherche.
+\end{boxinfo}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~20.1. Indicateurs \niveaubase}]
+Citez trois indicateurs honnêtes de supervision.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~20.2. Trois valeurs \niveaubase}]
+Donnez le sens de OUI, NON et NEK.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~20.3. Trompeur \niveaubase}]
+Pourquoi « aucun incident ce mois-ci » peut-il tromper~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~20.4. Classer \niveaumoyen}]
+Attribuez OUI, NON ou NEK~: détection d'un compte de service anormal~;
+résistance à un attaquant patient~; détection de l'exfiltration partout.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~20.5. Pas de test \niveaumoyen}]
+Pourquoi ce qui n'a pas été éprouvé reste-t-il NEK~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~20.6. MBAM \niveaumoyen}]
+Comment l'exercice MBAM transforme-t-il des NEK en verdicts étayés~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~20.7. Note au DG \niveaumoyen}]
+Répondez à « sommes-nous prêts~? » en OUI / NON / NEK pour LiZbiZ.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~20.8. Outils \niveaumoyen}]
+Pourquoi le nombre d'outils déployés n'est-il pas un bon indicateur~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~20.9. Tableau de bord \niveauexpert}]
+Construisez le tableau de bord annuel de supervision et de réponse de LiZbiZ,
+NEK compris.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~20.10. Question de recherche \niveauexpert}]
+Formulez une question de recherche sur la mesure de la couverture de
+détection en contexte d'Afrique centrale.
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Pour aller plus loin.}
+\begin{itemize}
+    \item ISO/IEC 27004~\cite{iso27004}~; cadre de
+          l'auditologie~\cite{minka2026auditologie}.
+\end{itemize}
+\end{boxinfo}
+
+\begin{boxinfo}
+\textbf{Fin du cours.} De l'écran de rançon au verdict mesuré, SIS589 aura
+montré qu'une attaque se voit venir, s'investigue proprement et se maîtrise~:
+superviser, investiguer, répondre, apprendre, mesurer, sans jamais confondre
+ce que l'on constate et ce que l'on en déduit.
+\end{boxinfo}

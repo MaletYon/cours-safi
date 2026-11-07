@@ -1,0 +1,233 @@
+NDAP SUKULU · SAFI · fiche SAFI-FICHE-C12
+Chapitre 12 : Forensique système
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. Les programmes au démarrage sont révélés par :
+      a) La base de registre
+      b) La messagerie
+      c) Le pare-feu
+      d) La paie
+
+ 2. Les connexions et créations de comptes sont dans :
+      a) La base de registre
+      b) Les journaux d'événements
+      c) Le fichier d'échange
+      d) La paie
+
+ 3. Les commandes saisies sont dans :
+      a) Le cron
+      b) Le registre
+      c) L'historique des interpréteurs
+      d) La paie
+
+ 4. La persistance régulière passe par :
+      a) Le registre
+      b) La messagerie
+      c) La paie
+      d) Les tâches planifiées (cron)
+
+ 5. Construire une chronologie, c'est :
+      a) Ordonner les horodatages recalés
+      b) Vendre
+      c) Chiffrer
+      d) Facturer
+
+ 6. On distingue le certain (trace) du :
+      a) Prix
+      b) Probable (interprétation)
+      c) Chiffré
+      d) Vendu
+
+ 7. Supprimer un fichier :
+      a) L'efface aussitôt
+      b) Le chiffre
+      c) Marque l'espace réutilisable
+      d) Le vend
+
+ 8. Un fichier supprimé est récupérable tant qu'il n'est pas :
+      a) Vu
+      b) Vendu
+      c) Chiffré
+      d) Réécrit
+
+ 9. Le service installé le 1er mars s'appelle :
+      a) WinUpd32
+      b) svc_maj2
+      c) FS-01
+      d) svc_sauvegarde
+
+10. Le compte créé le 24 février s'appelle :
+      a) WinUpd32
+      b) svc_maj2
+      c) FS-01
+      d) adm.local
+
+11. Le chiffrement a eu lieu le :
+      a) 23 février
+      b) 1er mars
+      c) 6 mars
+      d) 4 mars
+
+12. L'accès massif aux partages a eu lieu le :
+      a) 23 février
+      b) 6 mars
+      c) 24 février
+      d) 4 mars
+
+13. Les documents récents sont révélés par :
+      a) Les raccourcis et fichiers récents
+      b) Le pare-feu
+      c) Le cron
+      d) La paie
+
+14. Les horodatages des fichiers révèlent :
+      a) Le prix
+      b) Accès et modification
+      c) La météo
+      d) La vente
+
+15. L'attaquant qui « nettoie » laisse souvent :
+      a) Rien
+      b) La paie
+      c) Des traces récupérables
+      d) La météo
+
+16. « WinUpd32 installé le 1er mars » est :
+      a) Un déduit
+      b) Une opinion
+      c) Une vente
+      d) Un tracé
+
+17. « L'attaquant cherchait la persistance » est :
+      a) Un déduit
+      b) Un tracé
+      c) Une preuve
+      d) Un prix
+
+18. Les clichés (versions antérieures) révèlent :
+      a) La paie
+      b) Des versions de fichiers
+      c) La météo
+      d) La vente
+
+19. On recale les horloges selon :
+      a) Le hasard
+      b) La météo
+      c) Les écarts connus
+      d) Le prix
+
+20. Dans un constat, on écrit d'abord :
+      a) L'interprétation
+      b) Le prix
+      c) La météo
+      d) La trace, puis l'interprétation
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. La messagerie révèle les programmes au démarrage.
+      Vrai / Faux
+
+22. Le pare-feu révèle les commandes saisies dans l'interpréteur.
+      Vrai / Faux
+
+23. Supprimer un fichier l'efface immédiatement du disque.
+      Vrai / Faux
+
+24. On confond toujours le tracé et le déduit dans un constat.
+      Vrai / Faux
+
+25. Le service installé le 1er mars s'appelle WinUpd32.
+      Vrai / Faux
+
+26. Un fichier supprimé est récupérable tant qu'il n'est pas réécrit.
+      Vrai / Faux
+
+27. Le chiffrement a eu lieu le 6 mars.
+      Vrai / Faux
+
+28. « L'attaquant cherchait la persistance » est une trace.
+      Vrai / Faux
+
+29. Le « nettoyage » de l'attaquant laisse souvent des traces.
+      Vrai / Faux
+
+30. On recale les horloges selon les écarts connus.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. Les programmes au démarrage sont dans la base de ______.
+
+32. Les commandes saisies sont dans l'historique des ______.
+
+33. Le service installé le 1er mars est ______.
+
+34. Le compte créé le 24 février est ______.
+
+35. Le chiffrement a eu lieu le 6 ______.
+
+36. Un fichier supprimé est récupérable tant qu'il n'est pas ______.
+
+37. On distingue le tracé du ______.
+
+38. La persistance régulière sous Linux passe par le ______.
+
+39. On ______ les horloges selon les écarts connus.
+
+40. L'accès massif aux partages a eu lieu le ______ mars.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

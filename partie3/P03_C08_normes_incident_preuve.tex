@@ -1,0 +1,220 @@
+% ============================================================================
+% Fichier  : partie3/P03_C08_normes_incident_preuve.tex
+% Titre    : Normes de la Gestion d'Incident et de la Preuve
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% ============================================================================
+% Sources : ISO/IEC 27035 ; ISO/IEC 27037 ; NIST SP 800-86 ; RFC 3227.
+% ============================================================================
+
+\chapter{Normes de la Gestion d'Incident et de la Preuve}
+\label{chap:normes}
+\chaptermark{Normes de l'incident et de la preuve}
+
+\epigraph{%
+    « Une norme ne remplace pas le jugement~;\\
+    elle en garantit la méthode et la trace. »%
+}{Principe du cours}
+
+\niveauChapitre{Fondamental}{Partie~II~; notions de gestion de la sécurité.}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Décrire le cycle de gestion d'incident de l'ISO/IEC 27035.
+    \item Connaître les principes de collecte de preuve de l'ISO/IEC 27037.
+    \item Situer le guide NIST SP 800-86 et la RFC 3227.
+    \item Articuler ces référentiels entre eux.
+    \item Relier chaque norme à une pratique du cours.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : quelles normes encadrent ce que LiZbiZ doit faire, du constat à la preuve~?}
+% ============================================================================
+
+Face à l'incident, LiZbiZ et NYONG SÉCURITÉ ne partent pas d'une page
+blanche~: des normes internationales fixent le cycle de gestion et les
+exigences de la preuve. Ce chapitre les présente et montre comment elles
+s'articulent.
+
+\medskip
+\textbf{Plan du chapitre.}
+\begin{enumerate}
+    \item Le cycle ISO/IEC 27035 (section~\ref{sec:c08-27035}).
+    \item La preuve selon l'ISO/IEC 27037 (section~\ref{sec:c08-27037}).
+    \item NIST SP 800-86 et RFC 3227 (section~\ref{sec:c08-nist}).
+    \item Articuler les référentiels (section~\ref{sec:c08-articuler}).
+\end{enumerate}
+
+\separateur
+
+% ============================================================================
+\section{Le Cycle ISO/IEC 27035}
+\label{sec:c08-27035}
+% ============================================================================
+
+\begin{boxdef}
+\termecle{ISO/IEC 27035}~: norme de gestion des incidents de sécurité de
+l'information. Elle décrit un cycle en cinq phases~: \emph{planifier et
+préparer}~; \emph{détecter et signaler}~; \emph{évaluer et décider}~;
+\emph{répondre}~; \emph{tirer les leçons}.
+\end{boxdef}
+
+\begin{tableaucours}{L{4.0cm}L{8.2cm}}{%
+    \tableauHeader{Phase (ISO 27035)} &
+    \tableauHeader{Ce qu'elle recouvre}
+}
+Planifier et préparer & Politique, rôles, outils, playbooks \\
+Détecter et signaler & Supervision, alertes, point de contact \\
+Évaluer et décider & Qualification, gravité, décision de réponse \\
+Répondre & Confinement, éradication, rétablissement \\
+Tirer les leçons & Retour d'expérience, amélioration \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~8.1. Le cycle en cinq phases de l'ISO/IEC 27035~\cite{iso27035}}\end{center}
+
+% ============================================================================
+\section{La Preuve selon l'ISO/IEC 27037}
+\label{sec:c08-27037}
+% ============================================================================
+
+\begin{boxdef}
+\termecle{ISO/IEC 27037}~: lignes directrices pour l'identification, la
+collecte, l'acquisition et la préservation des preuves numériques. Elle
+repose sur trois exigences~: \termecle{pertinence}, \termecle{fiabilité} et
+\termecle{suffisance}, garanties par la traçabilité des actes.
+\end{boxdef}
+
+\begin{boxprocedure}
+\textbf{Préserver une preuve (ISO/IEC 27037)}
+\begin{enumerate}
+    \item Identifier le support et sa volatilité.
+    \item Acquérir selon l'ordre de volatilité (du plus volatil au plus
+          stable).
+    \item Calculer un condensat (empreinte) à l'acquisition.
+    \item Documenter chaque acte~: qui, quoi, quand, comment.
+    \item Conserver en garantissant l'intégrité (chaîne de custody,
+          Chapitre~\ref{chap:fondements}).
+\end{enumerate}
+\end{boxprocedure}
+
+% ============================================================================
+\section{NIST SP 800-86 et RFC 3227}
+\label{sec:c08-nist}
+% ============================================================================
+
+Le \termecle{NIST SP 800-86} intègre la forensique à la réponse à incident en
+quatre temps~: \emph{collecte}, \emph{examen}, \emph{analyse},
+\emph{rapport}. La \termecle{RFC 3227} donne les lignes directrices de
+collecte et d'archivage des preuves, dont le fameux \termecle{ordre de
+volatilité} (mémoire avant disque, disque avant archives).
+
+\begin{boxCRO}
+\textbf{Analyse CRO de l'ordre de volatilité.} Capturer la mémoire d'abord
+sert la \cro{0}{+}{+}~: on fige une trace fugace (fiabilité) exploitable
+devant un tiers (opposabilité), sans exposer plus que nécessaire. Attendre,
+c'est perdre la trace et son opposabilité.
+\end{boxCRO}
+
+% ============================================================================
+\section{Articuler les Référentiels}
+\label{sec:c08-articuler}
+% ============================================================================
+
+\begin{boxscenario}{Opération FARO. Quelle norme pour quel acte}
+\textbf{Constatation.} Pour l'enquête, M.~BIKORO suit l'ISO 27035 (cycle),
+l'ISO 27037 (préservation), le NIST 800-86 (démarche forensique) et la
+RFC 3227 (ordre de volatilité).
+
+\medskip
+\textbf{Analyse} (confiance élevée). Les référentiels ne se concurrencent
+pas~: 27035 cadre la gestion, 27037 et RFC 3227 encadrent la preuve, 800-86
+relie forensique et réponse. Ensemble, ils garantissent une méthode
+opposable.
+\end{boxscenario}
+
+\begin{boxmetier}{Analyste forensique et RSSI}
+\textbf{Citer la norme suivie.} Dans un rapport, l'analyste indique quelle
+norme a guidé chaque acte~: c'est ce qui rend la démarche vérifiable et
+opposable. « J'ai acquis selon l'ISO 27037 » vaut mieux que « j'ai copié le
+disque ».
+\end{boxmetier}
+
+\separateur
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{ISO/IEC 27035}~: cycle d'incident en cinq phases.
+    \item \textbf{ISO/IEC 27037}~: pertinence, fiabilité, suffisance de la
+          preuve.
+    \item \textbf{NIST 800-86}~: collecte, examen, analyse, rapport.
+    \item \textbf{RFC 3227}~: ordre de volatilité.
+    \item \textbf{Les référentiels s'articulent}~; on cite celui que l'on
+          suit.
+\end{itemize}
+\end{boxresume}
+
+\begin{boxinfo}
+\textbf{Points de contrôle de l'élève.} Je sais~: énoncer les cinq phases de
+27035~; citer les exigences de 27037~; décrire la démarche 800-86~; énoncer
+l'ordre de volatilité~; articuler les référentiels.
+\end{boxinfo}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~8.1. Cinq phases \niveaubase}]
+Citez les cinq phases du cycle ISO/IEC 27035 dans l'ordre.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~8.2. Exigences \niveaubase}]
+Quelles sont les trois exigences de la preuve selon l'ISO/IEC 27037~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~8.3. Volatilité \niveaubase}]
+Dans quel ordre acquérir~: disque, mémoire, archives~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~8.4. 800-86 \niveaumoyen}]
+Décrivez les quatre temps du NIST SP 800-86 sur l'exemple de FARO.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~8.5. CRO \niveaumoyen}]
+Expliquez l'analyse CRO de l'ordre de volatilité.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~8.6. Articulation \niveaumoyen}]
+Quelle norme cadre la gestion~? Laquelle encadre la preuve~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~8.7. Condensat \niveaumoyen}]
+Pourquoi calculer un condensat dès l'acquisition~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~8.8. Citer la norme \niveaumoyen}]
+Pourquoi « acquis selon l'ISO 27037 » vaut-il mieux que « copié le disque »~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~8.9. Démarche \niveauexpert}]
+Rédigez, pour FARO, la démarche d'enquête en reliant chaque acte à sa norme.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~8.10. Playbook \niveauexpert}]
+Intégrez l'ISO 27035 dans un playbook de réponse au rançongiciel de LiZbiZ.
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Pour aller plus loin.}
+\begin{itemize}
+    \item ISO/IEC 27035~\cite{iso27035}~; ISO/IEC 27037~\cite{iso27037}~;
+          NIST SP~800-86~\cite{nist80086}~; RFC~3227~\cite{rfc3227}.
+\end{itemize}
+\end{boxinfo}
+
+\begin{boxinfo}
+\textbf{Transition.} Aux normes s'ajoute le droit~: le
+Chapitre~\ref{chap:droit} traite du cadre juridique camerounais et africain.
+\end{boxinfo}

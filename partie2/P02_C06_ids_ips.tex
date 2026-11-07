@@ -1,0 +1,211 @@
+% ============================================================================
+% Fichier  : partie2/P02_C06_ids_ips.tex
+% Titre    : La Détection d'Intrusion (IDS/IPS)
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% ============================================================================
+% Sources : NIST SP 800-94 (IDS/IPS) ; MITRE ATT&CK.
+% ============================================================================
+
+\chapter{La Détection d'Intrusion (IDS/IPS)}
+\label{chap:idsips}
+\chaptermark{La détection d'intrusion}
+
+\epigraph{%
+    « Détecter laisse passer pour voir~; prévenir bloque au risque de couper. »%
+}{Principe du cours}
+
+\niveauChapitre{Intermédiaire}{Chapitre~\ref{chap:siem}~; notions de réseaux.}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Distinguer IDS et IPS, réseau et hôte.
+    \item Comparer détection par signatures et par anomalies.
+    \item Comprendre le placement des sondes.
+    \item Relier les sondes au SIEM.
+    \item Peser le risque d'un blocage automatique.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : fallait-il bloquer automatiquement, au risque de couper la production de Garoua~?}
+% ============================================================================
+
+Un IPS aurait pu bloquer la connexion suspecte du 23~février. Mais un blocage
+mal réglé coupe aussi des flux légitimes. Ce chapitre distingue les sondes,
+leurs méthodes et leur placement, et pose l'arbitrage entre détecter et
+bloquer.
+
+\medskip
+\textbf{Plan du chapitre.}
+\begin{enumerate}
+    \item IDS et IPS, réseau et hôte (section~\ref{sec:c06-types}).
+    \item Signatures ou anomalies (section~\ref{sec:c06-methodes}).
+    \item Le placement des sondes (section~\ref{sec:c06-placement}).
+    \item Détecter ou bloquer (section~\ref{sec:c06-arbitrage}).
+\end{enumerate}
+
+\separateur
+
+% ============================================================================
+\section{IDS et IPS, Réseau et Hôte}
+\label{sec:c06-types}
+% ============================================================================
+
+\begin{tableaucours}{L{2.4cm}L{4.8cm}L{5.0cm}}{%
+    \tableauHeader{Sonde} &
+    \tableauHeader{Agit} &
+    \tableauHeader{Observe}
+}
+IDS & Détecte et alerte, sans bloquer & Le trafic ou l'activité \\
+IPS & Détecte et bloque en ligne & Le trafic ou l'activité \\
+Réseau (NIDS/NIPS) & Sur un point de passage du réseau & Les flux \\
+Hôte (HIDS/HIPS) & Sur une machine & Les processus, fichiers, journaux \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~6.1. Familles de sondes de détection}\end{center}
+
+% ============================================================================
+\section{Signatures ou Anomalies}
+\label{sec:c06-methodes}
+% ============================================================================
+
+\begin{tableaucours}{L{3.2cm}L{4.6cm}L{4.4cm}}{%
+    \tableauHeader{Méthode} &
+    \tableauHeader{Principe} &
+    \tableauHeader{Limite}
+}
+Signatures & Reconnaît des motifs connus & Aveugle à l'inconnu \\
+Anomalies & Signale l'écart à un profil normal & Faux positifs, apprentissage délicat \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~6.2. Deux méthodes de détection}\end{center}
+
+Les deux sont complémentaires~: les signatures attrapent le connu à faible
+bruit, les anomalies ouvrent une chance sur l'inconnu, au prix de faux
+positifs à régler.
+
+% ============================================================================
+\section{Le Placement des Sondes}
+\label{sec:c06-placement}
+% ============================================================================
+
+Une sonde réseau ne voit que le trafic qui passe par elle~: on la place aux
+points stratégiques (sortie Internet, cœur de réseau, segment serveurs). Une
+sonde hôte voit tout de sa machine mais rien des autres. Les alertes des
+sondes alimentent le SIEM, qui les corrèle avec les journaux
+(Chapitre~\ref{chap:siem}).
+
+% ============================================================================
+\section{Détecter ou Bloquer}
+\label{sec:c06-arbitrage}
+% ============================================================================
+
+\begin{boxalert}
+\textbf{Erreur fréquente.} Mettre tous les IPS en blocage automatique « pour
+être tranquille ».
+
+\smallskip
+\textbf{Règle~:} un blocage mal réglé coupe des flux légitimes et peut arrêter
+la production. On bloque automatiquement le connu à très forte confiance~; on
+détecte et on fait valider le reste par un analyste.
+\end{boxalert}
+
+\begin{boxscenario}{Opération BÉNOUÉ. Détecter d'abord}
+\textbf{Constatation.} LiZbiZ installe une sonde réseau en sortie et des
+sondes hôte sur les serveurs. Les sondes sont d'abord en détection, non en
+blocage.
+
+\medskip
+\textbf{Analyse} (confiance moyenne). Sur un parc sans historique de réglage,
+commencer en détection évite de couper la production~; le passage au blocage
+se fait règle par règle, une fois le bruit maîtrisé. Prudence d'abord, au nom
+de la disponibilité.
+\end{boxscenario}
+
+\begin{boxmetier}{Analyste SOC et administrateur réseau}
+\textbf{Régler avant de bloquer.} Le passage d'un IPS en blocage se décide
+sur mesure~: on observe en détection, on mesure les faux positifs, puis on
+bloque les règles sûres. La disponibilité de la production est un critère de
+sécurité.
+\end{boxmetier}
+
+\separateur
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{IDS} alerte, \textbf{IPS} bloque~; \textbf{réseau} ou
+          \textbf{hôte}.
+    \item \textbf{Signatures} (le connu) et \textbf{anomalies} (l'inconnu)
+          se complètent.
+    \item \textbf{Le placement} décide de ce qu'une sonde voit.
+    \item \textbf{Les sondes alimentent le SIEM}.
+    \item \textbf{Bloquer} se fait avec prudence, règle par règle.
+\end{itemize}
+\end{boxresume}
+
+\begin{boxinfo}
+\textbf{Points de contrôle de l'élève.} Je sais~: distinguer IDS/IPS et
+réseau/hôte~; comparer signatures et anomalies~; placer une sonde~; arbitrer
+entre détecter et bloquer.
+\end{boxinfo}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~6.1. IDS ou IPS \niveaubase}]
+Lequel bloque en ligne~? Lequel se contente d'alerter~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~6.2. Réseau ou hôte \niveaubase}]
+Quelle sonde voit les processus d'une machine~? Laquelle voit les flux~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~6.3. Méthodes \niveaubase}]
+Quelle méthode est aveugle à l'inconnu~? Laquelle produit des faux positifs~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~6.4. Placement \niveaumoyen}]
+Où placer une sonde réseau pour voir l'exfiltration vers l'Internet~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~6.5. Complémentarité \niveaumoyen}]
+Pourquoi combiner signatures et anomalies~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~6.6. Blocage \niveaumoyen}]
+Pourquoi ne pas tout mettre en blocage automatique chez LiZbiZ~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~6.7. SIEM \niveaumoyen}]
+Comment les alertes des sondes s'articulent-elles avec le SIEM~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~6.8. Angle mort \niveaumoyen}]
+Quel trafic une sonde réseau mal placée laisse-t-elle passer~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~6.9. Plan de déploiement \niveauexpert}]
+Proposez le plan de déploiement des sondes pour LiZbiZ (points, détection
+puis blocage).
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~6.10. Passage au blocage \niveauexpert}]
+Décrivez la démarche pour faire passer une règle d'IPS de la détection au
+blocage sans risque pour la production.
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Pour aller plus loin.}
+\begin{itemize}
+    \item NIST SP~800-61r2~\cite{nist80061r2}~; MITRE ATT\&CK~\cite{mitreattack}.
+\end{itemize}
+\end{boxinfo}
+
+\begin{boxinfo}
+\textbf{Transition.} Sondes et SIEM ne valent que par leurs règles~: le
+Chapitre~\ref{chap:regles} apprend à en écrire et à les éprouver.
+\end{boxinfo}

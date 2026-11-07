@@ -1,0 +1,210 @@
+% ============================================================================
+% Fichier  : partie4/P04_C12_forensique_systeme.tex
+% Titre    : Forensique Système
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% ============================================================================
+% Sources : NIST SP 800-86 ; artefacts Windows et Linux. Opération FARO.
+% ============================================================================
+
+\chapter{Forensique Système}
+\label{chap:systeme}
+\chaptermark{Forensique système}
+
+\epigraph{%
+    « Le disque garde la mémoire de ce que l'utilisateur croyait avoir effacé. »%
+}{Principe du cours}
+
+\niveauChapitre{Intermédiaire à expert}{Chapitre~\ref{chap:fondements}~;
+administration Windows et Linux.}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Identifier les artefacts système utiles sous Windows et Linux.
+    \item Reconstituer une chronologie à partir des horodatages.
+    \item Repérer les traces de persistance et d'exécution.
+    \item Distinguer suppression logique et effacement réel.
+    \item Rédiger un constat système.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : que révèle le disque de FS-01 sur les onze jours~?}
+% ============================================================================
+
+Le disque de \texttt{FS-01} contient les traces du passage de l'attaquant~:
+comptes créés, services installés, programmes exécutés, fichiers consultés.
+Ce chapitre apprend à les lire et à en tirer une chronologie opposable.
+
+\medskip
+\textbf{Plan du chapitre.}
+\begin{enumerate}
+    \item Les artefacts Windows (section~\ref{sec:c12-windows}).
+    \item Les artefacts Linux (section~\ref{sec:c12-linux}).
+    \item La chronologie (section~\ref{sec:c12-chrono}).
+    \item Suppression et récupération (section~\ref{sec:c12-suppression}).
+\end{enumerate}
+
+\separateur
+
+% ============================================================================
+\section{Les Artefacts Windows}
+\label{sec:c12-windows}
+% ============================================================================
+
+\begin{tableaucours}{L{4.0cm}L{8.2cm}}{%
+    \tableauHeader{Artefact} &
+    \tableauHeader{Ce qu'il révèle}
+}
+Journaux d'événements & Connexions, comptes, services, tâches \\
+Base de registre & Programmes au démarrage, périphériques branchés \\
+Traces d'exécution & Programmes lancés, fréquence, dates \\
+Fichiers récents, raccourcis & Documents ouverts, chemins \\
+Fichier d'échange, clichés & Fragments de mémoire, versions antérieures \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~12.1. Artefacts forensiques Windows}\end{center}
+
+% ============================================================================
+\section{Les Artefacts Linux}
+\label{sec:c12-linux}
+% ============================================================================
+
+\begin{tableaucours}{L{4.0cm}L{8.2cm}}{%
+    \tableauHeader{Artefact} &
+    \tableauHeader{Ce qu'il révèle}
+}
+Journaux système & Authentifications, sudo, démons \\
+Historique des interpréteurs & Commandes saisies \\
+Tâches planifiées (cron) & Persistance, exécutions régulières \\
+Horodatages des fichiers & Accès, modification, changement de métadonnées \\
+Comptes et clés & Comptes ajoutés, clés d'accès déposées \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~12.2. Artefacts forensiques Linux}\end{center}
+
+% ============================================================================
+\section{La Chronologie}
+\label{sec:c12-chrono}
+% ============================================================================
+
+\begin{boxprocedure}
+\textbf{Construire une chronologie (\textit{timeline})}
+\begin{enumerate}
+    \item Rassembler les horodatages de tous les artefacts.
+    \item Recaler les horloges (écarts connus).
+    \item Ordonner les événements et repérer les enchaînements.
+    \item Distinguer le certain (trace) du probable (interprétation).
+    \item Dater chaque étape de l'attaque.
+\end{enumerate}
+\end{boxprocedure}
+
+\begin{boxscenario}{Opération FARO. Onze jours reconstitués}
+\textbf{Constatation.} La chronologie du disque de \texttt{FS-01} établit~:
+23~février, connexion du compte \texttt{svc\_sauvegarde} à 2~h~14~; 24~février,
+création du compte \texttt{svc\_maj2}~; 1\textsuperscript{er}~mars,
+installation du service \texttt{WinUpd32}~; 4~mars, accès massif aux
+partages~; 6~mars, chiffrement.
+
+\medskip
+\textbf{Analyse} (confiance élevée pour les traces, moyenne pour les
+intentions). Les horodatages, recalés, dessinent une progression cohérente.
+On distingue ce qui est tracé (les événements) de ce qu'on en déduit (le but
+de l'attaquant).
+\end{boxscenario}
+
+% ============================================================================
+\section{Suppression et Récupération}
+\label{sec:c12-suppression}
+% ============================================================================
+
+Supprimer un fichier ne l'efface pas~: le système marque l'espace comme
+réutilisable, mais les données subsistent jusqu'à réécriture. D'où la
+possibilité de \termecle{récupérer} des fichiers supprimés, tant qu'ils n'ont
+pas été écrasés. L'attaquant qui « nettoie » laisse souvent des traces
+récupérables.
+
+\begin{boxmetier}{Analyste forensique}
+\textbf{Séparer le tracé du déduit.} Dans un constat système, l'analyste
+écrit d'abord ce que la trace montre, puis, à part, ce qu'il en déduit, avec
+un niveau de confiance. C'est le cœur de la méthode constatation/analyse.
+\end{boxmetier}
+
+\separateur
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{Windows et Linux} laissent des artefacts riches.
+    \item \textbf{La chronologie} relie les horodatages recalés.
+    \item \textbf{On date} chaque étape de l'attaque.
+    \item \textbf{Supprimer n'est pas effacer}~: récupération possible.
+    \item \textbf{On sépare} le tracé du déduit.
+\end{itemize}
+\end{boxresume}
+
+\begin{boxinfo}
+\textbf{Points de contrôle de l'élève.} Je sais~: citer les artefacts Windows
+et Linux~; construire une chronologie~; dater une attaque~; expliquer la
+récupération~; séparer trace et interprétation.
+\end{boxinfo}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~12.1. Artefact Windows \niveaubase}]
+Quel artefact Windows révèle les programmes lancés au démarrage~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~12.2. Artefact Linux \niveaubase}]
+Quel artefact Linux révèle les commandes saisies~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~12.3. Suppression \niveaubase}]
+Pourquoi un fichier supprimé peut-il être récupéré~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~12.4. Chronologie \niveaumoyen}]
+À partir des faits de FARO, dressez la chronologie des onze jours.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~12.5. Recaler \niveaumoyen}]
+Comment l'écart d'horloge de 40~min modifie-t-il la chronologie~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~12.6. Tracé ou déduit \niveaumoyen}]
+Classez~: « le service WinUpd32 a été installé le 1\textsuperscript{er}~mars »~;
+« l'attaquant cherchait la persistance ».
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~12.7. Persistance \niveaumoyen}]
+Quels artefacts trahissent une persistance sous Windows~? Sous Linux~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~12.8. Nettoyage \niveaumoyen}]
+Pourquoi le « nettoyage » de l'attaquant laisse-t-il souvent des traces~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~12.9. Constat système \niveauexpert}]
+Rédigez un constat système complet pour l'installation de \texttt{WinUpd32}.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~12.10. Plan d'analyse \niveauexpert}]
+Proposez un plan d'analyse du disque de \texttt{FS-01}, des artefacts à la
+chronologie.
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Pour aller plus loin.}
+\begin{itemize}
+    \item NIST SP~800-86~\cite{nist80086}~; ISO/IEC 27037~\cite{iso27037}.
+\end{itemize}
+\end{boxinfo}
+
+\begin{boxinfo}
+\textbf{Transition.} Le disque ne dit pas tout~: la mémoire vive garde ce qui
+n'a jamais été écrit sur disque. Le Chapitre~\ref{chap:memoire} traite du
+forensique mémoire.
+\end{boxinfo}

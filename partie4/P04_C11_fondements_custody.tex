@@ -1,0 +1,210 @@
+% ============================================================================
+% Fichier  : partie4/P04_C11_fondements_custody.tex
+% Titre    : Fondements du Forensique et Chaîne de Custody
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% ============================================================================
+% Sources : ISO/IEC 27037 ; RFC 3227 ; NIST SP 800-86. Opération FARO : fictif.
+% ============================================================================
+
+\chapter{Fondements du Forensique et Chaîne de Custody}
+\label{chap:fondements}
+\chaptermark{Fondements du forensique}
+
+\epigraph{%
+    « L'enquêteur ne cherche pas à avoir raison~;\\
+    il cherche à pouvoir le prouver. »%
+}{Principe du cours}
+
+\niveauChapitre{Fondamental}{Partie~III.}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Définir l'analyse forensique et ses principes.
+    \item Comprendre l'ordre de volatilité et la copie vérifiée.
+    \item Tenir une chaîne de custody.
+    \item Qualifier un artefact.
+    \item Préserver l'opposabilité à chaque étape.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : par où commence une enquête propre sur FS-01~?}
+% ============================================================================
+
+Devant un serveur compromis, la tentation est d'« aller voir ». Le forensique
+impose l'inverse~: figer, copier, documenter, puis analyser une copie. Ce
+chapitre pose les fondements et la chaîne de custody.
+
+\medskip
+\textbf{Plan du chapitre.}
+\begin{enumerate}
+    \item Qu'est-ce que le forensique (section~\ref{sec:c11-definir}).
+    \item L'ordre de volatilité (section~\ref{sec:c11-volatilite}).
+    \item La copie vérifiée (section~\ref{sec:c11-copie}).
+    \item La chaîne de custody (section~\ref{sec:c11-custody}).
+    \item Qualifier un artefact (section~\ref{sec:c11-artefact}).
+\end{enumerate}
+
+\separateur
+
+% ============================================================================
+\section{Qu'est-ce que le Forensique}
+\label{sec:c11-definir}
+% ============================================================================
+
+\begin{boxdef}
+\termecle{Analyse forensique}~: recherche méthodique, documentée et opposable
+des traces laissées par un événement sur les systèmes, afin d'établir ce qui
+s'est passé, comment, et par qui, dans le respect de l'intégrité des preuves.
+\end{boxdef}
+
+% ============================================================================
+\section{L'Ordre de Volatilité}
+\label{sec:c11-volatilite}
+% ============================================================================
+
+\begin{boxprocedure}
+\textbf{Acquérir selon l'ordre de volatilité (RFC 3227)}
+\begin{enumerate}
+    \item Mémoire vive et état du système (processus, connexions).
+    \item Fichiers temporaires et données de session.
+    \item Disque (systèmes de fichiers).
+    \item Journaux distants et configuration.
+    \item Supports d'archives.
+\end{enumerate}
+\end{boxprocedure}
+
+On capture d'abord ce qui disparaît le plus vite. Un redémarrage détruit la
+mémoire~: d'où la règle « ne rien toucher avant d'avoir figé »
+(Chapitre~\ref{chap:preuve}).
+
+% ============================================================================
+\section{La Copie Vérifiée}
+\label{sec:c11-copie}
+% ============================================================================
+
+On n'analyse jamais l'original~: on en fait une \termecle{copie bit à bit},
+dont on calcule un \termecle{condensat} (empreinte). Le même condensat sur
+l'original et la copie prouve que la copie est fidèle et que l'original n'a
+pas changé. Toute l'analyse se fait sur la copie.
+
+% ============================================================================
+\section{La Chaîne de Custody}
+\label{sec:c11-custody}
+% ============================================================================
+
+\begin{boxprocedure}
+\textbf{Tenir la chaîne de custody}
+\begin{enumerate}
+    \item Identifier chaque pièce (numéro, description, condensat).
+    \item Consigner chaque transfert~: qui, à qui, quand, pourquoi.
+    \item Protéger physiquement et logiquement les pièces.
+    \item Ne jamais laisser de trou dans la continuité de la détention.
+    \item Joindre la chaîne au dossier de preuve.
+\end{enumerate}
+\end{boxprocedure}
+
+\begin{boxCRO}
+\textbf{La chaîne de custody sert l'opposabilité.} Une pièce dont la
+détention présente un trou devient contestable~: \cro{0}{0}{-}. La continuité
+documentée est ce qui rend la preuve opposable devant un tiers.
+\end{boxCRO}
+
+% ============================================================================
+\section{Qualifier un Artefact}
+\label{sec:c11-artefact}
+% ============================================================================
+
+\begin{boxobjet}{Journal de connexion de FS-01}
+\textbf{Nature~:} journal d'authentification extrait de la copie du disque de
+\texttt{FS-01}. \textbf{Source~:} copie vérifiée (condensat au dossier).
+\textbf{Pertinence~:} contient les connexions du compte de service suspect.
+\textbf{Fiabilité~:} intègre (condensat), horodatage à recaler (écart connu
+de 40~min). \textbf{Opposabilité~:} chaîne de custody continue.
+\end{boxobjet}
+
+\begin{boxmetier}{Analyste forensique}
+\textbf{Documenter est enquêter.} Pour l'analyste, la documentation n'est pas
+une formalité postérieure~: c'est une partie de l'acte d'enquête. Un geste
+non documenté est un geste perdu.
+\end{boxmetier}
+
+\separateur
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{Le forensique} établit les faits de façon opposable.
+    \item \textbf{L'ordre de volatilité}~: du plus fugace au plus stable.
+    \item \textbf{La copie vérifiée} par condensat remplace l'original.
+    \item \textbf{La chaîne de custody} assure la continuité de la détention.
+    \item \textbf{Un artefact} se qualifie (nature, source, pertinence,
+          fiabilité, opposabilité).
+\end{itemize}
+\end{boxresume}
+
+\begin{boxinfo}
+\textbf{Points de contrôle de l'élève.} Je sais~: définir le forensique~;
+énoncer l'ordre de volatilité~; faire une copie vérifiée~; tenir une chaîne de
+custody~; qualifier un artefact.
+\end{boxinfo}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~11.1. Volatilité \niveaubase}]
+Classez du plus volatil au plus stable~: disque, mémoire vive, archives.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~11.2. Copie \niveaubase}]
+Pourquoi analyse-t-on une copie et non l'original~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~11.3. Custody \niveaubase}]
+Qu'est-ce qu'un « trou » dans la chaîne de custody~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~11.4. Condensat \niveaumoyen}]
+Comment un condensat prouve-t-il qu'une copie est fidèle~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~11.5. CRO \niveaumoyen}]
+Pourquoi un trou de custody dégrade-t-il l'opposabilité~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~11.6. Artefact \niveaumoyen}]
+Qualifiez un artefact de votre choix de l'opération FARO (cinq rubriques).
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~11.7. Horloge \niveaumoyen}]
+Comment traiter l'écart d'horloge de 40~min dans l'analyse~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~11.8. Documentation \niveaumoyen}]
+Pourquoi un geste non documenté est-il « perdu »~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~11.9. Procédure d'acquisition \niveauexpert}]
+Rédigez la procédure d'acquisition du serveur \texttt{FS-01}, dans l'ordre de
+volatilité.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~11.10. Formulaire de custody \niveauexpert}]
+Concevez le formulaire de chaîne de custody de LiZbiZ.
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Pour aller plus loin.}
+\begin{itemize}
+    \item ISO/IEC 27037~\cite{iso27037}~; RFC~3227~\cite{rfc3227}~;
+          NIST SP~800-86~\cite{nist80086}.
+\end{itemize}
+\end{boxinfo}
+
+\begin{boxinfo}
+\textbf{Transition.} Le premier terrain d'enquête est le disque~: le
+Chapitre~\ref{chap:systeme} traite du forensique système.
+\end{boxinfo}

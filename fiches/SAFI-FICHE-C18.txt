@@ -1,0 +1,233 @@
+NDAP SUKULU · SAFI · fiche SAFI-FICHE-C18
+Chapitre 18 : Confinement, éradication, rétablissement
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. On privilégie :
+      a) L'isolement réseau
+      b) L'extinction
+      c) La vente
+      d) La météo
+
+ 2. L'isolement réseau préserve :
+      a) Le prix
+      b) La mémoire et la preuve
+      c) La météo
+      d) La vente
+
+ 3. L'attaquant laisse souvent :
+      a) Une seule porte
+      b) Aucune
+      c) Plusieurs portes
+      d) La météo
+
+ 4. Avant de rétablir, on corrige :
+      a) Le prix
+      b) La météo
+      c) La TVA
+      d) La faille d'entrée
+
+ 5. On éradique à partir de :
+      a) La chronologie forensique
+      b) La météo
+      c) La paie
+      d) La vente
+
+ 6. On rétablit depuis des sauvegardes :
+      a) En ligne
+      b) Vérifiées hors ligne
+      c) Chiffrées
+      d) Vendues
+
+ 7. Payer la rançon :
+      a) Garantit tout
+      b) Est gratuit
+      c) Ne garantit ni restitution ni non-divulgation
+      d) Est obligatoire
+
+ 8. La vraie réponse au rançongiciel est :
+      a) Payer
+      b) La météo
+      c) La vente
+      d) La préparation (sauvegardes)
+
+ 9. La rançon demandée est de :
+      a) 25 millions de FCFA
+      b) 2 millions
+      c) 250 millions
+      d) Zéro
+
+10. LiZbiZ décide de :
+      a) Payer
+      b) Ne pas payer
+      c) Vendre
+      d) Fermer
+
+11. Éteindre brutalement détruit :
+      a) Le disque
+      b) Les archives
+      c) La mémoire
+      d) La paie
+
+12. Supprimer la seule charge visible :
+      a) Suffit
+      b) Chiffre
+      c) Vend
+      d) Ne suffit pas
+
+13. Une sauvegarde en ligne a pu être :
+      a) Chiffrée aussi
+      b) Préservée
+      c) Vendue
+      d) Imprimée
+
+14. Payer finance :
+      a) La défense
+      b) Le crime
+      c) La météo
+      d) La vente
+
+15. Les données exfiltrées, elles, sont :
+      a) Récupérées
+      b) Vendues
+      c) Déjà perdues
+      d) Chiffrées
+
+16. Payer n'améliore pas :
+      a) Le prix
+      b) La météo
+      c) La vente
+      d) La situation CRO
+
+17. On restaure en surveillant, prêt à :
+      a) Reconfiner
+      b) Vendre
+      c) Payer
+      d) Chiffrer
+
+18. On change aussi :
+      a) La météo
+      b) Les secrets exposés
+      c) Le prix
+      d) La vente
+
+19. Après non-paiement, LiZbiZ notifie :
+      a) Personne
+      b) La météo
+      c) L'ANTIC et les clients concernés
+      d) La vente
+
+20. Le blocage de comptes sert à :
+      a) Vendre
+      b) Chiffrer
+      c) La météo
+      d) Couper l'accès de l'attaquant
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. On privilégie l'extinction brutale, qui préserve la preuve.
+      Vrai / Faux
+
+22. L'attaquant ne laisse jamais qu'une seule porte.
+      Vrai / Faux
+
+23. Supprimer la seule charge visible suffit à nettoyer.
+      Vrai / Faux
+
+24. On rétablit depuis n'importe quelle sauvegarde en ligne.
+      Vrai / Faux
+
+25. Payer la rançon garantit la restitution des données.
+      Vrai / Faux
+
+26. LiZbiZ décide de ne pas payer la rançon.
+      Vrai / Faux
+
+27. La vraie réponse au rançongiciel est la préparation.
+      Vrai / Faux
+
+28. Avant de rétablir, on corrige la faille d'entrée.
+      Vrai / Faux
+
+29. Les données exfiltrées sont déjà perdues.
+      Vrai / Faux
+
+30. Éteindre brutalement détruit la mémoire.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. On privilégie l'______ réseau pour contenir.
+
+32. Avant de rétablir, on corrige la ______ d'entrée.
+
+33. On rétablit depuis des sauvegardes vérifiées ______ ligne.
+
+34. La rançon demandée est de ______ millions de FCFA.
+
+35. LiZbiZ décide de ______ payer.
+
+36. La vraie réponse au rançongiciel est la ______.
+
+37. L'attaquant laisse souvent plusieurs ______.
+
+38. On éradique à partir de la chronologie ______.
+
+39. Payer finance le ______.
+
+40. On restaure en surveillant, prêt à ______.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

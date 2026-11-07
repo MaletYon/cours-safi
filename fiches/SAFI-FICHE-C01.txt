@@ -1,0 +1,233 @@
+NDAP SUKULU · SAFI · fiche SAFI-FICHE-C01
+Chapitre 1 : Pourquoi superviser
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. La détection sert à :
+      a) Voir ce qui est passé malgré la prévention
+      b) Empêcher
+      c) Réagir seule
+      d) Facturer
+
+ 2. La prévention est :
+      a) Parfaite
+      b) Jamais parfaite
+      c) Inutile
+      d) Interdite
+
+ 3. Le filet qui rattrape ce que la prévention laisse passer est :
+      a) La réaction
+      b) L'audit
+      c) La détection
+      d) La paie
+
+ 4. La supervision de sécurité collecte :
+      a) La paie
+      b) La météo
+      c) Les ventes
+      d) Les traces d'un système
+
+ 5. La supervision d'exploitation surveille :
+      a) La disponibilité et la performance
+      b) Les attaques
+      c) Le droit
+      d) Les preuves
+
+ 6. Le délai de présence est le temps entre :
+      a) Deux incidents
+      b) La compromission et sa détection
+      c) L'alerte et le rapport
+      d) Deux audits
+
+ 7. Plus le délai de présence est long, plus l'attaquant :
+      a) Recule
+      b) Disparaît
+      c) S'étend et exfiltre
+      d) Paie
+
+ 8. La conservation des traces est imposée par :
+      a) La loi 2010/012
+      b) Un décret
+      c) L'usage
+      d) Aucune loi
+
+ 9. Le délai de détection mesure le temps entre :
+      a) La compromission et l'alerte
+      b) Deux alertes
+      c) L'alerte et le rapport
+      d) Deux audits
+
+10. Le délai de réaction mesure le temps entre :
+      a) L'alerte et le confinement
+      b) Deux incidents
+      c) La paie
+      d) La compromission et l'alerte
+
+11. La couverture de journalisation mesure :
+      a) Le prix
+      b) La météo
+      c) La part des systèmes dont les traces sont collectées
+      d) Le nombre d'alertes
+
+12. Un taux de faux positifs élevé :
+      a) Aide
+      b) Chiffre
+      c) Facture
+      d) Noie les vraies alertes
+
+13. Sans journaux exploitables, LiZbiZ ne peut prouver :
+      a) Son chiffre d'affaires
+      b) Sa diligence
+      c) La météo
+      d) Le prix
+
+14. Isoler un poste infecté relève de :
+      a) La prévention
+      b) La réaction
+      c) La détection
+      d) La facturation
+
+15. Réduire le délai de présence permet de contenir avant :
+      a) La paie
+      b) La météo
+      c) L'exfiltration et le chiffrement
+      d) L'audit
+
+16. La supervision la plus utile face à une attaque est celle de :
+      a) L'exploitation
+      b) La paie
+      c) La météo
+      d) La sécurité
+
+17. Un bon SOC suit son délai de détection :
+      a) D'un mois sur l'autre
+      b) Jamais
+      c) Une seule fois
+      d) Par hasard
+
+18. L'absence de journaux exploitables est :
+      a) Neutre
+      b) Un manquement opposable
+      c) Un avantage
+      d) Un détail
+
+19. Installer un correctif relève de :
+      a) La détection
+      b) La réaction
+      c) La prévention
+      d) L'audit
+
+20. Lire les journaux chaque matin relève de :
+      a) La prévention
+      b) La réaction
+      c) La paie
+      d) La détection
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. La prévention est toujours parfaite.
+      Vrai / Faux
+
+22. La supervision de sécurité et d'exploitation sont identiques.
+      Vrai / Faux
+
+23. Le délai de présence sépare la compromission de sa détection.
+      Vrai / Faux
+
+24. La conservation des traces est imposée par la loi 2010/012.
+      Vrai / Faux
+
+25. Un taux de faux positifs élevé améliore la détection.
+      Vrai / Faux
+
+26. La détection rattrape ce que la prévention laisse passer.
+      Vrai / Faux
+
+27. Réduire le délai de présence limite l'extension de l'attaque.
+      Vrai / Faux
+
+28. Sans journaux, LiZbiZ peut quand même prouver sa diligence.
+      Vrai / Faux
+
+29. Le délai de détection se suit d'un mois sur l'autre.
+      Vrai / Faux
+
+30. Isoler un poste infecté relève de la prévention.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. La chaîne : prévention, détection, ______.
+
+32. Le temps entre compromission et détection est le délai de ______.
+
+33. La supervision de ______ surveille la disponibilité, pas les attaques.
+
+34. La conservation des traces est imposée par la loi 2010/______.
+
+35. La part des systèmes dont les traces sont collectées est la ______ de journalisation.
+
+36. Installer un correctif relève de la ______.
+
+37. Dans BÉNOUÉ, le délai de présence est de ______ jours.
+
+38. La supervision de ______ détecte les attaques.
+
+39. Le délai de ______ sépare l'alerte du confinement.
+
+40. Sans journaux exploitables, c'est un manquement ______.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

@@ -1,0 +1,180 @@
+% ============================================================================
+% Fichier  : partie0/P00_decouverte_rancongiciel.tex
+% Titre    : Prologue : la Découverte
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% ============================================================================
+
+\chapter{Prologue : la Découverte}
+\label{chap:prologue}
+\chaptermark{Prologue}
+
+\epigraph{%
+    « Quand l'écran de rançon s'affiche, l'attaque est déjà vieille~;\\
+    la seule question est de savoir si quelqu'un l'a vue venir. »%
+}{Principe du cours}
+
+\niveauChapitre{Introductif}{Aucun prérequis. Les notions sont reprises en
+détail dans les chapitres.}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Situer la supervision, le forensique et la réponse à incident dans
+          une même journée réelle.
+    \item Distinguer ce qui relève de la détection, de l'investigation et de
+          la décision.
+    \item Découvrir le fil rouge LiZbiZ et le Trilemme CRO.
+    \item Formuler les questions auxquelles le cours répond.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{6 mars 2026, 6 h 40, site de LiZbiZ à Garoua}
+% ============================================================================
+
+Le vigile de nuit a cru à une coupure~: les écrans de l'entrepôt affichent
+tous le même fond noir et un texte en anglais réclamant un paiement. À
+6~h~40, l'astreinte informatique est jointe. À 7~h~15, M.~KOUNOU, responsable
+informatique, constate que le serveur de fichiers \texttt{FS-01}, la base de
+suivi des colis et deux postes de la comptabilité sont chiffrés. Les
+sauvegardes de la semaine sont, elles aussi, inaccessibles.
+
+\medskip
+Ce que personne ne sait encore ce matin-là\footnote{Cas fictif établi pour le
+cours. Les noms (LiZbiZ, NYONG SÉCURITÉ, BANQUE SANAGA), les dates et les
+montants sont fictifs~; les mécanismes techniques et les références
+normatives sont exacts.}~: l'attaque n'a pas commencé cette nuit. Les
+premières traces, dans les journaux, remontent à onze jours plus tôt. Entre
+les deux, un compte de service compromis, un déplacement discret d'une
+machine à l'autre, une exfiltration de 40~Go, puis le chiffrement. Pendant
+onze jours, tout était dans les journaux. Personne ne les lisait.
+
+% ============================================================================
+\section{Trois métiers, une seule journée}
+\label{sec:p00-metiers}
+% ============================================================================
+
+Cette journée met en scène les trois compétences du cours, dans l'ordre où
+elles interviennent.
+
+\begin{tableaucours}{L{3.2cm}L{4.4cm}L{4.6cm}}{%
+    \tableauHeader{Moment} &
+    \tableauHeader{Compétence} &
+    \tableauHeader{Question posée}
+}
+Avant (onze jours) & Supervision, détection & L'a-t-on vu venir~? \\
+Pendant (le constat) & Réponse à incident & Comment limiter les dégâts~? \\
+Après (l'enquête) & Analyse forensique & Que s'est-il exactement passé, et peut-on le prouver~? \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~0.1. Les trois temps d'un incident}\end{center}
+
+\begin{boxscenario}{Opération LOGONE. La journée du 6 mars}
+\textbf{Constatation.} À 7~h~15, quatre systèmes chiffrés, sauvegardes
+hebdomadaires inaccessibles, un message de rançon. La production de
+l'entrepôt de Garoua est arrêtée.
+
+\medskip
+\textbf{Analyse} (confiance moyenne au matin, élevée après enquête).
+L'incident n'est pas un simple chiffrement~: c'est l'aboutissement d'une
+intrusion de onze jours. La distinction entre ce que l'on \emph{constate}
+(les écrans noirs) et ce que l'on \emph{suppose} puis \emph{établit} (le
+chemin de l'attaquant) est le cœur du métier.
+\end{boxscenario}
+
+% ============================================================================
+\section{Le fil rouge : LiZbiZ et ses opérations}
+\label{sec:p00-filrouge}
+% ============================================================================
+
+Tout le cours suit la même entreprise, \sigle{LiZbiZ}, transporteur de colis
+présent à Yaoundé, Douala et Garoua, et le cabinet \sigle{NYONG SÉCURITÉ}
+qui l'assiste. Trois opérations, situées dans le Nord, structurent la
+pratique~:
+
+\begin{tableaucours}{L{3.0cm}L{9.2cm}}{%
+    \tableauHeader{Opération} &
+    \tableauHeader{Ce qu'elle illustre}
+}
+BÉNOUÉ & La supervision et la détection~: ce que le SIEM a vu, et pas vu, pendant les onze jours \\
+FARO & L'analyse forensique~: disque, mémoire, réseau, et la preuve opposable \\
+MAYO & La réponse à incident~: confinement, éradication, rétablissement, retour d'expérience \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~0.2. Les trois opérations du fil rouge}\end{center}
+
+\begin{tableaucours}{L{3.4cm}L{8.8cm}}{%
+    \tableauHeader{Acteur} &
+    \tableauHeader{Rôle}
+}
+M.~KOUNOU & Responsable informatique de LiZbiZ \\
+Mme~NKENG & Analyste SOC, cabinet NYONG SÉCURITÉ \\
+M.~BIKORO & Analyste forensique et chef de mission \\
+Mme~MOUAFO & Responsable de la réponse à incident \\
+M.~ETEME & Directeur général de LiZbiZ \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~0.3. Les acteurs de l'opération LOGONE}\end{center}
+
+% ============================================================================
+\section{Le Trilemme CRO}
+\label{sec:p00-cro}
+% ============================================================================
+
+Ce cours partage avec l'investigation numérique un fil conducteur théorique~:
+toute trace, tout acte d'enquête se juge sur trois dimensions à la fois.
+
+\begin{boxCRO}
+\textbf{Le Trilemme CRO.} \termecle{Confidentialité}~: la trace et l'enquête
+ne doivent pas exposer plus de données que nécessaire. \termecle{Fiabilité}~:
+la trace est-elle fidèle, complète, non altérée~? \termecle{Opposabilité}~:
+pourra-t-on s'en prévaloir devant un tiers (direction, ANTIC, juge)~?
+
+\smallskip
+Une action d'enquête améliore souvent une dimension au détriment d'une autre.
+On la note \cro{+}{-}{0}~: ici, confidentialité préservée, fiabilité
+dégradée, opposabilité inchangée. Le professionnel arbitre en conscience et
+\emph{documente} son arbitrage.
+\end{boxCRO}
+
+% ============================================================================
+\section{Les questions du cours}
+\label{sec:p00-questions}
+% ============================================================================
+
+\begin{boxinfo}
+\textbf{Ce que le cours apprend à répondre.}
+\begin{itemize}
+    \item Comment \textbf{superviser} un système pour voir l'attaque pendant
+          qu'elle se déroule (Parties~I et~II)~?
+    \item Que disent les \textbf{normes et le droit} sur la preuve et le
+          signalement (Partie~III)~?
+    \item Comment \textbf{investiguer} proprement disque, mémoire et réseau
+          (Partie~IV)~?
+    \item Comment \textbf{répondre} à l'incident et s'en relever (Partie~V)~?
+    \item Comment \textbf{apprendre} et mesurer, pour que la prochaine fois
+          quelqu'un voie venir l'attaque (Partie~VI)~?
+\end{itemize}
+\end{boxinfo}
+
+\separateur
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce prologue~:}
+\begin{itemize}
+    \item \textbf{L'écran de rançon} est la fin d'une histoire, pas le début.
+    \item \textbf{Trois temps}~: voir venir (supervision), limiter (réponse),
+          établir (forensique).
+    \item \textbf{Le fil rouge} LiZbiZ et les opérations BÉNOUÉ, FARO, MAYO.
+    \item \textbf{Le Trilemme CRO}~: confidentialité, fiabilité, opposabilité.
+    \item \textbf{Constater} n'est pas \textbf{supposer}~; on sépare toujours
+          les deux.
+\end{itemize}
+\end{boxresume}
+
+\begin{boxinfo}
+\textbf{Transition.} Pour voir venir l'attaque, il faut d'abord comprendre
+pourquoi et comment on supervise~: c'est l'objet du
+Chapitre~\ref{chap:pourquoi}.
+\end{boxinfo}

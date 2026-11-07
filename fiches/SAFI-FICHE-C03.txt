@@ -1,0 +1,233 @@
+NDAP SUKULU · SAFI · fiche SAFI-FICHE-C03
+Chapitre 3 : Gouvernance et indicateurs
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. La gouvernance de la supervision relie :
+      a) La technique à la stratégie
+      b) La paie à la vente
+      c) Deux serveurs
+      d) Deux clients
+
+ 2. « Nombre d'alertes traitées » est un indicateur :
+      a) De résultat
+      b) D'activité
+      c) De performance
+      d) De coût
+
+ 3. « Délai de détection » est un indicateur :
+      a) D'activité
+      b) De résultat
+      c) De performance
+      d) De paie
+
+ 4. « Part des techniques détectées » est un indicateur :
+      a) D'activité
+      b) De performance
+      c) De coût
+      d) De résultat
+
+ 5. Suivre seulement l'activité :
+      a) Ne dit rien de l'efficacité
+      b) Prouve l'efficacité
+      c) Suffit
+      d) Est idéal
+
+ 6. Un bon tableau de bord compte :
+      a) Vingt indicateurs
+      b) Cinq à sept indicateurs
+      c) Un seul
+      d) Cent
+
+ 7. Un tableau de bord doit montrer :
+      a) La valeur seule
+      b) La météo
+      c) L'évolution (tendance)
+      d) Le prix
+
+ 8. Un rançongiciel exige une détection en :
+      a) Jours
+      b) Semaines
+      c) Mois
+      d) Minutes
+
+ 9. À la direction, on présente :
+      a) Des indicateurs de résultat
+      b) Le détail technique
+      c) La météo
+      d) Le code
+
+10. Un tableau de bord honnête dit aussi :
+      a) Rien
+      b) Ce qui n'est pas couvert
+      c) Le prix
+      d) La météo
+
+11. L'activité répond à la question :
+      a) Est-on plus sûr ?
+      b) Le fait-on vite ?
+      c) Que fait-on ?
+      d) Combien ça coûte ?
+
+12. La performance répond à :
+      a) Que fait-on ?
+      b) Est-on plus sûr ?
+      c) La météo
+      d) Le fait-on bien et vite ?
+
+13. Un volume d'alertes élevé peut signaler :
+      a) De mauvaises règles
+      b) Une bonne détection
+      c) Rien
+      d) La paie
+
+14. On choisit au moins un indicateur :
+      a) D'activité seulement
+      b) De chaque famille
+      c) De paie
+      d) De météo
+
+15. Les cibles de délai guident :
+      a) La paie
+      b) La météo
+      c) Le dimensionnement du SOC
+      d) La vente
+
+16. L'analyste suit en interne :
+      a) Le résultat seul
+      b) La météo
+      c) Le prix
+      d) Le détail de la performance
+
+17. À six mois, le délai de détection médian est de :
+      a) 2 jours
+      b) 2 heures
+      c) 2 semaines
+      d) 2 mois
+
+18. La couverture de journalisation à six mois atteint :
+      a) 50 %
+      b) 85 %
+      c) 100 %
+      d) 10 %
+
+19. La tendance importe plus que :
+      a) La valeur d'un mois isolé
+      b) La météo
+      c) Le prix
+      d) Le nombre d'outils
+
+20. La gouvernance fixe le périmètre, les moyens, les responsabilités et :
+      a) La météo
+      b) Les ventes
+      c) Le prix
+      d) Les indicateurs
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. La gouvernance de la supervision ne concerne que la technique.
+      Vrai / Faux
+
+22. « Nombre d'alertes » est un indicateur de résultat.
+      Vrai / Faux
+
+23. L'activité seule prouve l'efficacité de la détection.
+      Vrai / Faux
+
+24. Un tableau de bord compte cinq à sept indicateurs.
+      Vrai / Faux
+
+25. Un tableau de bord honnête affiche ce qui n'est pas couvert.
+      Vrai / Faux
+
+26. « Part des techniques détectées » est un indicateur de résultat.
+      Vrai / Faux
+
+27. Un rançongiciel exige une détection en minutes.
+      Vrai / Faux
+
+28. À six mois, la couverture de journalisation atteint 85 %.
+      Vrai / Faux
+
+29. La valeur d'un mois isolé importe plus que la tendance.
+      Vrai / Faux
+
+30. Un volume d'alertes élevé prouve toujours une bonne détection.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. « Nombre d'alertes » est un indicateur d'______.
+
+32. « Délai de détection » est un indicateur de ______.
+
+33. « Part des techniques détectées » est un indicateur de ______.
+
+34. Un tableau de bord compte cinq à ______ indicateurs.
+
+35. Un tableau de bord honnête affiche ce qui n'est pas ______.
+
+36. La gouvernance relie la technique à la ______.
+
+37. À six mois, le délai de détection médian est de ______ heures.
+
+38. Les cibles de délai guident le ______ du SOC.
+
+39. L'______ seule ne dit rien de l'efficacité.
+
+40. À six mois, la couverture de journalisation atteint ______ %.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

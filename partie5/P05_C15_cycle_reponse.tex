@@ -1,0 +1,216 @@
+% ============================================================================
+% Fichier  : partie5/P05_C15_cycle_reponse.tex
+% Titre    : Le Cycle de Réponse à Incident
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% ============================================================================
+% Sources : ISO/IEC 27035 ; NIST SP 800-61r2. Opération MAYO : fictif.
+% ============================================================================
+
+\chapter{Le Cycle de Réponse à Incident}
+\label{chap:cycle}
+\chaptermark{Le cycle de réponse}
+
+\epigraph{%
+    « La réponse se prépare à froid~;\\
+    en pleine crise, on applique, on n'improvise pas. »%
+}{Principe du cours}
+
+\niveauChapitre{Fondamental}{Chapitre~\ref{chap:normes}.}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Décrire le cycle de réponse (ISO 27035, NIST 800-61r2).
+    \item Classer un incident par gravité et fixer les délais.
+    \item Comprendre le rôle de la préparation.
+    \item Distinguer confinement, éradication, rétablissement.
+    \item Articuler réponse et forensique sans les opposer.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : le 6 mars à 7 h 15, que faut-il faire, et dans quel ordre~?}
+% ============================================================================
+
+Devant l'incident, l'urgence pousse à tout faire en même temps. Le cycle de
+réponse impose un ordre~: qualifier, décider, contenir, éradiquer, rétablir,
+apprendre. Ce chapitre le pose, avec les délais par gravité.
+
+\medskip
+\textbf{Plan du chapitre.}
+\begin{enumerate}
+    \item Le cycle (section~\ref{sec:c15-cycle}).
+    \item Classer par gravité (section~\ref{sec:c15-gravite}).
+    \item La préparation (section~\ref{sec:c15-preparation}).
+    \item Réponse et forensique (section~\ref{sec:c15-forensique}).
+\end{enumerate}
+
+\separateur
+
+% ============================================================================
+\section{Le Cycle}
+\label{sec:c15-cycle}
+% ============================================================================
+
+\begin{tableaucours}{L{3.6cm}L{8.6cm}}{%
+    \tableauHeader{Étape} &
+    \tableauHeader{Ce qu'on y fait}
+}
+Préparer & Politique, rôles, playbooks, outils, astreinte \\
+Détecter et qualifier & Confirmer l'incident, évaluer la gravité \\
+Contenir & Limiter la propagation sans détruire la preuve \\
+Éradiquer & Supprimer la cause et la présence de l'attaquant \\
+Rétablir & Restaurer le service à partir de sauvegardes vérifiées \\
+Apprendre & Retour d'expérience, amélioration (Partie~VI) \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~15.1. Le cycle de réponse~\cite{iso27035,nist80061r2}}\end{center}
+
+% ============================================================================
+\section{Classer par Gravité}
+\label{sec:c15-gravite}
+% ============================================================================
+
+\begin{tableaucours}{L{2.4cm}L{5.2cm}L{4.2cm}}{%
+    \tableauHeader{Gravité} &
+    \tableauHeader{Exemple} &
+    \tableauHeader{Délai de prise en charge}
+}
+Critique & Rançongiciel, arrêt de production & Moins d'une heure, astreinte \\
+Élevée & Compromission d'un compte à privilèges & Moins de 4 heures \\
+Moyenne & Poste infecté isolé & Moins de 24 heures \\
+Faible & Tentative bloquée & Moins de 72 heures \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~15.2. Grille de gravité et délais (LiZbiZ)}\end{center}
+
+% ============================================================================
+\section{La Préparation}
+\label{sec:c15-preparation}
+% ============================================================================
+
+La préparation est la phase la plus déterminante~: la qualité de la réponse
+se joue avant l'incident. Elle comprend les rôles, les coordonnées, les
+playbooks (rançongiciel, hameçonnage, fuite de données), les sauvegardes
+vérifiées et les droits d'accès d'urgence. Un incident révèle toujours l'état
+de la préparation.
+
+\begin{boxalert}
+\textbf{Erreur fréquente.} Rétablir avant d'éradiquer.
+
+\smallskip
+\textbf{Règle~:} restaurer un service alors que l'attaquant est toujours
+présent le ramène aussitôt. On éradique (et on vérifie l'éradication) avant
+de rétablir.
+\end{boxalert}
+
+% ============================================================================
+\section{Réponse et Forensique}
+\label{sec:c15-forensique}
+% ============================================================================
+
+\begin{boxscenario}{Opération MAYO. L'ordre tenu}
+\textbf{Constatation.} Le 6~mars, après qualification (critique), Mme~MOUAFO
+décide~: isoler les systèmes atteints (confinement), capturer les preuves
+avant toute remise en service, éradiquer le compte \texttt{svc\_maj2} et le
+service \texttt{WinUpd32}, puis rétablir depuis des sauvegardes vérifiées hors
+ligne.
+
+\medskip
+\textbf{Analyse} (confiance élevée). Le confinement a précédé le
+rétablissement~; la capture des preuves (Partie~IV) a été insérée avant
+l'éradication. Réponse et forensique ne s'opposent pas~: on contient, on fige,
+puis on nettoie.
+\end{boxscenario}
+
+\begin{boxCRO}
+\textbf{Contenir sans détruire la preuve.} Isoler une machine du réseau
+préserve la preuve (on ne l'éteint pas) et limite la propagation~:
+\cro{+}{+}{+}. Éteindre brutalement contiendrait aussi, mais détruirait la
+mémoire~: \cro{+}{-}{-}. On préfère isoler.
+\end{boxCRO}
+
+\begin{boxmetier}{Responsable de la réponse à incident}
+\textbf{Tenir l'ordre sous pression.} Le RRI résiste à la pression de
+« tout rallumer tout de suite »~: il fait tenir l'ordre confiner, figer,
+éradiquer, rétablir. C'est la discipline qui évite la rechute.
+\end{boxmetier}
+
+\separateur
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{Préparer, qualifier, contenir, éradiquer, rétablir,
+          apprendre.}
+    \item \textbf{La gravité} fixe les délais.
+    \item \textbf{La préparation} décide de la qualité de la réponse.
+    \item \textbf{Éradiquer avant de rétablir}, sous peine de rechute.
+    \item \textbf{Contenir en isolant}, pour préserver la preuve.
+\end{itemize}
+\end{boxresume}
+
+\begin{boxinfo}
+\textbf{Points de contrôle de l'élève.} Je sais~: décrire le cycle~; classer
+par gravité~; expliquer le rôle de la préparation~; ordonner éradication et
+rétablissement~; articuler réponse et forensique.
+\end{boxinfo}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~15.1. Le cycle \niveaubase}]
+Citez les six étapes du cycle de réponse.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~15.2. Gravité \niveaubase}]
+À quelle gravité classer un rançongiciel qui arrête la production~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~15.3. Ordre \niveaubase}]
+Pourquoi ne pas rétablir avant d'éradiquer~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~15.4. Préparation \niveaumoyen}]
+Pourquoi la préparation est-elle la phase la plus déterminante~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~15.5. Isoler \niveaumoyen}]
+Pourquoi isoler plutôt qu'éteindre~? (Analyse CRO)
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~15.6. MAYO \niveaumoyen}]
+Reconstituez l'ordre des décisions de Mme~MOUAFO le 6~mars.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~15.7. Figer \niveaumoyen}]
+Où insère-t-on la capture des preuves dans le cycle~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~15.8. Sauvegardes \niveaumoyen}]
+Pourquoi rétablir à partir de sauvegardes vérifiées hors ligne~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~15.9. Playbook \niveauexpert}]
+Rédigez le playbook rançongiciel de LiZbiZ, étape par étape, avec les
+décisions.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~15.10. Grille \niveauexpert}]
+Construisez la grille de gravité de LiZbiZ avec délais, astreinte et
+escalades.
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Pour aller plus loin.}
+\begin{itemize}
+    \item ISO/IEC 27035~\cite{iso27035}~; NIST SP~800-61r2~\cite{nist80061r2}.
+\end{itemize}
+\end{boxinfo}
+
+\begin{boxinfo}
+\textbf{Transition.} Répondre suppose une équipe organisée~: le
+Chapitre~\ref{chap:csirt} traite du CSIRT et du CERT.
+\end{boxinfo}

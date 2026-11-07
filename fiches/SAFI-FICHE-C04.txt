@@ -1,0 +1,233 @@
+NDAP SUKULU · SAFI · fiche SAFI-FICHE-C04
+Chapitre 4 : Les journaux
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. La création d'un compte est journalisée par :
+      a) Les journaux du domaine
+      b) Le pare-feu
+      c) La messagerie
+      d) L'imprimante
+
+ 2. Les flux refusés sont journalisés par :
+      a) La messagerie
+      b) Le pare-feu
+      c) Le domaine
+      d) L'imprimante
+
+ 3. Normaliser, c'est ramener les journaux à :
+      a) Un format commun
+      b) La météo
+      c) La paie
+      d) Un seul fichier chiffré
+
+ 4. Une horloge commune est fournie par :
+      a) Le hasard
+      b) La paie
+      c) Le DNS
+      d) NTP
+
+ 5. Sans horloge cohérente, on ne peut :
+      a) Reconstituer une chronologie
+      b) Facturer
+      c) Chiffrer
+      d) Vendre
+
+ 6. On centralise les journaux :
+      a) Sur la machine surveillée
+      b) Hors des machines surveillées
+      c) Nulle part
+      d) Sur l'imprimante
+
+ 7. On centralise hors des machines car l'attaquant :
+      a) Paie
+      b) Dort
+      c) Efface les journaux locaux
+      d) Chiffre
+
+ 8. La conservation des données de connexion est imposée par :
+      a) La loi 2010/012 et 2010/013
+      b) Un décret météo
+      c) L'usage
+      d) Aucune loi
+
+ 9. FS-01 n'envoyait rien au central, donc l'exfiltration était :
+      a) Invisible
+      b) Visible
+      c) Chiffrée
+      d) Facturée
+
+10. L'horloge d'un poste de Garoua avançait de :
+      a) 4 minutes
+      b) 40 minutes
+      c) 4 heures
+      d) 4 jours
+
+11. La normalisation conditionne :
+      a) La paie
+      b) La météo
+      c) La corrélation
+      d) La vente
+
+12. L'intégrité des journaux se protège par :
+      a) Rien
+      b) La météo
+      c) La paie
+      d) Accès restreint, écriture seule, condensats
+
+13. La messagerie journalise :
+      a) Les courriels et signalements
+      b) Les flux réseau
+      c) Les impressions
+      d) La paie
+
+14. Un horodatage fiable sert surtout :
+      a) La confidentialité
+      b) La fiabilité et l'opposabilité
+      c) La paie
+      d) La météo
+
+15. Un angle mort est :
+      a) Un journal collecté
+      b) Une alerte
+      c) Une source non collectée
+      d) Une règle
+
+16. Une trace non collectée rend la technique :
+      a) Visible
+      b) Chiffrée
+      c) Facturée
+      d) Invisible
+
+17. Les connexions au domaine sont dans :
+      a) Les journaux du domaine
+      b) La messagerie
+      c) L'imprimante
+      d) La paie
+
+18. Des journaux fiables et conservés sont :
+      a) Un luxe
+      b) Une obligation et un outil
+      c) Interdits
+      d) Inutiles
+
+19. Un écart d'horloge brouille :
+      a) La paie
+      b) La météo
+      c) La chronologie
+      d) La vente
+
+20. La durée de conservation se fixe selon :
+      a) La météo
+      b) Le hasard
+      c) Le prix du café
+      d) Le droit et les besoins
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. La création d'un compte est journalisée par la messagerie.
+      Vrai / Faux
+
+22. Une horloge commune est inutile pour reconstituer une chronologie.
+      Vrai / Faux
+
+23. On centralise les journaux sur la machine surveillée.
+      Vrai / Faux
+
+24. L'exfiltration depuis FS-01 a été détectée en direct par le SIEM.
+      Vrai / Faux
+
+25. La normalisation conditionne la corrélation.
+      Vrai / Faux
+
+26. L'horloge d'un poste de Garoua avançait de 40 minutes.
+      Vrai / Faux
+
+27. La conservation des données de connexion est imposée par la loi.
+      Vrai / Faux
+
+28. Une trace non collectée reste visible du défenseur.
+      Vrai / Faux
+
+29. On centralise hors des machines car l'attaquant efface les journaux locaux.
+      Vrai / Faux
+
+30. Un horodatage fiable sert la fiabilité et l'opposabilité.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. L'horloge commune est fournie par le protocole ______.
+
+32. Ramener les journaux à un format commun, c'est les ______.
+
+33. On centralise les journaux ______ des machines surveillées.
+
+34. L'horloge d'un poste de Garoua avançait de ______ minutes.
+
+35. L'exfiltration depuis FS-01 était ______ faute de collecte.
+
+36. La conservation des données de connexion relève des lois 2010/012 et 2010/______.
+
+37. La normalisation conditionne la ______.
+
+38. L'intégrité des journaux se protège par un accès ______.
+
+39. Les flux refusés sont journalisés par le ______.
+
+40. Une source non collectée est un ______ mort.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

@@ -1,0 +1,205 @@
+% ============================================================================
+% Fichier  : partie5/P05_C16_csirt_cert.tex
+% Titre    : Le CSIRT et le CERT
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% ============================================================================
+% Sources : ISO/IEC 27035 ; modèles de CSIRT/CERT ; ANTIC. Opération MAYO.
+% ============================================================================
+
+\chapter{Le CSIRT et le CERT}
+\label{chap:csirt}
+\chaptermark{Le CSIRT et le CERT}
+
+\epigraph{%
+    « En crise, ce qui n'est pas écrit n'a pas été décidé. »%
+}{Principe du cours}
+
+\niveauChapitre{Fondamental}{Chapitre~\ref{chap:cycle}.}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Définir le CSIRT et le CERT, et leur différence.
+    \item Décrire les rôles d'une cellule de réponse.
+    \item Comprendre la main courante et la communication de crise.
+    \item Situer la coopération avec l'ANTIC et les tiers.
+    \item Dimensionner une cellule pour une PME.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : qui décide, qui agit, qui parle pendant l'incident de LiZbiZ~?}
+% ============================================================================
+
+Sans organisation, un incident se gère dans la confusion~: tout le monde
+agit, personne ne décide, et rien n'est tracé. Ce chapitre présente la
+cellule de réponse, ses rôles, sa main courante et ses relations
+extérieures.
+
+\medskip
+\textbf{Plan du chapitre.}
+\begin{enumerate}
+    \item CSIRT et CERT (section~\ref{sec:c16-definir}).
+    \item Les rôles de la cellule (section~\ref{sec:c16-roles}).
+    \item La main courante (section~\ref{sec:c16-maincourante}).
+    \item Coopérer avec l'extérieur (section~\ref{sec:c16-cooperer}).
+\end{enumerate}
+
+\separateur
+
+% ============================================================================
+\section{CSIRT et CERT}
+\label{sec:c16-definir}
+% ============================================================================
+
+\begin{boxdef}
+\termecle{CSIRT} (\textit{Computer Security Incident Response Team})~: équipe
+chargée de recevoir, analyser et traiter les incidents de sécurité d'un
+périmètre donné. \termecle{CERT} est une appellation voisine, protégée~; tout
+CERT est un CSIRT. L'\sigle{ANTIC} opère le CERT national camerounais.
+\end{boxdef}
+
+% ============================================================================
+\section{Les Rôles de la Cellule}
+\label{sec:c16-roles}
+% ============================================================================
+
+\begin{tableaucours}{L{3.6cm}L{8.6cm}}{%
+    \tableauHeader{Rôle} &
+    \tableauHeader{Responsabilité}
+}
+Responsable de la cellule & Décide, arbitre, rend compte à la direction \\
+Analystes & Investiguent, contiennent, éradiquent \\
+Référent technique métier & Connaît les systèmes atteints \\
+Communication & Messages internes et externes, maîtrisés \\
+Juridique & Obligations, signalements, ANTIC, assurance \\
+Main courante & Consigne chaque décision et chaque action \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~16.1. Les rôles d'une cellule de réponse}\end{center}
+
+% ============================================================================
+\section{La Main Courante}
+\label{sec:c16-maincourante}
+% ============================================================================
+
+\begin{boxprocedure}
+\textbf{Tenir la main courante}
+\begin{enumerate}
+    \item Horodater chaque entrée.
+    \item Noter la décision, qui l'a prise, sur quelle base.
+    \item Noter l'action, qui l'a faite, son résultat.
+    \item Ne rien reconstruire après coup~: on écrit sur le moment.
+    \item Conserver la main courante au dossier (preuve et RETEX).
+\end{enumerate}
+\end{boxprocedure}
+
+\begin{boxobjet}{Main courante de l'opération MAYO}
+\textbf{Nature~:} journal horodaté des décisions et actions du 6~mars.
+\textbf{Source~:} tenue en direct par le secrétaire de cellule.
+\textbf{Pertinence~:} établit qui a décidé quoi, et quand.
+\textbf{Fiabilité~:} entrées horodatées, non modifiées. \textbf{Opposabilité~:}
+preuve de la diligence de LiZbiZ.
+\end{boxobjet}
+
+% ============================================================================
+\section{Coopérer avec l'Extérieur}
+\label{sec:c16-cooperer}
+% ============================================================================
+
+\begin{boxscenario}{Opération MAYO. La cellule de LiZbiZ}
+\textbf{Constatation.} LiZbiZ n'avait pas de CSIRT. Le 6~mars, une cellule est
+constituée en urgence~: M.~KOUNOU (technique), Mme~MOUAFO (responsable),
+NYONG SÉCURITÉ (analystes), un juriste, un chargé de communication. L'ANTIC
+est informée dans la journée.
+
+\medskip
+\textbf{Analyse} (confiance élevée). L'improvisation a coûté du temps.
+Après l'incident, LiZbiZ formalise un CSIRT minimal et des playbooks~: la
+prochaine cellule se réunira en minutes, pas en heures.
+\end{boxscenario}
+
+\begin{boxmetier}{Responsable de la réponse à incident}
+\textbf{Désigner avant la crise.} Le responsable constitue la cellule et
+nomme les rôles à froid, avec suppléants et coordonnées. En crise, on active
+une liste, on ne cherche pas qui appeler.
+\end{boxmetier}
+
+\separateur
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{CSIRT} (générique) et \textbf{CERT} (appellation
+          protégée)~; l'ANTIC opère le CERT national.
+    \item \textbf{Les rôles}~: responsable, analystes, métier, communication,
+          juridique, main courante.
+    \item \textbf{La main courante} trace décisions et actions, en direct.
+    \item \textbf{On coopère} avec l'ANTIC et les tiers.
+    \item \textbf{On désigne} la cellule avant la crise.
+\end{itemize}
+\end{boxresume}
+
+\begin{boxinfo}
+\textbf{Points de contrôle de l'élève.} Je sais~: distinguer CSIRT et CERT~;
+citer les rôles~; tenir une main courante~; situer la coopération~;
+dimensionner une cellule.
+\end{boxinfo}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~16.1. CSIRT ou CERT \niveaubase}]
+Quelle est la différence entre CSIRT et CERT~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~16.2. Rôles \niveaubase}]
+Citez quatre rôles d'une cellule de réponse.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~16.3. Main courante \niveaubase}]
+Que consigne-t-on dans une main courante~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~16.4. Écrit \niveaumoyen}]
+Pourquoi « ce qui n'est pas écrit n'a pas été décidé »~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~16.5. ANTIC \niveaumoyen}]
+Quand et pourquoi informer l'ANTIC~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~16.6. MAYO \niveaumoyen}]
+Qu'a coûté à LiZbiZ l'absence de CSIRT préétabli~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~16.7. Communication \niveaumoyen}]
+Pourquoi un rôle communication dédié dans la cellule~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~16.8. Opposabilité \niveaumoyen}]
+En quoi la main courante est-elle une preuve de diligence~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~16.9. Charte de CSIRT \niveauexpert}]
+Rédigez la charte du CSIRT minimal de LiZbiZ~: périmètre, rôles, suppléants,
+coordonnées.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~16.10. Modèle de main courante \niveauexpert}]
+Concevez le modèle de main courante de LiZbiZ.
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Pour aller plus loin.}
+\begin{itemize}
+    \item ISO/IEC 27035~\cite{iso27035}~; NIST SP~800-61r2~\cite{nist80061r2}.
+\end{itemize}
+\end{boxinfo}
+
+\begin{boxinfo}
+\textbf{Transition.} Pour anticiper, la cellule s'appuie sur le renseignement
+sur la menace~: le Chapitre~\ref{chap:renseignement} le traite.
+\end{boxinfo}

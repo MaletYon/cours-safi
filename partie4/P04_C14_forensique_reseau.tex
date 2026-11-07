@@ -1,0 +1,223 @@
+% ============================================================================
+% Fichier  : partie4/P04_C14_forensique_reseau.tex
+% Titre    : Forensique Réseau
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% ============================================================================
+% Sources : RFC 3227 ; NIST SP 800-86 ; MITRE ATT&CK. Opération FARO.
+% Le bureau d'analyse n'a pas d'outil de capture graphique : on travaille sur
+% des journaux de flux exportés (CSV).
+% ============================================================================
+
+\chapter{Forensique Réseau}
+\label{chap:reseau}
+\chaptermark{Forensique réseau}
+
+\epigraph{%
+    « Les fichiers mentent parfois~; les flux, rarement. »%
+}{Principe du cours}
+
+\niveauChapitre{Intermédiaire à expert}{Chapitre~\ref{chap:memoire}~; notions
+de réseaux (TCP/IP).}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Identifier les sources de traces réseau (flux, journaux, DNS).
+    \item Repérer une exfiltration et un canal de pilotage.
+    \item Lire des enregistrements de flux exportés.
+    \item Relier les traces réseau à la chronologie système.
+    \item Rédiger un constat réseau.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : où sont partis les 40 Go, et par quel canal l'attaquant pilotait-il~?}
+% ============================================================================
+
+L'exfiltration et le pilotage laissent des traces réseau~: connexions
+sortantes inhabituelles, requêtes DNS répétées, volumes anormaux. Ce chapitre
+apprend à les lire, à partir des journaux de flux exportés (le bureau
+d'analyse n'a pas d'outil de capture graphique).
+
+\medskip
+\textbf{Plan du chapitre.}
+\begin{enumerate}
+    \item Les sources de traces réseau (section~\ref{sec:c14-sources}).
+    \item Exfiltration et pilotage (section~\ref{sec:c14-exfil}).
+    \item Lire des flux exportés (section~\ref{sec:c14-flux}).
+    \item Recouper avec le système (section~\ref{sec:c14-recouper}).
+\end{enumerate}
+
+\separateur
+
+% ============================================================================
+\section{Les Sources de Traces Réseau}
+\label{sec:c14-sources}
+% ============================================================================
+
+\begin{tableaucours}{L{3.6cm}L{8.6cm}}{%
+    \tableauHeader{Source} &
+    \tableauHeader{Ce qu'elle révèle}
+}
+Journaux de flux (pare-feu) & Qui parle à qui, quand, combien \\
+Journaux du mandataire web & Destinations web, volumes, agents \\
+Journaux DNS & Noms résolus, requêtes répétées ou suspectes \\
+Journaux d'authentification distante & Accès VPN, bureau à distance \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~14.1. Sources de traces réseau}\end{center}
+
+\begin{boxalert}
+\textbf{Contrainte du cours.} Le bureau d'analyse de NDAP SUKULU ne dispose
+pas d'outil de capture graphique.
+
+\smallskip
+\textbf{Règle~:} on travaille sur des \emph{journaux de flux exportés} (au
+format tableur), ce qui suffit à établir les faits et reste parfaitement
+opposable. L'essentiel n'est pas l'outil, mais la lecture méthodique.
+\end{boxalert}
+
+% ============================================================================
+\section{Exfiltration et Pilotage}
+\label{sec:c14-exfil}
+% ============================================================================
+
+Deux signatures réseau trahissent une intrusion active~: l'\termecle{exfiltration}
+(un volume sortant anormal vers une destination inhabituelle) et le
+\termecle{canal de pilotage} (de petites connexions régulières vers un serveur
+distant, qui commandent le code malveillant). Les deux se repèrent dans les
+journaux de flux.
+
+% ============================================================================
+\section{Lire des Flux Exportés}
+\label{sec:c14-flux}
+% ============================================================================
+
+\begin{boxprocedure}
+\textbf{Analyser des journaux de flux}
+\begin{enumerate}
+    \item Agréger par couple source-destination et par volume.
+    \item Repérer les destinations externes inhabituelles.
+    \item Repérer les connexions régulières de faible volume (pilotage).
+    \item Relever les pics de volume sortant (exfiltration).
+    \item Recaler les horodatages sur la chronologie système.
+\end{enumerate}
+\end{boxprocedure}
+
+\begin{boxscenario}{Opération FARO. Les 40 Go de la nuit du 4 mars}
+\textbf{Constatation.} Les journaux de flux montrent, dans la nuit du 4~mars,
+un transfert sortant de 40~Go depuis \texttt{FS-01} vers une adresse externe,
+précédé, depuis le 24~février, de petites connexions régulières (toutes les
+10~minutes) vers la même adresse.
+
+\medskip
+\textbf{Analyse} (confiance élevée). Les petites connexions régulières
+constituent le canal de pilotage~; le transfert de 40~Go, l'exfiltration. Les
+dates recoupent la chronologie système (création du compte le 24, accès aux
+partages le 4). Le faisceau est cohérent.
+\end{boxscenario}
+
+% ============================================================================
+\section{Recouper avec le Système}
+\label{sec:c14-recouper}
+% ============================================================================
+
+Une trace réseau isolée prouve peu~; recoupée avec le disque et la mémoire,
+elle devient un faisceau solide. La force de l'enquête tient à la convergence
+des trois scènes (système, mémoire, réseau) sur une même chronologie.
+
+\begin{boxobjet}{Flux d'exfiltration du 4 mars}
+\textbf{Nature~:} enregistrement de flux (journal du pare-feu, exporté).
+\textbf{Source~:} copie du journal (condensat au dossier). \textbf{Pertinence~:}
+transfert de 40~Go de \texttt{FS-01} vers une adresse externe.
+\textbf{Fiabilité~:} intègre, horodatage recalé. \textbf{Opposabilité~:}
+chaîne de custody continue, recoupé avec la chronologie système.
+\end{boxobjet}
+
+\begin{boxmetier}{Analyste forensique et analyste SOC}
+\textbf{Faire converger les scènes.} L'analyste ne se contente pas d'une
+source~: il recoupe réseau, système et mémoire. Une conclusion tenue par une
+seule trace est fragile~; tenue par trois convergentes, elle est opposable.
+\end{boxmetier}
+
+\separateur
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{Flux, mandataire, DNS}~: les sources réseau.
+    \item \textbf{Exfiltration} (gros volume sortant) et \textbf{pilotage}
+          (petites connexions régulières).
+    \item \textbf{Des journaux de flux exportés} suffisent à établir les
+          faits.
+    \item \textbf{On recoupe} réseau, système et mémoire.
+    \item \textbf{La convergence} fait la force de la preuve.
+\end{itemize}
+\end{boxresume}
+
+\begin{boxinfo}
+\textbf{Points de contrôle de l'élève.} Je sais~: citer les sources réseau~;
+reconnaître exfiltration et pilotage~; lire des flux exportés~; recouper avec
+la chronologie~; rédiger un constat réseau.
+\end{boxinfo}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~14.1. Sources \niveaubase}]
+Quelle source révèle le volume d'un transfert sortant~? Les noms résolus~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~14.2. Exfiltration \niveaubase}]
+Quelle signature réseau trahit une exfiltration~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~14.3. Pilotage \niveaubase}]
+Comment se repère un canal de pilotage dans les flux~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~14.4. Sans capture \niveaumoyen}]
+Pourquoi des journaux de flux exportés suffisent-ils, sans capture graphique~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~14.5. FARO \niveaumoyen}]
+Dans FARO, distinguez le canal de pilotage de l'exfiltration.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~14.6. Recouper \niveaumoyen}]
+Comment les flux du 4~mars recoupent-ils la chronologie système~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~14.7. Faisceau \niveaumoyen}]
+Pourquoi une trace réseau isolée prouve-t-elle peu~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~14.8. Constat réseau \niveaumoyen}]
+Rédigez le constat du flux d'exfiltration du 4~mars.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~14.9. Analyse de flux \niveauexpert}]
+À partir d'un journal de flux exporté, proposez la démarche pour isoler
+l'exfiltration.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~14.10. Convergence \niveauexpert}]
+Construisez le faisceau de preuves de FARO en faisant converger les trois
+scènes.
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Pour aller plus loin.}
+\begin{itemize}
+    \item RFC~3227~\cite{rfc3227}~; NIST SP~800-86~\cite{nist80086}~;
+          MITRE ATT\&CK~\cite{mitreattack}.
+\end{itemize}
+\end{boxinfo}
+
+\begin{boxinfo}
+\textbf{Transition.} L'enquête établie, il faut agir~: la Partie~V traite de
+la réponse à incident, à commencer par son cycle
+(Chapitre~\ref{chap:cycle}).
+\end{boxinfo}

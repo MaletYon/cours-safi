@@ -1,0 +1,233 @@
+NDAP SUKULU · SAFI · fiche SAFI-FICHE-C06
+Chapitre 6 : La détection d'intrusion (IDS/IPS)
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. L'IDS :
+      a) Détecte et alerte sans bloquer
+      b) Bloque en ligne
+      c) Facture
+      d) Chiffre
+
+ 2. L'IPS :
+      a) Alerte seulement
+      b) Détecte et bloque en ligne
+      c) Vend
+      d) Chiffre
+
+ 3. La sonde hôte observe :
+      a) Les flux
+      b) La paie
+      c) Les processus, fichiers, journaux
+      d) La météo
+
+ 4. La sonde réseau observe :
+      a) Les processus
+      b) La paie
+      c) La météo
+      d) Les flux
+
+ 5. La détection par signatures reconnaît :
+      a) Des motifs connus
+      b) L'inconnu
+      c) La paie
+      d) La météo
+
+ 6. La détection par anomalies signale :
+      a) Le connu
+      b) L'écart à un profil normal
+      c) La paie
+      d) La vente
+
+ 7. La limite des signatures est :
+      a) Le bruit
+      b) Le prix
+      c) L'aveuglement à l'inconnu
+      d) La météo
+
+ 8. La limite des anomalies est :
+      a) L'aveuglement
+      b) La paie
+      c) Le prix
+      d) Les faux positifs
+
+ 9. Une sonde réseau ne voit que :
+      a) Le trafic qui passe par elle
+      b) Tout
+      c) La paie
+      d) La météo
+
+10. Les alertes des sondes alimentent :
+      a) La paie
+      b) Le SIEM
+      c) La météo
+      d) La vente
+
+11. Mettre tous les IPS en blocage automatique :
+      a) Est prudent
+      b) Est obligatoire
+      c) Peut couper la production
+      d) Chiffre
+
+12. On bloque automatiquement :
+      a) Tout
+      b) Rien
+      c) La paie
+      d) Le connu à très forte confiance
+
+13. Sur un parc sans réglage, on commence en :
+      a) Détection
+      b) Blocage
+      c) Facturation
+      d) Chiffrement
+
+14. NIDS désigne une sonde :
+      a) Hôte
+      b) Réseau
+      c) De paie
+      d) Météo
+
+15. HIDS désigne une sonde :
+      a) Réseau
+      b) De paie
+      c) Hôte
+      d) Météo
+
+16. Signatures et anomalies sont :
+      a) Concurrentes
+      b) Identiques
+      c) Interdites
+      d) Complémentaires
+
+17. Pour voir l'exfiltration, on place une sonde :
+      a) En sortie Internet
+      b) Au sous-sol
+      c) Sur l'imprimante
+      d) Nulle part
+
+18. La disponibilité de la production est :
+      a) Hors sujet
+      b) Un critère de sécurité
+      c) La météo
+      d) Un détail
+
+19. Le passage au blocage se fait :
+      a) D'un coup
+      b) Jamais
+      c) Règle par règle
+      d) Au hasard
+
+20. Une sonde mal placée laisse passer :
+      a) Rien
+      b) La paie
+      c) La météo
+      d) Le trafic qui ne passe pas par elle
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. L'IDS bloque en ligne et l'IPS se contente d'alerter.
+      Vrai / Faux
+
+22. La sonde hôte observe les flux réseau.
+      Vrai / Faux
+
+23. Les signatures détectent parfaitement les attaques inconnues.
+      Vrai / Faux
+
+24. Les anomalies produisent des faux positifs.
+      Vrai / Faux
+
+25. Les alertes des sondes alimentent le SIEM.
+      Vrai / Faux
+
+26. On met tous les IPS en blocage automatique pour être tranquille.
+      Vrai / Faux
+
+27. Signatures et anomalies sont complémentaires.
+      Vrai / Faux
+
+28. Sur un parc sans réglage, on commence en détection.
+      Vrai / Faux
+
+29. Une sonde réseau voit tout le trafic du réseau.
+      Vrai / Faux
+
+30. Le passage au blocage se fait règle par règle.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. La sonde qui détecte et bloque en ligne est l'______.
+
+32. La sonde qui observe les flux est la sonde ______.
+
+33. La détection par ______ reconnaît des motifs connus.
+
+34. La détection par ______ signale l'écart à un profil normal.
+
+35. Les alertes des sondes alimentent le ______.
+
+36. Sur un parc sans réglage, on commence en ______.
+
+37. Le passage au blocage se fait ______ par règle.
+
+38. Pour voir l'exfiltration, on place une sonde en sortie ______.
+
+39. Signatures et anomalies sont ______.
+
+40. La ______ de la production est un critère de sécurité.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

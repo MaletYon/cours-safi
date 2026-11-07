@@ -1,0 +1,233 @@
+NDAP SUKULU · SAFI · fiche SAFI-FICHE-C14
+Chapitre 14 : Forensique réseau
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. Le volume d'un transfert sortant est dans :
+      a) Les journaux de flux
+      b) La messagerie
+      c) Le registre
+      d) La paie
+
+ 2. Les noms résolus sont dans :
+      a) Les journaux DNS
+      b) La paie
+      c) Le registre
+      d) La météo
+
+ 3. L'exfiltration se repère à :
+      a) Un petit flux
+      b) La paie
+      c) Un volume sortant anormal
+      d) La météo
+
+ 4. Le canal de pilotage se repère à :
+      a) Un gros transfert
+      b) La paie
+      c) La météo
+      d) De petites connexions régulières
+
+ 5. Le bureau d'analyse travaille sur :
+      a) Des journaux de flux exportés
+      b) Une capture graphique
+      c) La paie
+      d) La météo
+
+ 6. Analyser des flux commence par :
+      a) Vendre
+      b) Agréger par couple source-destination
+      c) Chiffrer
+      d) Facturer
+
+ 7. Une trace réseau isolée prouve :
+      a) Beaucoup
+      b) Tout
+      c) Peu
+      d) La paie
+
+ 8. La force de la preuve vient de :
+      a) Une source
+      b) La paie
+      c) La météo
+      d) La convergence des scènes
+
+ 9. Le transfert de 40 Go a eu lieu dans la nuit du :
+      a) 4 mars
+      b) 23 février
+      c) 6 mars
+      d) 1er mars
+
+10. Les petites connexions régulières revenaient toutes les :
+      a) heures
+      b) 10 minutes
+      c) secondes
+      d) semaines
+
+11. Les accès VPN sont dans :
+      a) La messagerie
+      b) Le registre
+      c) Les journaux d'authentification distante
+      d) La paie
+
+12. Des journaux de flux exportés sont :
+      a) Insuffisants
+      b) Interdits
+      c) Inutiles
+      d) Suffisants pour établir les faits
+
+13. Dans FARO, le volume exfiltré est de :
+      a) 40 Go
+      b) 4 Go
+      c) 400 Go
+      d) 4 To
+
+14. On recoupe réseau, système et :
+      a) La paie
+      b) Mémoire
+      c) La météo
+      d) La vente
+
+15. Le canal de pilotage commande :
+      a) La paie
+      b) La météo
+      c) Le code malveillant
+      d) La vente
+
+16. On repère dans les flux les destinations :
+      a) Habituelles
+      b) De paie
+      c) Météo
+      d) Externes inhabituelles
+
+17. Le canal de pilotage existait depuis le :
+      a) 24 février
+      b) 6 mars
+      c) 4 mars
+      d) 1er janvier
+
+18. Les dates réseau recoupent la chronologie :
+      a) De paie
+      b) Système
+      c) Météo
+      d) De vente
+
+19. Les destinations web et volumes sont dans :
+      a) Le registre
+      b) La paie
+      c) Les journaux du mandataire
+      d) La météo
+
+20. Une conclusion tenue par trois traces convergentes est :
+      a) Fragile
+      b) Chère
+      c) Belle
+      d) Opposable
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. Le volume d'un transfert sortant est dans la messagerie.
+      Vrai / Faux
+
+22. L'exfiltration se repère à l'absence de tout trafic.
+      Vrai / Faux
+
+23. Le canal de pilotage se repère à un unique gros transfert.
+      Vrai / Faux
+
+24. Le bureau d'analyse exige une capture graphique complète.
+      Vrai / Faux
+
+25. Une trace réseau isolée prouve beaucoup à elle seule.
+      Vrai / Faux
+
+26. Le transfert de 40 Go a eu lieu dans la nuit du 4 mars.
+      Vrai / Faux
+
+27. Des journaux de flux exportés suffisent à établir les faits.
+      Vrai / Faux
+
+28. La force de la preuve vient de la convergence des scènes.
+      Vrai / Faux
+
+29. Les petites connexions de pilotage revenaient toutes les 10 minutes.
+      Vrai / Faux
+
+30. On recoupe réseau, système et mémoire.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. L'exfiltration se repère à un ______ sortant anormal.
+
+32. Le canal de ______ se repère à de petites connexions régulières.
+
+33. Le bureau d'analyse travaille sur des journaux de flux ______.
+
+34. Le transfert de ______ Go a eu lieu la nuit du 4 mars.
+
+35. Les connexions de pilotage revenaient toutes les ______ minutes.
+
+36. La force de la preuve vient de la ______ des scènes.
+
+37. Les noms résolus sont dans les journaux ______.
+
+38. On recoupe réseau, système et ______.
+
+39. Dans FARO, le volume exfiltré est de ______ Go.
+
+40. Une trace réseau isolée prouve ______.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

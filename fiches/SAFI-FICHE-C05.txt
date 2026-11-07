@@ -1,0 +1,233 @@
+NDAP SUKULU · SAFI · fiche SAFI-FICHE-C05
+Chapitre 5 : Le SIEM
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. Le SIEM collecte, normalise, conserve et :
+      a) Déclenche des alertes par corrélation
+      b) Vend
+      c) Chiffre
+      d) Facture
+
+ 2. Un SIEM sans cas d'usage est :
+      a) Très efficace
+      b) Un entrepôt muet
+      c) Interdit
+      d) Un pare-feu
+
+ 3. La dernière étape de la chaîne SIEM est :
+      a) La collecte
+      b) La normalisation
+      c) L'alerte
+      d) La vente
+
+ 4. L'enrichissement ajoute :
+      a) Du bruit
+      b) La paie
+      c) La météo
+      d) Du contexte (criticité, géolocalisation)
+
+ 5. Un cas d'usage est :
+      a) Une situation à détecter, traduite en règles
+      b) Un serveur
+      c) Une facture
+      d) Un port
+
+ 6. On construit un SIEM :
+      a) D'un coup
+      b) Cas d'usage par cas d'usage
+      c) Jamais
+      d) Au hasard
+
+ 7. Corréler, c'est :
+      a) Chercher ce qu'on sait déjà
+      b) Facturer
+      c) Rapprocher des événements pour faire émerger une alerte
+      d) Chiffrer
+
+ 8. « Liste les connexions de ce compte » est :
+      a) Une corrélation
+      b) Une alerte
+      c) Une règle
+      d) Une recherche
+
+ 9. Activer toutes les règles par défaut :
+      a) Génère du bruit
+      b) Améliore tout
+      c) Est obligatoire
+      d) Chiffre
+
+10. La valeur d'un SIEM est dans :
+      a) L'outil
+      b) Les règles
+      c) La paie
+      d) La météo
+
+11. Rejouées sur février, combien de règles auraient alerté dès le 23 ?
+      a) Une
+      b) Dix
+      c) Trois
+      d) Zéro
+
+12. Le SIEM arrivé après l'incident est :
+      a) Interne à LiZbiZ
+      b) À l'ANTIC
+      c) Inexistant
+      d) Mutualisé chez NYONG SÉCURITÉ
+
+13. La collecte reçoit les journaux via :
+      a) Agents, syslog, API
+      b) La paie
+      c) La météo
+      d) Le DNS seul
+
+14. Une corrélation à trois événements peut révéler :
+      a) Une vente
+      b) Une intrusion
+      c) La météo
+      d) Une facture
+
+15. Sans cas d'usage, le SIEM produit :
+      a) Beaucoup d'alertes utiles
+      b) La paie
+      c) Aucune alerte utile
+      d) La météo
+
+16. Le volume collecté coûte :
+      a) Rien
+      b) La météo
+      c) Un café
+      d) Cher
+
+17. On priorise les cas d'usage sur :
+      a) Les techniques les plus probables (ATT&CK)
+      b) La météo
+      c) Le prix
+      d) Les ventes
+
+18. La normalisation ramène à :
+      a) Un format commun
+      b) La paie
+      c) La météo
+      d) Un chiffrement
+
+19. Les trois règles auraient réduit le délai de présence à :
+      a) Onze jours
+      b) Un mois
+      c) Quelques heures
+      d) Zéro
+
+20. Le SIEM déclenche une alerte quand une règle reconnaît :
+      a) Une vente
+      b) La météo
+      c) Un paiement
+      d) Un motif suspect
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. Un SIEM détecte les attaques même sans aucun cas d'usage.
+      Vrai / Faux
+
+22. Corréler, c'est chercher une seule chose qu'on connaît déjà.
+      Vrai / Faux
+
+23. La valeur d'un SIEM est dans l'outil, pas dans les règles.
+      Vrai / Faux
+
+24. Trois règles simples auraient alerté dès le 23 février.
+      Vrai / Faux
+
+25. Sans cas d'usage, le SIEM ne produit aucune alerte utile.
+      Vrai / Faux
+
+26. La dernière étape de la chaîne SIEM est l'alerte.
+      Vrai / Faux
+
+27. Activer toutes les règles par défaut améliore la détection.
+      Vrai / Faux
+
+28. « Liste les connexions de ce compte » est une corrélation.
+      Vrai / Faux
+
+29. Le SIEM de LiZbiZ est mutualisé chez NYONG SÉCURITÉ.
+      Vrai / Faux
+
+30. On priorise les cas d'usage sur les techniques les plus probables.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. Un SIEM sans cas d'usage est un entrepôt ______.
+
+32. Rapprocher des événements pour faire émerger une alerte, c'est ______.
+
+33. La valeur d'un SIEM est dans les ______.
+
+34. ______ règles auraient alerté dès le 23 février.
+
+35. La dernière étape de la chaîne SIEM est l'______.
+
+36. On priorise les cas d'usage selon les techniques d'______.
+
+37. L'enrichissement ajoute du ______ (criticité).
+
+38. Les trois règles auraient réduit le délai de présence à quelques ______.
+
+39. Le SIEM déclenche une alerte par ______.
+
+40. Une situation à détecter traduite en règles est un ______ d'usage.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

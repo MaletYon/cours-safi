@@ -1,0 +1,223 @@
+% ============================================================================
+% Fichier  : partie5/P05_C17_threat_intelligence.tex
+% Titre    : Le Renseignement sur la Menace
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% ============================================================================
+% Sources : MITRE ATT&CK ; Kill Chain (Lockheed Martin, 2011) ; Diamond Model
+% (2013) ; STIX/TAXII (OASIS). Opération MAYO.
+% ============================================================================
+
+\chapter{Le Renseignement sur la Menace}
+\label{chap:renseignement}
+\chaptermark{Le renseignement sur la menace}
+
+\epigraph{%
+    « Connaître l'adversaire, c'est transformer une alerte en histoire. »%
+}{Principe du cours}
+
+\niveauChapitre{Intermédiaire à expert}{Chapitre~\ref{chap:csirt}~;
+Chapitre~\ref{chap:regles}.}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Définir le renseignement sur la menace et ses usages.
+    \item Utiliser la chaîne d'attaque (Kill Chain) et ATT\&CK.
+    \item Comprendre le modèle du Diamant.
+    \item Situer les formats d'échange (STIX/TAXII) et les indicateurs.
+    \item Mapper un incident aux techniques de l'adversaire.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : l'attaque de LiZbiZ ressemble-t-elle à d'autres, et qu'en déduire~?}
+% ============================================================================
+
+Une attaque n'est presque jamais inédite~: elle suit des étapes connues et
+emploie des techniques répertoriées. Le renseignement sur la menace permet de
+reconnaître le mode opératoire, d'anticiper la suite et d'écrire de meilleures
+règles.
+
+\medskip
+\textbf{Plan du chapitre.}
+\begin{enumerate}
+    \item Qu'est-ce que le renseignement (section~\ref{sec:c17-definir}).
+    \item Chaîne d'attaque et ATT\&CK (section~\ref{sec:c17-attack}).
+    \item Le modèle du Diamant (section~\ref{sec:c17-diamant}).
+    \item Échanger le renseignement (section~\ref{sec:c17-echanger}).
+\end{enumerate}
+
+\separateur
+
+% ============================================================================
+\section{Qu'est-ce que le Renseignement}
+\label{sec:c17-definir}
+% ============================================================================
+
+\begin{boxdef}
+\termecle{Renseignement sur la menace}~: information analysée sur les
+adversaires, leurs motivations, leurs techniques et leurs indicateurs, qui
+éclaire la détection, la réponse et la décision. Il transforme des données
+brutes en connaissance actionnable.
+\end{boxdef}
+
+% ============================================================================
+\section{Chaîne d'Attaque et ATT\&CK}
+\label{sec:c17-attack}
+% ============================================================================
+
+La \termecle{chaîne d'attaque} (Lockheed Martin, 2011) décrit une intrusion
+en étapes~: reconnaissance, armement, livraison, exploitation, installation,
+pilotage, actions sur objectif. \termecle{MITRE ATT\&CK} affine en tactiques
+et techniques observées. Les deux se complètent~: la chaîne raconte
+l'histoire, ATT\&CK en nomme les gestes.
+
+\begin{tableaucours}{L{4.2cm}L{4.4cm}L{3.6cm}}{%
+    \tableauHeader{Étape (LOGONE)} &
+    \tableauHeader{Tactique ATT\&CK} &
+    \tableauHeader{Trace}
+}
+Accès initial (compte de service) & Accès aux identifiants & Connexion anormale \\
+Installation (WinUpd32) & Persistance & Service installé \\
+Pilotage (connexions régulières) & Commande et contrôle & Flux réguliers \\
+Exfiltration (40 Go) & Exfiltration & Volume sortant \\
+Chiffrement & Impact & Fichiers chiffrés \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~17.1. L'opération LOGONE mappée à ATT\&CK~\cite{mitreattack,killchain2011}}\end{center}
+
+% ============================================================================
+\section{Le Modèle du Diamant}
+\label{sec:c17-diamant}
+% ============================================================================
+
+\begin{boxdef}
+\termecle{Modèle du Diamant} (2013)~: cadre d'analyse d'une intrusion par
+quatre sommets reliés~: l'\emph{adversaire}, ses \emph{capacités}, son
+\emph{infrastructure}, et la \emph{victime}. Relier deux sommets connus permet
+d'inférer les autres.
+\end{boxdef}
+
+Exemple~: connaissant l'infrastructure de pilotage (l'adresse externe) et la
+victime (LiZbiZ), on peut rapprocher l'incident d'autres victimes partageant
+la même infrastructure, et ainsi caractériser l'adversaire.
+
+% ============================================================================
+\section{Échanger le Renseignement}
+\label{sec:c17-echanger}
+% ============================================================================
+
+Les \termecle{indicateurs de compromission} (adresses, condensats, noms de
+domaine) s'échangent entre organisations dans des formats normalisés
+(\termecle{STIX} pour décrire, \termecle{TAXII} pour transporter). L'ANTIC et
+les CERT sectoriels jouent ce rôle de partage au niveau national.
+
+\begin{boxalert}
+\textbf{Prudence.} Un indicateur partagé peut vieillir ou être faux.
+
+\smallskip
+\textbf{Règle~:} on qualifie la source et la fraîcheur d'un indicateur avant
+d'en faire une règle de blocage~: un indicateur périmé génère du bruit, un
+indicateur erroné bloque du trafic légitime.
+\end{boxalert}
+
+\begin{boxscenario}{Opération MAYO. Le mode opératoire reconnu}
+\textbf{Constatation.} Mappée à ATT\&CK et au Diamant, l'attaque de LiZbiZ
+correspond à un mode opératoire de rançongiciel courant en Afrique centrale~:
+accès par compte de service, persistance par service, exfiltration avant
+chiffrement.
+
+\medskip
+\textbf{Analyse} (confiance moyenne). La reconnaissance du mode opératoire a
+permis d'anticiper la recherche de persistances cachées et d'écrire des
+règles ciblées. On ne nomme pas l'adversaire avec certitude~: NEK sur
+l'attribution.
+\end{boxscenario}
+
+\begin{boxmetier}{Analyste SOC / Red Team}
+\textbf{Du renseignement aux règles.} L'analyste transforme chaque
+caractérisation d'adversaire en règles de détection et en points de chasse~:
+le renseignement ne vaut que s'il améliore la défense.
+\end{boxmetier}
+
+\separateur
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{Le renseignement} rend la menace actionnable.
+    \item \textbf{La chaîne d'attaque} raconte, \textbf{ATT\&CK} nomme les
+          gestes.
+    \item \textbf{Le Diamant} relie adversaire, capacités, infrastructure,
+          victime.
+    \item \textbf{STIX/TAXII} échangent les indicateurs~; on qualifie leur
+          fraîcheur.
+    \item \textbf{L'attribution} reste souvent un NEK.
+\end{itemize}
+\end{boxresume}
+
+\begin{boxinfo}
+\textbf{Points de contrôle de l'élève.} Je sais~: définir le renseignement~;
+mapper une attaque à la chaîne et à ATT\&CK~; appliquer le Diamant~; situer
+STIX/TAXII~; transformer le renseignement en règles.
+\end{boxinfo}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~17.1. Chaîne \niveaubase}]
+Citez trois étapes de la chaîne d'attaque.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~17.2. Diamant \niveaubase}]
+Quels sont les quatre sommets du modèle du Diamant~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~17.3. Indicateur \niveaubase}]
+Donnez trois exemples d'indicateurs de compromission.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~17.4. Mapper \niveaumoyen}]
+Mappez l'installation de \texttt{WinUpd32} à une tactique ATT\&CK.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~17.5. Inférer \niveaumoyen}]
+Connaissant l'infrastructure et la victime, qu'infère-t-on avec le Diamant~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~17.6. Indicateur périmé \niveaumoyen}]
+Pourquoi qualifier la fraîcheur d'un indicateur avant d'en faire une règle~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~17.7. Attribution \niveaumoyen}]
+Pourquoi l'attribution reste-t-elle souvent un NEK~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~17.8. STIX/TAXII \niveaumoyen}]
+Quelle est la différence entre STIX et TAXII~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~17.9. Mapping complet \niveauexpert}]
+Dressez le mapping complet de l'opération LOGONE à ATT\&CK.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~17.10. Du renseignement aux règles \niveauexpert}]
+À partir du mode opératoire reconnu, proposez trois règles et deux points de
+chasse.
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Pour aller plus loin.}
+\begin{itemize}
+    \item MITRE ATT\&CK~\cite{mitreattack}~; chaîne d'attaque~\cite{killchain2011}~;
+          modèle du Diamant~\cite{diamond2013}~; STIX/TAXII~\cite{stixtaxii}.
+\end{itemize}
+\end{boxinfo}
+
+\begin{boxinfo}
+\textbf{Transition.} Reste à agir concrètement sur l'incident~: le
+Chapitre~\ref{chap:confinement} traite du confinement, de l'éradication et du
+rétablissement.
+\end{boxinfo}

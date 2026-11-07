@@ -1,0 +1,218 @@
+% ============================================================================
+% Fichier  : partie2/P02_C05_siem.tex
+% Titre    : Le SIEM
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% ============================================================================
+% Sources : NIST SP 800-92 ; CIS Controls v8 ; MITRE ATT&CK.
+% ============================================================================
+
+\chapter{Le SIEM}
+\label{chap:siem}
+\chaptermark{Le SIEM}
+
+\epigraph{%
+    « Le SIEM ne détecte pas~; il rapproche. Ce sont vos règles qui détectent. »%
+}{Principe du cours}
+
+\niveauChapitre{Intermédiaire}{Chapitre~\ref{chap:journaux}.}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Définir le SIEM et son rôle dans le SOC.
+    \item Décrire la chaîne collecte, normalisation, corrélation, alerte.
+    \item Comprendre la notion de cas d'usage de détection.
+    \item Distinguer corrélation et simple recherche.
+    \item Éviter les pièges du volume et du bruit.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : un SIEM aurait-il, à lui seul, arrêté l'attaque~?}
+% ============================================================================
+
+Beaucoup croient qu'installer un SIEM « rend visible » l'attaque. En réalité,
+un SIEM sans cas d'usage est un entrepôt de journaux muet. Ce chapitre montre
+ce qu'un SIEM fait, et ce qu'il ne fait pas sans travail humain.
+
+\medskip
+\textbf{Plan du chapitre.}
+\begin{enumerate}
+    \item Qu'est-ce qu'un SIEM (section~\ref{sec:c05-definir}).
+    \item La chaîne de traitement (section~\ref{sec:c05-chaine}).
+    \item Les cas d'usage (section~\ref{sec:c05-cas}).
+    \item Corréler, pas seulement chercher (section~\ref{sec:c05-correler}).
+    \item Les pièges (section~\ref{sec:c05-pieges}).
+\end{enumerate}
+
+\separateur
+
+% ============================================================================
+\section{Qu'est-ce qu'un SIEM}
+\label{sec:c05-definir}
+% ============================================================================
+
+\begin{boxdef}
+\termecle{SIEM} (\textit{Security Information and Event Management})~:
+plateforme qui collecte les journaux de sources multiples, les normalise, les
+conserve, et déclenche des alertes lorsque des règles de corrélation
+reconnaissent un motif suspect.
+\end{boxdef}
+
+% ============================================================================
+\section{La Chaîne de Traitement}
+\label{sec:c05-chaine}
+% ============================================================================
+
+\begin{tableaucours}{L{3.0cm}L{9.2cm}}{%
+    \tableauHeader{Étape} &
+    \tableauHeader{Rôle}
+}
+Collecte & Recevoir les journaux des sources (agents, syslog, API) \\
+Normalisation & Ramener à un format commun (qui, quoi, quand, où) \\
+Enrichissement & Ajouter contexte (géolocalisation, criticité de l'actif) \\
+Corrélation & Rapprocher plusieurs événements selon une règle \\
+Alerte & Signaler à l'analyste un motif suspect, avec son contexte \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~5.1. La chaîne de traitement d'un SIEM}\end{center}
+
+% ============================================================================
+\section{Les Cas d'Usage}
+\label{sec:c05-cas}
+% ============================================================================
+
+\begin{boxdef}
+\termecle{Cas d'usage de détection}~: situation précise que l'on veut
+détecter, traduite en une ou plusieurs règles sur des sources identifiées.
+Exemple~: « un compte de service se connecte à un poste de travail hors
+plage horaire habituelle ».
+\end{boxdef}
+
+Un SIEM se construit cas d'usage par cas d'usage, en priorité sur les
+techniques d'attaque les plus probables (ATT\&CK). Sans cas d'usage, il ne
+produit aucune alerte utile.
+
+% ============================================================================
+\section{Corréler, pas seulement Chercher}
+\label{sec:c05-correler}
+% ============================================================================
+
+Chercher dans les journaux (« trouve-moi les connexions de ce compte »)
+répond à une question que l'on se pose déjà. \termecle{Corréler}, c'est
+rapprocher automatiquement des événements de sources différentes pour faire
+émerger une alerte que personne n'a pensé à chercher~: une connexion, suivie
+d'une création de compte, suivie d'un accès à un partage sensible, en
+quelques minutes.
+
+% ============================================================================
+\section{Les Pièges}
+\label{sec:c05-pieges}
+% ============================================================================
+
+\begin{boxalert}
+\textbf{Erreur fréquente.} Tout collecter et activer toutes les règles par
+défaut.
+
+\smallskip
+\textbf{Règle~:} le volume coûte cher et le bruit noie les vraies alertes. On
+collecte ce qui sert des cas d'usage, on règle les seuils, on mesure le taux
+de faux positifs (Chapitre~\ref{chap:gouvernance}).
+\end{boxalert}
+
+\begin{boxscenario}{Opération BÉNOUÉ. Le SIEM arrivé trop tard}
+\textbf{Constatation.} Après l'incident, LiZbiZ déploie un SIEM mutualisé
+chez NYONG SÉCURITÉ. Rejouées sur les journaux de février, trois règles
+simples (connexion anormale d'un compte de service, création de compte hors
+maintenance, service installé à distance) auraient alerté dès le 23~février.
+
+\medskip
+\textbf{Analyse} (confiance élevée). Le SIEM n'aurait rien fait seul~: ce sont
+ces trois cas d'usage, écrits à la main, qui auraient réduit le délai de
+présence de onze jours à quelques heures.
+\end{boxscenario}
+
+\begin{boxmetier}{Analyste SOC}
+\textbf{Un SIEM se nourrit de cas d'usage.} L'analyste ne « regarde » pas le
+SIEM~: il y écrit des cas d'usage, les éprouve, mesure leur bruit et les
+affine. La valeur est dans les règles, pas dans l'outil.
+\end{boxmetier}
+
+\separateur
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{Le SIEM} collecte, normalise, corrèle, alerte.
+    \item \textbf{Sans cas d'usage}, il est muet.
+    \item \textbf{Corréler} fait émerger ce qu'on n'aurait pas cherché.
+    \item \textbf{Le volume et le bruit} sont les pièges.
+    \item \textbf{La valeur} est dans les règles, pas dans l'outil.
+\end{itemize}
+\end{boxresume}
+
+\begin{boxinfo}
+\textbf{Points de contrôle de l'élève.} Je sais~: définir un SIEM~; décrire
+sa chaîne~; écrire un cas d'usage~; distinguer corréler et chercher~; éviter
+le piège du volume.
+\end{boxinfo}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~5.1. Chaîne \niveaubase}]
+Remettez dans l'ordre~: alerte, collecte, corrélation, normalisation.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~5.2. Muet \niveaubase}]
+Pourquoi un SIEM sans cas d'usage ne produit-il aucune alerte utile~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~5.3. Cas d'usage \niveaubase}]
+Rédigez un cas d'usage en une phrase pour « compte de service sur un poste
+ordinaire ».
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~5.4. Corréler \niveaumoyen}]
+Donnez un exemple de corrélation à trois événements qui révèle une intrusion.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~5.5. Bruit \niveaumoyen}]
+Pourquoi activer toutes les règles par défaut nuit-il à la détection~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~5.6. BÉNOUÉ \niveaumoyen}]
+Quelles trois règles auraient alerté dès le 23~février~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~5.7. Enrichissement \niveaumoyen}]
+Qu'apporte l'enrichissement (criticité de l'actif) à une alerte~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~5.8. Chercher ou corréler \niveaumoyen}]
+Classez~: « liste les connexions de svc\_sauvegarde »~; « alerte si un compte
+de service accède à un partage sensible après une connexion anormale ».
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~5.9. Catalogue \niveauexpert}]
+Proposez un catalogue de dix cas d'usage prioritaires pour LiZbiZ, reliés à
+des techniques ATT\&CK.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~5.10. Dimensionnement \niveauexpert}]
+Comment arbitrer entre volume collecté, coût et couverture de détection~?
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Pour aller plus loin.}
+\begin{itemize}
+    \item CIS Controls v8~\cite{cis2021controls}~; MITRE ATT\&CK~\cite{mitreattack}.
+\end{itemize}
+\end{boxinfo}
+
+\begin{boxinfo}
+\textbf{Transition.} À côté du SIEM, des sondes détectent au fil du réseau et
+des hôtes~: le Chapitre~\ref{chap:idsips} traite des IDS/IPS.
+\end{boxinfo}

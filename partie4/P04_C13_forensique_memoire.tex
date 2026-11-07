@@ -1,0 +1,204 @@
+% ============================================================================
+% Fichier  : partie4/P04_C13_forensique_memoire.tex
+% Titre    : Forensique Mémoire
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% ============================================================================
+% Sources : NIST SP 800-86 ; RFC 3227 ; MITRE ATT&CK. Opération FARO.
+% ============================================================================
+
+\chapter{Forensique Mémoire}
+\label{chap:memoire}
+\chaptermark{Forensique mémoire}
+
+\epigraph{%
+    « La mémoire vive est le seul témoin qui dit la vérité du moment présent\\
+    et meurt dès qu'on éteint. »%
+}{Principe du cours}
+
+\niveauChapitre{Expert}{Chapitre~\ref{chap:systeme}.}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Comprendre pourquoi et quand capturer la mémoire vive.
+    \item Identifier ce que la mémoire révèle et que le disque ignore.
+    \item Décrire l'acquisition et ses précautions.
+    \item Repérer les traces d'exécution en mémoire.
+    \item Mesurer le coût d'un redémarrage imprudent.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : qu'a-t-on perdu en redémarrant FS-01~?}
+% ============================================================================
+
+En redémarrant le serveur, le technicien a effacé la mémoire vive. Ce
+chapitre montre ce qu'elle contenait, pourquoi elle prime dans l'ordre de
+volatilité, et comment on la capture quand elle est encore là.
+
+\medskip
+\textbf{Plan du chapitre.}
+\begin{enumerate}
+    \item Pourquoi la mémoire (section~\ref{sec:c13-pourquoi}).
+    \item Ce qu'elle révèle (section~\ref{sec:c13-revele}).
+    \item L'acquisition (section~\ref{sec:c13-acquisition}).
+    \item Le coût du redémarrage (section~\ref{sec:c13-cout}).
+\end{enumerate}
+
+\separateur
+
+% ============================================================================
+\section{Pourquoi la Mémoire}
+\label{sec:c13-pourquoi}
+% ============================================================================
+
+La mémoire vive contient l'état réel du système au moment présent~: processus
+en cours, connexions réseau ouvertes, clés et secrets déchiffrés, code
+malveillant qui ne touche jamais le disque. C'est pourquoi elle vient en tête
+de l'ordre de volatilité (Chapitre~\ref{chap:fondements})~: elle disparaît à
+l'extinction.
+
+% ============================================================================
+\section{Ce qu'elle Révèle}
+\label{sec:c13-revele}
+% ============================================================================
+
+\begin{tableaucours}{L{4.0cm}L{8.2cm}}{%
+    \tableauHeader{Élément en mémoire} &
+    \tableauHeader{Intérêt pour l'enquête}
+}
+Processus en cours & Code malveillant actif, parent suspect \\
+Connexions réseau & Vers où le système parlait (exfiltration, pilotage) \\
+Secrets déchiffrés & Clés, mots de passe, jetons en clair \\
+Code injecté & Programme présent en mémoire mais absent du disque \\
+Commandes récentes & Ce que l'attaquant faisait à l'instant \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~13.1. Ce que révèle la mémoire vive}\end{center}
+
+% ============================================================================
+\section{L'Acquisition}
+\label{sec:c13-acquisition}
+% ============================================================================
+
+\begin{boxprocedure}
+\textbf{Acquérir la mémoire vive}
+\begin{enumerate}
+    \item Agir sur le système vivant, avant toute extinction.
+    \item Utiliser un outil d'acquisition à empreinte minimale, documenté.
+    \item Écrire la capture sur un support externe, jamais sur le disque
+          analysé.
+    \item Calculer le condensat de la capture.
+    \item Consigner l'acte dans la chaîne de custody.
+\end{enumerate}
+\end{boxprocedure}
+
+\begin{boxCRO}
+\textbf{Capturer la mémoire, un arbitrage CRO.} L'acquisition touche
+nécessairement le système vivant~: elle laisse une empreinte \cro{0}{-}{+}.
+On accepte une légère altération (fiabilité) pour sauver une trace unique et
+opposable (opposabilité), et on la documente pour la rendre défendable.
+\end{boxCRO}
+
+% ============================================================================
+\section{Le Coût du Redémarrage}
+\label{sec:c13-cout}
+% ============================================================================
+
+\begin{boxscenario}{Opération FARO. Ce que la mémoire aurait dit}
+\textbf{Constatation.} La mémoire de \texttt{FS-01}, perdue au redémarrage,
+aurait vraisemblablement contenu~: le processus de chiffrement actif, la
+connexion d'exfiltration ouverte, et peut-être la clé de chiffrement en clair.
+
+\medskip
+\textbf{Analyse} (confiance moyenne). Sans la mémoire, l'enquête a dû
+reconstituer ces éléments indirectement, à partir du disque et du réseau~:
+plus long, moins complet. La clé en clair, si elle avait été capturée, aurait
+pu éviter de payer la rançon. Le redémarrage a coûté cher.
+\end{boxscenario}
+
+\begin{boxmetier}{Analyste forensique et analyste SOC}
+\textbf{Capturer la mémoire d'abord.} Face à un système compromis encore
+allumé, le réflexe est de capturer la mémoire avant tout autre geste. Éteindre
+« pour arrêter l'attaque » peut détruire la preuve qui aurait permis de la
+comprendre.
+\end{boxmetier}
+
+\separateur
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{La mémoire vive} contient l'état réel, et meurt à
+          l'extinction.
+    \item \textbf{Elle révèle} processus, connexions, secrets, code injecté.
+    \item \textbf{On la capture} sur le système vivant, vers un support
+          externe.
+    \item \textbf{L'acquisition} est un arbitrage CRO documenté.
+    \item \textbf{Un redémarrage} détruit cette preuve unique.
+\end{itemize}
+\end{boxresume}
+
+\begin{boxinfo}
+\textbf{Points de contrôle de l'élève.} Je sais~: expliquer la primauté de la
+mémoire~; citer ce qu'elle révèle~; décrire son acquisition~; analyser le CRO
+de l'acquisition~; mesurer le coût d'un redémarrage.
+\end{boxinfo}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~13.1. Pourquoi d'abord \niveaubase}]
+Pourquoi la mémoire vient-elle en tête de l'ordre de volatilité~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~13.2. Révélations \niveaubase}]
+Citez trois éléments que la mémoire révèle et que le disque ignore.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~13.3. Support \niveaubase}]
+Sur quel support écrit-on la capture mémoire~? Pourquoi pas le disque
+analysé~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~13.4. CRO \niveaumoyen}]
+Expliquez l'arbitrage CRO de l'acquisition mémoire.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~13.5. FARO \niveaumoyen}]
+Qu'aurait pu contenir la mémoire de \texttt{FS-01}~? Qu'a coûté sa perte~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~13.6. Code injecté \niveaumoyen}]
+Pourquoi un code injecté peut-il être invisible sur le disque~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~13.7. Éteindre \niveaumoyen}]
+« Il faut éteindre pour arrêter l'attaque. » Discutez.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~13.8. Empreinte \niveaumoyen}]
+Pourquoi documente-t-on l'empreinte laissée par l'outil d'acquisition~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~13.9. Procédure \niveauexpert}]
+Rédigez la procédure de capture mémoire de première intervention pour LiZbiZ.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~13.10. Consigne \niveauexpert}]
+Rédigez la consigne « système compromis allumé~: que faire en premier~? ».
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Pour aller plus loin.}
+\begin{itemize}
+    \item NIST SP~800-86~\cite{nist80086}~; RFC~3227~\cite{rfc3227}.
+\end{itemize}
+\end{boxinfo}
+
+\begin{boxinfo}
+\textbf{Transition.} Reste la troisième scène~: le réseau, qui garde la trace
+des échanges. Le Chapitre~\ref{chap:reseau} traite du forensique réseau.
+\end{boxinfo}

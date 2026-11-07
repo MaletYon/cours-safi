@@ -1,0 +1,233 @@
+NDAP SUKULU · SAFI · fiche SAFI-FICHE-C02
+Chapitre 2 : L'architecture d'un SOC
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. Un SOC transforme :
+      a) Des traces en décisions
+      b) Des ventes en profit
+      c) Du code en binaire
+      d) Des alertes en factures
+
+ 2. Le SOC s'appuie sur :
+      a) La paie
+      b) Le SIEM et les sondes
+      c) La météo
+      d) Le marketing
+
+ 3. Le niveau N1 fait :
+      a) L'expertise
+      b) Le forensique
+      c) La surveillance et le tri
+      d) La décision stratégique
+
+ 4. Le niveau N2 fait :
+      a) Le tri
+      b) La paie
+      c) La vente
+      d) L'investigation
+
+ 5. Le niveau N3 fait :
+      a) L'expertise et la chasse
+      b) Le tri
+      c) La surveillance
+      d) La facturation
+
+ 6. Le modèle interne convient :
+      a) Aux PME sans équipe
+      b) Aux grandes organisations
+      c) À personne
+      d) Aux écoles
+
+ 7. Le modèle infogéré (MSSP) convient :
+      a) Aux PME sans équipe
+      b) À personne
+      c) Aux seules banques
+      d) Aux écoles
+
+ 8. Le modèle hybride garde en interne :
+      a) Rien
+      b) La paie
+      c) La météo
+      d) La décision
+
+ 9. La chasse consiste à :
+      a) Rechercher ce qui n'a pas alerté
+      b) Trier les alertes
+      c) Facturer
+      d) Vendre
+
+10. L'ingénierie de détection consiste à :
+      a) Vendre
+      b) Écrire et maintenir les règles
+      c) Trier
+      d) Payer
+
+11. Pour une PME, le bon départ est souvent :
+      a) Trois niveaux internes
+      b) Aucun SOC
+      c) Le modèle hybride
+      d) Un antivirus seul
+
+12. L'organisation d'un SOC doit suivre :
+      a) La mode
+      b) Le hasard
+      c) La météo
+      d) La maturité et le budget
+
+13. Écarter un faux positif relève de :
+      a) N3
+      b) N1
+      c) La direction
+      d) Le juriste
+
+14. Faire du forensique relève de :
+      a) N1
+      b) N3
+      c) N2
+      d) La vente
+
+15. Un incident traité améliore :
+      a) La paie
+      b) La météo
+      c) Les règles de détection
+      d) Le prix
+
+16. « Une salle pleine d'écrans » est :
+      a) Un SOC complet
+      b) Obligatoire
+      c) Le N3
+      d) Une vision fausse du SOC
+
+17. Dans l'hybride de LiZbiZ, la surveillance est opérée par :
+      a) NYONG SÉCURITÉ
+      b) LiZbiZ seul
+      c) L'ANTIC
+      d) Personne
+
+18. La décision engage l'entreprise, donc elle reste :
+      a) Externe
+      b) Interne
+      c) Supprimée
+      d) Publique
+
+19. Un SOC interne sous-doté détecte :
+      a) Mieux
+      b) Parfaitement
+      c) Moins bien qu'un infogéré bien piloté
+      d) Rien du tout toujours
+
+20. La réponse traite :
+      a) La paie
+      b) La vente
+      c) La météo
+      d) L'incident
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. Un SOC n'est qu'une salle pleine d'écrans sans traitement.
+      Vrai / Faux
+
+22. Le N1 fait le forensique et la chasse.
+      Vrai / Faux
+
+23. Le modèle infogéré ne convient qu'aux très grandes banques.
+      Vrai / Faux
+
+24. Dans l'hybride, la décision reste interne.
+      Vrai / Faux
+
+25. Une PME devrait monter d'emblée trois niveaux internes.
+      Vrai / Faux
+
+26. Un incident traité améliore les règles de détection.
+      Vrai / Faux
+
+27. Le N3 fait l'expertise et la chasse.
+      Vrai / Faux
+
+28. Un SOC n'est qu'une salle pleine d'écrans.
+      Vrai / Faux
+
+29. La surveillance de LiZbiZ est opérée par NYONG SÉCURITÉ.
+      Vrai / Faux
+
+30. L'organisation d'un SOC suit la maturité et le budget.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. Le SOC transforme des traces en ______.
+
+32. La surveillance et le tri relèvent du niveau ______.
+
+33. Le forensique et la chasse relèvent du niveau ______.
+
+34. Le modèle équilibré pour une PME est le modèle ______.
+
+35. Écrire et maintenir les règles est l'ingénierie de ______.
+
+36. Dans l'hybride de LiZbiZ, la ______ reste interne.
+
+37. Rechercher ce qui n'a pas alerté s'appelle la ______.
+
+38. Le sigle du centre d'opérations de sécurité est ______.
+
+39. Un SOC infogéré se dit aussi ______.
+
+40. La surveillance de LiZbiZ est opérée par le cabinet ______.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

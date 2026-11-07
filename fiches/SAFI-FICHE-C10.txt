@@ -1,0 +1,233 @@
+NDAP SUKULU · SAFI · fiche SAFI-FICHE-C10
+Chapitre 10 : L'admissibilité de la preuve numérique
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. L'admissibilité tient à :
+      a) La manière de recueillir et documenter
+      b) La seule exactitude
+      c) Le prix
+      d) La météo
+
+ 2. Une preuve admissible est reçue par :
+      a) Personne
+      b) Un tiers (direction, ANTIC, juge)
+      c) La météo
+      d) La vente
+
+ 3. L'intégrité signifie que la preuve :
+      a) Est belle
+      b) Est chère
+      c) N'a pas été altérée depuis l'acquisition
+      d) Est rapide
+
+ 4. L'authenticité signifie que la preuve :
+      a) Est rapide
+      b) Est chère
+      c) Est belle
+      d) Est bien de la source déclarée
+
+ 5. La traçabilité repose sur :
+      a) La chaîne de custody
+      b) Le prix
+      c) La météo
+      d) La TVA
+
+ 6. La licéité exige :
+      a) La beauté
+      b) Le respect du droit (autorisation)
+      c) Le prix
+      d) La vitesse
+
+ 7. L'opposabilité du CRO est :
+      a) Le coût
+      b) La météo
+      c) L'admissibilité
+      d) La vente
+
+ 8. Travailler sur l'original :
+      a) Est recommandé
+      b) Est gratuit
+      c) Chiffre
+      d) Détruit la preuve
+
+ 9. On travaille sur :
+      a) Une copie vérifiée par condensat
+      b) L'original
+      c) La paie
+      d) La météo
+
+10. Le redémarrage de FS-01 a détruit :
+      a) Le disque
+      b) La mémoire vive
+      c) Les archives
+      d) La paie
+
+11. Après le redémarrage, le disque était :
+      a) Écrasé
+      b) Chiffré
+      c) Pas encore écrasé, donc sauvé
+      d) Vendu
+
+12. Une collecte illicite :
+      a) Renforce la preuve
+      b) N'a aucun effet
+      c) Chiffre
+      d) Compromet l'admissibilité
+
+13. Une preuve manipulée sans trace est :
+      a) Perdue, même si exacte
+      b) Renforcée
+      c) Vendue
+      d) Chiffrée
+
+14. L'admissibilité ne tient pas à :
+      a) La manière
+      b) La seule exactitude de la trace
+      c) La traçabilité
+      d) La licéité
+
+15. Le technicien qui a redémarré était :
+      a) Malveillant
+      b) Un attaquant
+      c) De bonne foi
+      d) Absent
+
+16. Le condensat garantit :
+      a) La beauté
+      b) Le prix
+      c) La vitesse
+      d) L'intégrité
+
+17. Une bonne pratique vise à chaque acte :
+      a) C0 F+ O+
+      b) C-F-O-
+      c) Rien
+      d) La météo
+
+18. « Figer avant de comprendre » signifie :
+      a) Analyser le vivant d'abord
+      b) Figer l'état avant toute analyse
+      c) Éteindre
+      d) Vendre
+
+19. Les quatre conditions sont intégrité, authenticité, traçabilité et :
+      a) Beauté
+      b) Prix
+      c) Licéité
+      d) Vitesse
+
+20. Une preuve exacte mais mal recueillie est :
+      a) Admissible
+      b) Chère
+      c) Rapide
+      d) Non admissible
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. L'admissibilité tient à la seule exactitude de la trace.
+      Vrai / Faux
+
+22. L'intégrité signifie que la preuve est belle à présenter.
+      Vrai / Faux
+
+23. L'opposabilité du Trilemme CRO correspond au coût de l'enquête.
+      Vrai / Faux
+
+24. On travaille sur une copie vérifiée, pas sur l'original.
+      Vrai / Faux
+
+25. Le redémarrage de FS-01 a préservé la mémoire vive.
+      Vrai / Faux
+
+26. Une preuve manipulée sans trace reste pleinement valable.
+      Vrai / Faux
+
+27. Le technicien qui a redémarré était de bonne foi.
+      Vrai / Faux
+
+28. Une collecte illicite compromet l'admissibilité.
+      Vrai / Faux
+
+29. Le condensat garantit l'intégrité de la preuve.
+      Vrai / Faux
+
+30. Une preuve exacte mais mal recueillie reste admissible.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. L'admissibilité tient à la ______ de recueillir, pas à la seule exactitude.
+
+32. Les quatre conditions : intégrité, authenticité, traçabilité, ______.
+
+33. L'______ du CRO est l'admissibilité.
+
+34. On travaille sur une ______ vérifiée par condensat.
+
+35. Le redémarrage a détruit la ______ vive.
+
+36. Le ______ garantit l'intégrité de la preuve.
+
+37. La règle : ______ avant de comprendre.
+
+38. L'______ signifie que la preuve est bien de la source déclarée.
+
+39. Travailler sur l'______ détruit la preuve.
+
+40. Une collecte ______ compromet l'admissibilité.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

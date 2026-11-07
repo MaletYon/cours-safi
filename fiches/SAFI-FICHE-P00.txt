@@ -1,0 +1,233 @@
+NDAP SUKULU · SAFI · fiche SAFI-FICHE-P00
+Chapitre 0 : Prologue : la découverte
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. L'écran de rançon marque :
+      a) La fin d'une histoire déjà ancienne
+      b) Le début de l'attaque
+      c) Une simple panne
+      d) Un faux positif
+
+ 2. La supervision agit :
+      a) Après l'incident
+      b) Avant, pour voir venir
+      c) Jamais
+      d) À la place du forensique
+
+ 3. L'analyse forensique sert à :
+      a) Prévenir
+      b) Chiffrer
+      c) Établir ce qui s'est passé et le prouver
+      d) Facturer
+
+ 4. La réponse à incident sert à :
+      a) Voir venir
+      b) Prouver
+      c) Mesurer
+      d) Limiter les dégâts
+
+ 5. Combien de temps l'attaquant est-il resté avant la découverte ?
+      a) Onze jours
+      b) Onze heures
+      c) Onze semaines
+      d) Onze mois
+
+ 6. Pendant ces onze jours, les traces étaient :
+      a) Absentes
+      b) Dans les journaux, mais non lues
+      c) Chiffrées
+      d) Effacées
+
+ 7. « Quatre systèmes sont chiffrés » est :
+      a) Une analyse
+      b) Une hypothèse
+      c) Une constatation
+      d) Une opinion
+
+ 8. « L'attaque a duré onze jours » est :
+      a) Une constatation brute
+      b) Une rumeur
+      c) Une légende
+      d) Une analyse étayée par les traces
+
+ 9. L'opération de supervision et de détection s'appelle :
+      a) BÉNOUÉ
+      b) FARO
+      c) MAYO
+      d) SANAGA
+
+10. L'opération d'analyse forensique s'appelle :
+      a) BÉNOUÉ
+      b) FARO
+      c) MAYO
+      d) LOGONE
+
+11. L'opération de réponse à incident s'appelle :
+      a) FARO
+      b) BÉNOUÉ
+      c) MAYO
+      d) NYONG
+
+12. Le C du Trilemme CRO désigne :
+      a) Le coût
+      b) Le contrôle
+      c) La conformité
+      d) La confidentialité
+
+13. Le O du Trilemme CRO désigne :
+      a) L'opposabilité
+      b) L'origine
+      c) L'ordre
+      d) L'objectif
+
+14. Le F du Trilemme CRO désigne :
+      a) La facilité
+      b) La fiabilité
+      c) La fréquence
+      d) La finalité
+
+15. L'entreprise victime du fil rouge est :
+      a) BANQUE SANAGA
+      b) NYONG
+      c) LiZbiZ
+      d) ANTIC
+
+16. Le cabinet qui assiste LiZbiZ est :
+      a) LiZbiZ
+      b) ANTIC
+      c) MINPOSTEL
+      d) NYONG SÉCURITÉ
+
+17. Le métier qui détecte est :
+      a) L'analyste SOC
+      b) L'analyste forensique
+      c) Le juriste
+      d) Le DG
+
+18. Le métier qui établit les faits est :
+      a) L'analyste SOC
+      b) L'analyste forensique
+      c) Le commercial
+      d) Le DG
+
+19. « Sommes-nous prêts ? » se répond par :
+      a) Oui en bloc
+      b) Non en bloc
+      c) Des verdicts précis OUI, NON, NEK
+      d) Un chiffre
+
+20. Le site de LiZbiZ touché est à :
+      a) Douala
+      b) Yaoundé
+      c) Bafoussam
+      d) Garoua
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. L'écran de rançon est le début de l'attaque.
+      Vrai / Faux
+
+22. L'attaquant est resté onze jours avant la découverte.
+      Vrai / Faux
+
+23. « L'attaque a duré onze jours » est une simple constatation.
+      Vrai / Faux
+
+24. L'opération BÉNOUÉ concerne la supervision et la détection.
+      Vrai / Faux
+
+25. Le O du Trilemme CRO désigne l'opposabilité.
+      Vrai / Faux
+
+26. L'entreprise victime du fil rouge est LiZbiZ.
+      Vrai / Faux
+
+27. L'analyste SOC établit les faits après coup.
+      Vrai / Faux
+
+28. Pendant les onze jours, aucune trace n'existait.
+      Vrai / Faux
+
+29. « Sommes-nous prêts » se répond par un simple oui ou non.
+      Vrai / Faux
+
+30. La supervision vise à voir venir l'attaque.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. L'attaquant est resté ______ jours avant la découverte.
+
+32. L'opération d'analyse forensique s'appelle ______.
+
+33. L'opération de réponse à incident s'appelle ______.
+
+34. Le Trilemme CRO : Confidentialité, Fiabilité, ______.
+
+35. L'entreprise victime du fil rouge est ______.
+
+36. Le métier qui détecte en continu est l'analyste ______.
+
+37. On sépare toujours la constatation de l'______.
+
+38. Le site touché de LiZbiZ est à ______.
+
+39. Le F du Trilemme CRO désigne la ______.
+
+40. L'écran de rançon est la ______ d'une histoire déjà ancienne.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

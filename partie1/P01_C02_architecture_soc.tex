@@ -1,0 +1,221 @@
+% ============================================================================
+% Fichier  : partie1/P01_C02_architecture_soc.tex
+% Titre    : L'Architecture d'un SOC
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% ============================================================================
+% Sources : NIST SP 800-61r2 ; modèles de SOC (niveaux N1-N3) ; CIS Controls v8.
+% ============================================================================
+
+\chapter{L'Architecture d'un SOC}
+\label{chap:soc}
+\chaptermark{L'architecture d'un SOC}
+
+\epigraph{%
+    « Un SOC n'est pas une salle pleine d'écrans~;\\
+    c'est un processus qui transforme des traces en décisions. »%
+}{Principe du cours}
+
+\niveauChapitre{Fondamental}{Chapitre~\ref{chap:pourquoi}.}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Définir le centre d'opérations de sécurité (SOC) et sa mission.
+    \item Décrire les niveaux d'analyse (N1, N2, N3) et leurs rôles.
+    \item Comprendre les modèles d'organisation (interne, infogéré, hybride).
+    \item Situer les fonctions chasse, ingénierie de détection, réponse.
+    \item Dimensionner un SOC réaliste pour une PME.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : de quelle équipe LiZbiZ a-t-elle besoin pour voir venir la prochaine attaque~?}
+% ============================================================================
+
+LiZbiZ n'a ni SOC ni analyste dédié~; M.~KOUNOU fait tout. Ce chapitre montre
+ce qu'est un SOC, ses rôles et ses modèles, et comment en bâtir un
+proportionné à une PME, seul ou avec le cabinet NYONG SÉCURITÉ.
+
+\medskip
+\textbf{Plan du chapitre.}
+\begin{enumerate}
+    \item La mission du SOC (section~\ref{sec:c02-mission}).
+    \item Les niveaux d'analyse (section~\ref{sec:c02-niveaux}).
+    \item Les modèles d'organisation (section~\ref{sec:c02-modeles}).
+    \item Les fonctions transverses (section~\ref{sec:c02-fonctions}).
+    \item Dimensionner pour une PME (section~\ref{sec:c02-pme}).
+\end{enumerate}
+
+\separateur
+
+% ============================================================================
+\section{La Mission du SOC}
+\label{sec:c02-mission}
+% ============================================================================
+
+\begin{boxdef}
+\termecle{SOC} (\textit{Security Operations Center})~: fonction, humaine et
+technique, chargée de détecter, analyser et traiter les événements de
+sécurité en continu, à partir des traces collectées par le \sigle{SIEM} et
+les sondes.
+\end{boxdef}
+
+% ============================================================================
+\section{Les Niveaux d'Analyse}
+\label{sec:c02-niveaux}
+% ============================================================================
+
+\begin{tableaucours}{L{2.2cm}L{4.6cm}L{5.4cm}}{%
+    \tableauHeader{Niveau} &
+    \tableauHeader{Rôle} &
+    \tableauHeader{Ce qu'il fait}
+}
+N1 & Surveillance, tri & Reçoit les alertes, écarte les faux positifs, qualifie, escalade \\
+N2 & Investigation & Analyse l'alerte qualifiée, reconstitue, décide du traitement \\
+N3 & Expertise, chasse & Forensique, chasse proactive, ingénierie de détection \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~2.1. Les niveaux d'un SOC}\end{center}
+
+\begin{boxalert}
+\textbf{Erreur fréquente.} Vouloir trois niveaux dès le premier jour.
+
+\smallskip
+\textbf{Règle~:} une PME commence souvent par un N1 outillé et un N2 à temps
+partiel, l'expertise N3 étant externalisée. L'organisation suit la maturité,
+pas l'inverse.
+\end{boxalert}
+
+% ============================================================================
+\section{Les Modèles d'Organisation}
+\label{sec:c02-modeles}
+% ============================================================================
+
+\begin{tableaucours}{L{3.0cm}L{4.8cm}L{4.4cm}}{%
+    \tableauHeader{Modèle} &
+    \tableauHeader{Principe} &
+    \tableauHeader{Pour qui}
+}
+Interne & Équipe propre, 24/7 ou heures ouvrées & Grandes organisations \\
+Infogéré (MSSP) & Un prestataire opère le SOC & PME sans équipe \\
+Hybride & N1/N2 infogéré, N3 et décision internes & Cas fréquent et équilibré \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~2.2. Modèles d'organisation d'un SOC}\end{center}
+
+% ============================================================================
+\section{Les Fonctions Transverses}
+\label{sec:c02-fonctions}
+% ============================================================================
+
+Au-delà des niveaux, un SOC mûr distingue trois fonctions~: la
+\termecle{chasse} (rechercher activement ce qui n'a pas déclenché d'alerte,
+Chapitre~\ref{chap:renseignement}), l'\termecle{ingénierie de détection}
+(écrire et maintenir les règles, Chapitre~\ref{chap:regles}) et la
+\termecle{réponse} (traiter l'incident, Partie~V). Elles se nourrissent l'une
+l'autre~: chaque incident traité améliore les règles.
+
+% ============================================================================
+\section{Dimensionner pour une PME}
+\label{sec:c02-pme}
+% ============================================================================
+
+\begin{boxscenario}{Opération BÉNOUÉ. Le SOC qui n'existait pas}
+\textbf{Constatation.} LiZbiZ n'avait aucune fonction de détection~: pas de
+SIEM, pas d'analyste, des journaux dispersés et non lus.
+
+\medskip
+\textbf{Analyse} (confiance élevée). Un modèle hybride convient~: le cabinet
+NYONG SÉCURITÉ opère la surveillance (N1/N2) sur un SIEM mutualisé, LiZbiZ
+garde la décision et le lien avec l'ANTIC. Le coût est compatible avec une
+PME, et le délai de présence tombe de onze jours à quelques heures.
+\end{boxscenario}
+
+\begin{boxmetier}{RSSI}
+\textbf{Choisir un modèle soutenable.} Le RSSI ne vise pas le SOC le plus
+complet, mais celui que l'organisation peut financer et faire vivre dans la
+durée. Un SOC interne sous-doté détecte moins bien qu'un infogéré bien piloté.
+\end{boxmetier}
+
+\separateur
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{Le SOC} transforme des traces en décisions, en continu.
+    \item \textbf{N1, N2, N3}~: tri, investigation, expertise.
+    \item \textbf{Interne, infogéré, hybride}~: le modèle suit la maturité et
+          le budget.
+    \item \textbf{Chasse, ingénierie de détection, réponse}~: les fonctions
+          transverses.
+    \item \textbf{Pour une PME}, l'hybride est souvent le bon départ.
+\end{itemize}
+\end{boxresume}
+
+\begin{boxinfo}
+\textbf{Points de contrôle de l'élève.} Je sais~: définir un SOC~; décrire
+N1/N2/N3~; comparer les modèles~; situer chasse, ingénierie, réponse~;
+proposer un SOC pour une PME.
+\end{boxinfo}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~2.1. Les niveaux \niveaubase}]
+Associez à N1, N2 ou N3~: écarter un faux positif~; faire du forensique~;
+décider d'isoler un serveur.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~2.2. SOC ou exploitation \niveaubase}]
+Pourquoi un SOC n'est-il pas « une salle pleine d'écrans »~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~2.3. Modèles \niveaubase}]
+Citez un avantage et une limite de chaque modèle (interne, infogéré,
+hybride).
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~2.4. Maturité \niveaumoyen}]
+Pourquoi déconseille-t-on à une PME de monter d'emblée trois niveaux
+internes~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~2.5. Hybride \niveaumoyen}]
+Dans le modèle hybride de LiZbiZ, qui garde la décision~? Pourquoi~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~2.6. Fonctions \niveaumoyen}]
+Expliquez comment un incident traité améliore les règles de détection.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~2.7. Escalade \niveaumoyen}]
+Décrivez le parcours d'une alerte de N1 à N2, avec les critères d'escalade.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~2.8. Chasse \niveaumoyen}]
+En quoi la chasse diffère-t-elle du traitement d'alerte~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~2.9. Proposition \niveauexpert}]
+Rédigez une proposition de SOC hybride pour LiZbiZ~: périmètre, rôles,
+horaires, responsabilités partagées avec NYONG SÉCURITÉ.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~2.10. Convention de service \niveauexpert}]
+Quels engagements de service (délais, couverture, rapports) inscririez-vous
+au contrat avec un SOC infogéré~?
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Pour aller plus loin.}
+\begin{itemize}
+    \item NIST SP~800-61r2~\cite{nist80061r2}~; CIS Controls v8~\cite{cis2021controls}.
+\end{itemize}
+\end{boxinfo}
+
+\begin{boxinfo}
+\textbf{Transition.} Un SOC se pilote~: le Chapitre~\ref{chap:gouvernance}
+traite de sa gouvernance et de ses indicateurs.
+\end{boxinfo}

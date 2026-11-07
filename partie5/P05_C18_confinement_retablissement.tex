@@ -1,0 +1,216 @@
+% ============================================================================
+% Fichier  : partie5/P05_C18_confinement_retablissement.tex
+% Titre    : Confinement, Éradication, Rétablissement
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% ============================================================================
+% Sources : ISO/IEC 27035 ; NIST SP 800-61r2. Opération MAYO.
+% ============================================================================
+
+\chapter{Confinement, Éradication, Rétablissement}
+\label{chap:confinement}
+\chaptermark{Confiner, éradiquer, rétablir}
+
+\epigraph{%
+    « Contenir sans détruire la preuve, éradiquer sans oublier une porte,\\
+    rétablir sans ramener l'attaquant. »%
+}{Principe du cours}
+
+\niveauChapitre{Intermédiaire à expert}{Chapitre~\ref{chap:cycle}.}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Choisir une stratégie de confinement adaptée.
+    \item Éradiquer complètement la présence de l'attaquant.
+    \item Rétablir à partir de sauvegardes sûres.
+    \item Vérifier qu'il n'y a pas de rechute.
+    \item Décider, ou non, de payer une rançon.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : comment remettre LiZbiZ en marche sans rouvrir la porte~?}
+% ============================================================================
+
+Après la qualification et la capture des preuves, il faut agir~: contenir,
+éradiquer, rétablir. Chaque étape a ses pièges. Ce chapitre les parcourt, et
+aborde la question difficile du paiement de la rançon.
+
+\medskip
+\textbf{Plan du chapitre.}
+\begin{enumerate}
+    \item Le confinement (section~\ref{sec:c18-confiner}).
+    \item L'éradication (section~\ref{sec:c18-eradiquer}).
+    \item Le rétablissement (section~\ref{sec:c18-retablir}).
+    \item Faut-il payer~? (section~\ref{sec:c18-payer}).
+\end{enumerate}
+
+\separateur
+
+% ============================================================================
+\section{Le Confinement}
+\label{sec:c18-confiner}
+% ============================================================================
+
+\begin{tableaucours}{L{3.6cm}L{4.6cm}L{4.0cm}}{%
+    \tableauHeader{Stratégie} &
+    \tableauHeader{Principe} &
+    \tableauHeader{Quand}
+}
+Isolement réseau & Couper la machine du réseau sans l'éteindre & Préserve la preuve \\
+Segmentation & Fermer un segment & Limiter la propagation \\
+Blocage de comptes & Désactiver les comptes compromis & Couper l'accès \\
+Arrêt (dernier recours) & Éteindre & Si la propagation l'exige \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~18.1. Stratégies de confinement}\end{center}
+
+On privilégie l'isolement réseau, qui préserve la mémoire et la preuve
+(Chapitre~\ref{chap:memoire}).
+
+% ============================================================================
+\section{L'Éradication}
+\label{sec:c18-eradiquer}
+% ============================================================================
+
+\begin{boxprocedure}
+\textbf{Éradiquer}
+\begin{enumerate}
+    \item Supprimer les accès de l'attaquant (comptes créés, clés déposées).
+    \item Supprimer les persistances (services, tâches, clés de démarrage).
+    \item Corriger la faille d'entrée (sinon l'attaquant revient).
+    \item Changer les secrets exposés (mots de passe, clés).
+    \item Vérifier l'éradication avant de rétablir.
+\end{enumerate}
+\end{boxprocedure}
+
+\begin{boxalert}
+\textbf{Erreur fréquente.} Supprimer le rançongiciel visible et croire la
+machine propre.
+
+\smallskip
+\textbf{Règle~:} l'attaquant a souvent plusieurs portes (comptes, services,
+accès distant). On éradique à partir de la chronologie forensique, qui liste
+\emph{toutes} ses traces, pas seulement la charge finale.
+\end{boxalert}
+
+% ============================================================================
+\section{Le Rétablissement}
+\label{sec:c18-retablir}
+% ============================================================================
+
+On rétablit à partir de sauvegardes \termecle{vérifiées} et \termecle{hors
+ligne} (une sauvegarde en ligne a pu être chiffrée elle aussi). On restaure
+par étapes, en surveillant étroitement, prêt à reconfiner en cas de rechute.
+La supervision renforcée (Partie~II) accompagne le retour à la normale.
+
+% ============================================================================
+\section{Faut-il Payer~?}
+\label{sec:c18-payer}
+% ============================================================================
+
+\begin{boxscenario}{Opération MAYO. LiZbiZ ne paie pas}
+\textbf{Constatation.} La rançon demandée s'élève à 25~millions de FCFA.
+LiZbiZ dispose de sauvegardes hors ligne du serveur de suivi, vieilles de
+cinq jours. Les données exfiltrées, elles, sont déjà perdues.
+
+\medskip
+\textbf{Analyse} (confiance élevée). Payer ne garantit ni la restitution ni
+la non-divulgation, finance le crime, et peut être juridiquement risqué.
+LiZbiZ choisit de ne pas payer~: elle restaure depuis les sauvegardes
+(perte de cinq jours de données de suivi, reconstituées), notifie l'ANTIC et
+les clients concernés par l'exfiltration. La décision est documentée.
+\end{boxscenario}
+
+\begin{boxCRO}
+\textbf{La décision de payer, sous l'angle CRO.} Payer n'améliore pas la
+\cro{-}{-}{-}~: les données exfiltrées restent exposées (C), rien ne garantit
+l'intégrité des données « rendues » (F), et le paiement affaiblit la position
+devant l'autorité (O). La préparation (sauvegardes) est la vraie réponse.
+\end{boxCRO}
+
+\begin{boxmetier}{Responsable de la réponse à incident et RSSI}
+\textbf{La meilleure réponse au rançongiciel est antérieure à l'attaque.}
+Des sauvegardes hors ligne testées rendent la question du paiement presque
+théorique. Le RRI prépare cette réponse à froid.
+\end{boxmetier}
+
+\separateur
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{Confiner} en isolant, pour préserver la preuve.
+    \item \textbf{Éradiquer} toutes les portes, pas seulement la charge
+          visible.
+    \item \textbf{Corriger la faille d'entrée} avant de rétablir.
+    \item \textbf{Rétablir} depuis des sauvegardes vérifiées hors ligne.
+    \item \textbf{Payer} n'est pas une solution~; la préparation l'est.
+\end{itemize}
+\end{boxresume}
+
+\begin{boxinfo}
+\textbf{Points de contrôle de l'élève.} Je sais~: choisir une stratégie de
+confinement~; éradiquer complètement~; rétablir sûrement~; vérifier l'absence
+de rechute~; argumenter sur le paiement.
+\end{boxinfo}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~18.1. Confiner \niveaubase}]
+Pourquoi préférer l'isolement réseau à l'extinction~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~18.2. Portes \niveaubase}]
+Citez trois « portes » qu'un attaquant peut laisser.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~18.3. Sauvegardes \niveaubase}]
+Pourquoi rétablir depuis des sauvegardes hors ligne~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~18.4. Éradication incomplète \niveaumoyen}]
+Pourquoi supprimer seulement le rançongiciel visible ne suffit-il pas~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~18.5. Faille d'entrée \niveaumoyen}]
+Que se passe-t-il si l'on rétablit sans corriger la faille d'entrée~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~18.6. Payer \niveaumoyen}]
+Donnez trois raisons de ne pas payer une rançon.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~18.7. CRO \niveaumoyen}]
+Analysez la décision de payer sous l'angle CRO.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~18.8. MAYO \niveaumoyen}]
+Reconstituez la décision de LiZbiZ~: pourquoi ne pas payer, et comment
+rétablir~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~18.9. Plan de rétablissement \niveauexpert}]
+Rédigez le plan de rétablissement de LiZbiZ après l'éradication.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~18.10. Politique rançongiciel \niveauexpert}]
+Rédigez la politique de LiZbiZ sur le paiement des rançons, fondée sur la
+préparation.
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Pour aller plus loin.}
+\begin{itemize}
+    \item ISO/IEC 27035~\cite{iso27035}~; NIST SP~800-61r2~\cite{nist80061r2}.
+\end{itemize}
+\end{boxinfo}
+
+\begin{boxinfo}
+\textbf{Transition.} L'incident traité, il reste à en tirer les leçons~: la
+Partie~VI s'ouvre sur le retour d'expérience
+(Chapitre~\ref{chap:retex}).
+\end{boxinfo}

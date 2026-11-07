@@ -1,0 +1,223 @@
+% ============================================================================
+% Fichier  : partie1/P01_C01_pourquoi_superviser.tex
+% Titre    : Pourquoi Superviser
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% ============================================================================
+% Sources : ISO/IEC 27035 ; NIST SP 800-61r2 ; CIS Controls v8. Opération
+% BÉNOUÉ (LiZbiZ) : cas fictif.
+% ============================================================================
+
+\chapter{Pourquoi Superviser}
+\label{chap:pourquoi}
+\chaptermark{Pourquoi superviser}
+
+\epigraph{%
+    « On ne défend pas ce que l'on ne voit pas. »%
+}{Principe du cours}
+
+\niveauChapitre{Fondamental}{Le prologue~; notions de réseaux et de systèmes.}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Définir la supervision de sécurité et la distinguer de la
+          supervision d'exploitation.
+    \item Situer la détection dans la chaîne prévention, détection, réaction.
+    \item Comprendre le délai de présence de l'attaquant et pourquoi il
+          compte.
+    \item Relier la supervision aux obligations de l'entreprise.
+    \item Poser les indicateurs fondamentaux de la détection.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : si tout était dans les journaux, pourquoi personne n'a-t-il rien vu~?}
+% ============================================================================
+
+Onze jours de présence, des traces à chaque étape, et pourtant la découverte
+par un écran de rançon. Ce chapitre explique pourquoi la prévention ne suffit
+pas, ce qu'est superviser, et comment se mesure la capacité à voir venir.
+
+\medskip
+\textbf{Plan du chapitre.}
+\begin{enumerate}
+    \item Prévenir ne suffit pas (section~\ref{sec:c01-prevenir}).
+    \item Qu'est-ce que superviser (section~\ref{sec:c01-definir}).
+    \item Le délai de présence (section~\ref{sec:c01-delai}).
+    \item Superviser, une obligation (section~\ref{sec:c01-obligation}).
+    \item Les indicateurs fondamentaux (section~\ref{sec:c01-indicateurs}).
+\end{enumerate}
+
+\separateur
+
+% ============================================================================
+\section{Prévenir ne Suffit Pas}
+\label{sec:c01-prevenir}
+% ============================================================================
+
+La sécurité se joue sur trois temps~: \termecle{prévention} (empêcher),
+\termecle{détection} (voir ce qui est passé malgré la prévention) et
+\termecle{réaction} (limiter et corriger). Aucune prévention n'est parfaite~:
+un correctif manquant, un mot de passe faible, un courriel piégé suffisent.
+La détection est le filet qui rattrape ce que la prévention a laissé passer.
+
+% ============================================================================
+\section{Qu'est-ce que Superviser}
+\label{sec:c01-definir}
+% ============================================================================
+
+\begin{boxdef}
+\termecle{Supervision de sécurité}~: collecte continue des traces d'un
+système, leur corrélation et leur analyse pour détecter, le plus tôt
+possible, les activités malveillantes ou anormales. Elle se distingue de la
+\termecle{supervision d'exploitation}, qui surveille la disponibilité et la
+performance, non les attaques.
+\end{boxdef}
+
+% ============================================================================
+\section{Le Délai de Présence}
+\label{sec:c01-delai}
+% ============================================================================
+
+\begin{boxdef}
+\termecle{Délai de présence} (temps de séjour)~: durée entre la première
+compromission et sa détection. Plus il est long, plus l'attaquant s'étend,
+exfiltre et s'installe.
+\end{boxdef}
+
+\begin{boxscenario}{Opération BÉNOUÉ. Onze jours}
+\textbf{Constatation.} Première trace le 23~février (connexion d'un compte de
+service à une heure inhabituelle)~; chiffrement le 6~mars. Délai de présence~:
+onze jours.
+
+\medskip
+\textbf{Analyse} (confiance élevée). Réduire ce délai de onze jours à
+quelques heures aurait permis de contenir l'attaque avant l'exfiltration et
+le chiffrement. C'est l'objectif premier de la supervision.
+\end{boxscenario}
+
+% ============================================================================
+\section{Superviser, une Obligation}
+\label{sec:c01-obligation}
+% ============================================================================
+
+\begin{boxjuris}
+Au Cameroun, la loi n°~2010/012 du 21~décembre~2010 relative à la
+cybersécurité et à la cybercriminalité impose la conservation des traces de
+connexion et la coopération avec l'\sigle{ANTIC} en cas d'incident
+(Chapitre~\ref{chap:droit}). Ne pas disposer de journaux exploitables n'est
+pas seulement une faiblesse technique~: c'est un manquement opposable.
+\end{boxjuris}
+
+% ============================================================================
+\section{Les Indicateurs Fondamentaux}
+\label{sec:c01-indicateurs}
+% ============================================================================
+
+\begin{tableaucours}{L{4.4cm}L{7.8cm}}{%
+    \tableauHeader{Indicateur} &
+    \tableauHeader{Ce qu'il mesure}
+}
+Délai moyen de détection & Temps entre compromission et alerte \\
+Délai moyen de réaction & Temps entre alerte et confinement \\
+Couverture de journalisation & Part des systèmes dont les traces sont collectées \\
+Taux de faux positifs & Alertes sans incident réel \\
+Taux de détection & Part des attaques (ou techniques) effectivement vues \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~1.1. Indicateurs fondamentaux de la supervision}\end{center}
+
+\begin{boxmetier}{Analyste SOC}
+\textbf{Mesurer pour progresser.} L'analyste ne se contente pas de traiter
+les alertes~: il suit le délai de détection d'un mois sur l'autre et
+l'améliore. Un SOC qui ne mesure pas son délai de détection ne sait pas s'il
+s'améliore.
+\end{boxmetier}
+
+\separateur
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{Prévention, détection, réaction}~: la détection rattrape ce
+          que la prévention laisse passer.
+    \item \textbf{Superviser} la sécurité n'est pas superviser l'exploitation.
+    \item \textbf{Le délai de présence} est l'ennemi~; le réduire est
+          l'objectif.
+    \item \textbf{Superviser est une obligation} (loi 2010/012).
+    \item \textbf{On mesure} délai de détection, de réaction, couverture.
+\end{itemize}
+\end{boxresume}
+
+\begin{boxinfo}
+\textbf{Points de contrôle de l'élève.} Je sais~: définir la supervision de
+sécurité~; situer la détection dans la chaîne~; expliquer le délai de
+présence~; rappeler l'obligation légale~; citer les indicateurs.
+\end{boxinfo}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~1.1. Trois temps \niveaubase}]
+Classez~: installer un correctif~; lire les journaux chaque matin~; isoler un
+poste infecté. À quel temps (prévention, détection, réaction) chacun
+appartient-il~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~1.2. Deux supervisions \niveaubase}]
+Distinguez supervision de sécurité et supervision d'exploitation par un
+exemple de chacune.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~1.3. Le délai \niveaubase}]
+Calculez le délai de présence de l'opération BÉNOUÉ. Pourquoi le réduire~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~1.4. Le filet \niveaumoyen}]
+« Puisque nous avons un pare-feu et un antivirus, la détection est inutile. »
+Répondez.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~1.5. Obligation \niveaumoyen}]
+En quoi l'absence de journaux exploitables est-elle un manquement opposable
+chez LiZbiZ~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~1.6. Indicateurs \niveaumoyen}]
+Pour LiZbiZ, proposez une valeur cible de délai de détection et justifiez-la.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~1.7. Couverture \niveaumoyen}]
+Pourquoi une couverture de journalisation partielle crée-t-elle des angles
+morts~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~1.8. Faux positifs \niveaumoyen}]
+Quel risque un taux de faux positifs trop élevé fait-il courir à la
+détection~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~1.9. Tableau de bord \niveauexpert}]
+Construisez le tableau de bord de supervision que LiZbiZ devrait suivre après
+l'opération LOGONE.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~1.10. Note à la direction \niveauexpert}]
+Rédigez une note qui explique à M.~ETEME pourquoi investir dans la détection,
+et non seulement dans la prévention.
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Pour aller plus loin.}
+\begin{itemize}
+    \item ISO/IEC 27035~\cite{iso27035}~; NIST SP~800-61r2~\cite{nist80061r2}.
+\end{itemize}
+\end{boxinfo}
+
+\begin{boxinfo}
+\textbf{Transition.} Superviser suppose une organisation~: le
+Chapitre~\ref{chap:soc} présente l'architecture d'un centre d'opérations de
+sécurité.
+\end{boxinfo}

@@ -1,0 +1,215 @@
+% ============================================================================
+% Fichier  : partie3/P03_C09_cadre_juridique.tex
+% Titre    : Le Cadre Juridique
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% ============================================================================
+% Sources : loi 2010/012, loi 2010/013, loi 2024/017 (Cameroun) ; Convention
+% de Malabo (UA, 2014) ; Convention de Budapest (2001).
+% ============================================================================
+
+\chapter{Le Cadre Juridique}
+\label{chap:droit}
+\chaptermark{Le cadre juridique}
+
+\epigraph{%
+    « Les journaux tracent la frontière entre la faute professionnelle\\
+    et la bonne foi prouvée. »%
+}{Principe du cours}
+
+\niveauChapitre{Fondamental}{Chapitre~\ref{chap:normes}~; notions de droit
+numérique.}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Connaître la loi camerounaise 2010/012 et la loi 2010/013.
+    \item Situer la loi de 2024 sur les données personnelles.
+    \item Comprendre le rôle et les pouvoirs de l'ANTIC.
+    \item Articuler le droit national avec la Convention de Malabo et celle
+          de Budapest.
+    \item Déduire les obligations de LiZbiZ en cas d'incident.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Question directrice : qu'est-ce que la loi impose à LiZbiZ le 6 mars au matin~?}
+% ============================================================================
+
+L'incident n'est pas qu'un problème technique~: il déclenche des obligations.
+Conserver les traces, signaler à l'ANTIC, notifier une fuite de données~:
+autant de devoirs dont le non-respect engage la responsabilité. Ce chapitre
+pose le cadre.
+
+\medskip
+\textbf{Plan du chapitre.}
+\begin{enumerate}
+    \item La loi 2010/012 et la loi 2010/013 (section~\ref{sec:c09-lois}).
+    \item Les données personnelles (section~\ref{sec:c09-donnees}).
+    \item L'ANTIC (section~\ref{sec:c09-antic}).
+    \item Malabo et Budapest (section~\ref{sec:c09-international}).
+    \item Les obligations de LiZbiZ (section~\ref{sec:c09-obligations}).
+\end{enumerate}
+
+\separateur
+
+% ============================================================================
+\section{La Loi 2010/012 et la Loi 2010/013}
+\label{sec:c09-lois}
+% ============================================================================
+
+\begin{boxjuris}
+La \loicam{loi n°~2010/012 du 21~décembre~2010} relative à la cybersécurité et
+à la cybercriminalité est le texte fondateur~: elle réprime l'accès et le
+maintien frauduleux dans un système, impose la conservation des traces et la
+coopération avec l'ANTIC. La \loicam{loi n°~2010/013} régit les
+communications électroniques et les obligations des opérateurs. Les articles
+précis se lisent dans le texte publié au Journal officiel~; le cours n'en
+cite que des éléments vérifiés.
+\end{boxjuris}
+
+% ============================================================================
+\section{Les Données Personnelles}
+\label{sec:c09-donnees}
+% ============================================================================
+
+\begin{boxjuris}
+La \loicam{loi n°~2024/017 du 23~décembre~2024} régit la protection des
+données à caractère personnel. Une fuite de données clients, comme celle
+redoutée dans l'opération LOGONE, relève de ce texte~: information de
+l'autorité, des personnes concernées, et documentation de la violation.
+\end{boxjuris}
+
+% ============================================================================
+\section{L'ANTIC}
+\label{sec:c09-antic}
+% ============================================================================
+
+\begin{boxdef}
+\termecle{ANTIC} (Agence Nationale des Technologies de l'Information et de la
+Communication)~: autorité camerounaise de la sécurité électronique. Elle
+reçoit les signalements d'incidents, peut auditer, coordonne la réponse
+nationale et coopère avec le parquet.
+\end{boxdef}
+
+% ============================================================================
+\section{Malabo et Budapest}
+\label{sec:c09-international}
+% ============================================================================
+
+\begin{tableaucours}{L{3.6cm}L{8.6cm}}{%
+    \tableauHeader{Instrument} &
+    \tableauHeader{Portée}
+}
+Convention de Malabo (UA, 2014) & Cadre continental~: cybersécurité, cybercriminalité, données personnelles \\
+Convention de Budapest (2001) & Cadre international~: infractions, preuve électronique, coopération \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~9.1. Deux instruments supranationaux~\cite{malabo2014,budapest2001}}\end{center}
+
+% ============================================================================
+\section{Les Obligations de LiZbiZ}
+\label{sec:c09-obligations}
+% ============================================================================
+
+\begin{boxscenario}{Opération LOGONE. Les devoirs du 6 mars}
+\textbf{Constatation.} LiZbiZ subit un rançongiciel avec exfiltration
+probable de données clients. Elle doit~: conserver les journaux, signaler
+l'incident à l'ANTIC, documenter la violation, et, si des données
+personnelles sont touchées, en informer l'autorité et les personnes.
+
+\medskip
+\textbf{Analyse} (confiance élevée). Ne pas disposer de journaux exploitables
+affaiblirait la position de LiZbiZ~: la preuve de sa diligence repose sur les
+traces. Le droit transforme la supervision en obligation, et le forensique en
+moyen de preuve.
+\end{boxscenario}
+
+\begin{boxmetier}{RSSI et juriste TIC}
+\textbf{Connaître ses obligations avant l'incident.} Le RSSI prépare, à
+froid, la liste des signalements et notifications dus, avec leurs
+destinataires et délais. En pleine crise, on applique une procédure, on ne
+découvre pas le droit.
+\end{boxmetier}
+
+\separateur
+
+\begin{boxresume}
+\textbf{Ce qu'il faut retenir de ce chapitre~:}
+\begin{itemize}
+    \item \textbf{Loi 2010/012}~: accès frauduleux, conservation, coopération.
+    \item \textbf{Loi 2024/017}~: protection des données personnelles.
+    \item \textbf{L'ANTIC} reçoit les signalements et coordonne.
+    \item \textbf{Malabo et Budapest} encadrent au niveau continental et
+          international.
+    \item \textbf{Les journaux} fondent la preuve de la diligence.
+\end{itemize}
+\end{boxresume}
+
+\begin{boxinfo}
+\textbf{Points de contrôle de l'élève.} Je sais~: citer les lois 2010/012,
+2010/013, 2024/017~; décrire l'ANTIC~; situer Malabo et Budapest~; énoncer
+les obligations de LiZbiZ.
+\end{boxinfo}
+
+\bigskip
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~9.1. La loi fondatrice \niveaubase}]
+Quel texte camerounais fonde le droit de la cybersécurité~? De quelle année~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~9.2. L'ANTIC \niveaubase}]
+Citez trois pouvoirs de l'ANTIC.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~9.3. Données \niveaubase}]
+Quel texte protège les données personnelles au Cameroun~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~9.4. Malabo \niveaumoyen}]
+Qu'apporte la Convention de Malabo par rapport au droit national~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~9.5. Preuve de diligence \niveaumoyen}]
+Pourquoi les journaux tracent-ils la frontière entre faute et bonne foi~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~9.6. Notifications \niveaumoyen}]
+Quelles notifications LiZbiZ doit-elle envisager le 6~mars~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~9.7. Budapest \niveaumoyen}]
+En quoi la Convention de Budapest facilite-t-elle la coopération
+internationale~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~9.8. À froid \niveaumoyen}]
+Pourquoi préparer la liste des obligations avant l'incident~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~9.9. Procédure de signalement \niveauexpert}]
+Rédigez la procédure de signalement à l'ANTIC pour LiZbiZ~: déclencheur,
+contenu, délai, destinataire.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~9.10. Note juridique \niveauexpert}]
+Rédigez une note qui récapitule les obligations légales de LiZbiZ en cas
+d'incident majeur.
+\end{boxexo}
+
+\bigskip
+
+\begin{boxinfo}
+\textbf{Pour aller plus loin.}
+\begin{itemize}
+    \item Lois 2010/012~\cite{loi2010012}, 2010/013~\cite{loi2010013},
+          2024/017~\cite{loi2024017}.
+    \item Convention de Malabo~\cite{malabo2014}~; Convention de
+          Budapest~\cite{budapest2001}.
+\end{itemize}
+\end{boxinfo}
+
+\begin{boxinfo}
+\textbf{Transition.} Normes et droit convergent sur une question~: une trace
+est-elle recevable~? C'est l'objet du Chapitre~\ref{chap:preuve}.
+\end{boxinfo}

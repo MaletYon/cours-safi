@@ -1,0 +1,233 @@
+NDAP SUKULU · SAFI · fiche SAFI-FICHE-C16
+Chapitre 16 : Le CSIRT et le CERT
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. Tout CERT est :
+      a) Un CSIRT
+      b) Un pare-feu
+      c) Une banque
+      d) Une école
+
+ 2. Le CERT national camerounais est opéré par :
+      a) LiZbiZ
+      b) L'ANTIC
+      c) NYONG
+      d) La banque
+
+ 3. CERT est une appellation :
+      a) Libre
+      b) Interdite
+      c) Protégée
+      d) Vendue
+
+ 4. La personne qui décide et arbitre est :
+      a) L'analyste
+      b) Le juriste
+      c) Le DG
+      d) Le responsable de la cellule
+
+ 5. La main courante consigne :
+      a) Décisions et actions
+      b) Le prix
+      c) La météo
+      d) Les ventes
+
+ 6. Le rôle communication gère :
+      a) La paie
+      b) Les messages internes et externes
+      c) La météo
+      d) La TVA
+
+ 7. « Ce qui n'est pas écrit n'a pas été :
+      a) Payé
+      b) Vendu
+      c) Décidé
+      d) Chiffré
+
+ 8. On écrit la main courante :
+      a) Après coup
+      b) Jamais
+      c) À la vente
+      d) Sur le moment
+
+ 9. En cas d'incident majeur, on informe :
+      a) L'ANTIC
+      b) La météo
+      c) La vente
+      d) La TVA
+
+10. LiZbiZ, le 6 mars, avait :
+      a) Un CSIRT formel
+      b) Pas de CSIRT
+      c) Deux CSIRT
+      d) Un CERT
+
+11. Un CSIRT traite :
+      a) Les ventes
+      b) La météo
+      c) Les incidents de sécurité
+      d) La paie
+
+12. Le référent métier connaît :
+      a) La paie
+      b) La météo
+      c) La TVA
+      d) Les systèmes atteints
+
+13. La main courante est une preuve de :
+      a) Diligence
+      b) Prix
+      c) Météo
+      d) Vente
+
+14. L'improvisation d'une cellule coûte :
+      a) Rien
+      b) Du temps
+      c) La météo
+      d) Un café
+
+15. Après l'incident, LiZbiZ formalise :
+      a) Rien
+      b) La météo
+      c) Un CSIRT minimal et des playbooks
+      d) La vente
+
+16. Le rôle juridique gère :
+      a) La paie
+      b) La météo
+      c) La vente
+      d) Obligations, signalements, ANTIC
+
+17. Chaque entrée de main courante est :
+      a) Horodatée
+      b) Floue
+      c) Vendue
+      d) Chiffrée
+
+18. On désigne la cellule :
+      a) En crise
+      b) À froid, avec suppléants
+      c) Jamais
+      d) Après le rapport
+
+19. La différence CSIRT/CERT tient surtout à :
+      a) La taille
+      b) Le prix
+      c) L'appellation protégée
+      d) La météo
+
+20. En crise, on active :
+      a) Une recherche
+      b) La météo
+      c) La vente
+      d) Une liste de rôles préétablie
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. Un CERT n'a rien à voir avec un CSIRT.
+      Vrai / Faux
+
+22. Le CERT national camerounais est opéré par LiZbiZ.
+      Vrai / Faux
+
+23. On reconstruit la main courante plusieurs jours après l'incident.
+      Vrai / Faux
+
+24. Le responsable de la cellule se contente d'observer sans décider.
+      Vrai / Faux
+
+25. LiZbiZ disposait d'un CSIRT formel avant le 6 mars.
+      Vrai / Faux
+
+26. La main courante est une preuve de diligence.
+      Vrai / Faux
+
+27. En cas d'incident majeur, on informe l'ANTIC.
+      Vrai / Faux
+
+28. On désigne la cellule à froid, avec suppléants.
+      Vrai / Faux
+
+29. Après l'incident, LiZbiZ formalise un CSIRT minimal.
+      Vrai / Faux
+
+30. « Ce qui n'est pas écrit n'a pas été décidé. »
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. Tout CERT est un ______.
+
+32. Le CERT national camerounais est opéré par l'______.
+
+33. La personne qui décide et arbitre est le ______ de la cellule.
+
+34. On écrit la main courante sur le ______.
+
+35. La main courante est une preuve de ______.
+
+36. En cas d'incident majeur, on informe l'______.
+
+37. Le 6 mars, LiZbiZ n'avait ______ CSIRT.
+
+38. On désigne la cellule ______ la crise.
+
+39. CERT est une appellation ______.
+
+40. La ______ courante consigne décisions et actions.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................
