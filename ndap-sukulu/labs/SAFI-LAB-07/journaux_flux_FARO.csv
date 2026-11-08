@@ -1,0 +1,5 @@
+Source;Destination;Période;Volume (Mo);Nb connexions
+FS-01;198.51.100.23;24/02-06/03;6;1584
+FS-01;198.51.100.23;04/03 01:05;40960;1
+PC-GAR-03;mises-a-jour.example;quotidien;120;30
+DC-01;annuaire interne;continu;50;5000

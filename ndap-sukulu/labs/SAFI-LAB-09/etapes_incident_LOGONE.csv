@@ -1,0 +1,8 @@
+Étape observée;Tactique ATT&CK (à compléter)
+Connexion de svc_sql_facturation (compte compromis);
+Création du compte svc_maj2;
+Installation du service WinUpd32;
+Connexions régulières vers 198.51.100.23;
+Transfert de 40 Go vers l'extérieur;
+Chiffrement des fichiers;
+Balayage interne du réseau;

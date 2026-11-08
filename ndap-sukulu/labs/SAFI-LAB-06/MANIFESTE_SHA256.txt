@@ -1,0 +1,1 @@
+8d1b4862bc91b92d19b9d4321f991bce8bf6953dd09c218dde46021cfb8fac20  artefacts_horodates_FS01.csv

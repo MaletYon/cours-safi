@@ -1,0 +1,6 @@
+Artefact à qualifier : journal d'authentification de DC-01.
+(Document fictif établi pour le cours SIS589. Noms, dates, adresses et montants fictifs.)
+
+Source : copie vérifiée du disque de DC-01 (condensat au dossier).
+Contient : les connexions du compte svc_sql_facturation.
+Horodatage : fiable (DC-01 synchronisé NTP).

@@ -1,0 +1,5 @@
+Tactiques ATT&CK de référence (extrait).
+(Document fictif établi pour le cours SIS589. Noms, dates, adresses et montants fictifs.)
+
+Accès aux identifiants, Persistance, Commande et contrôle, Exfiltration,
+Impact, Découverte, Mouvement latéral, Élévation de privilèges.

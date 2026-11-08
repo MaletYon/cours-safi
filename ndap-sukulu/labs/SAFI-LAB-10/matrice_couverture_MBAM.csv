@@ -1,0 +1,11 @@
+Technique;Détectée;Éprouvée par exercice
+Empoisonnement de résolution;non;oui
+Vol de ticket (kerberoasting);non;oui
+Création de compte;oui;oui
+Service installé à distance;oui;oui
+Exfiltration;oui;oui
+Suppression des journaux;oui;oui
+Mouvement latéral (empreinte);non;oui
+Résistance à un attaquant très patient;non;non
+Tâche planifiée;oui;oui
+Ajout à un groupe à privilèges;non;oui

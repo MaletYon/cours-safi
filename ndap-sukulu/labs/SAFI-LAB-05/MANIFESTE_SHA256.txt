@@ -1,0 +1,2 @@
+997afd52d1286435ebdff7da447d47abb6551e6c6089c576a762d1094cbe2d4a  journal_custody_FARO.csv
+76e239a3ef206ed01c9090cd20870ff84b7746f0847e4394e24ef84fff1f2f65  note_artefact.txt

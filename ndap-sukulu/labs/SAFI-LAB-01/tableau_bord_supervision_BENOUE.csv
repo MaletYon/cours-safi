@@ -1,0 +1,8 @@
+Indicateur;Famille;Valeur;Affichage
+Alertes traitées;activité;3120;—
+Délai de détection médian (h);performance;2;2 h
+Délai de réaction médian (h);performance;1;1 h
+Couverture de journalisation (%);résultat;85;85 %
+Techniques ATT&CK détectées (%);résultat;40;40 %
+Taux de faux positifs (%);performance;12;12 %
+Systèmes non journalisés (%);résultat;15;15 %

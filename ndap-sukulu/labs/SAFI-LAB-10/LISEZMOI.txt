@@ -1,0 +1,26 @@
+SAFI-LAB-10, couverture de détection et verdict OUI/NON/NEK
+
+Les pièces du lab se trouvent dans le dossier preuves, en lecture seule, et
+une copie de travail modifiable dans le dossier travail (ouvert au démarrage).
+  matrice_couverture_MBAM.csv   matrice technique / détection / épreuve
+  MANIFESTE_SHA256.txt          empreintes de référence (preuves)
+
+Marche à suivre.
+
+1. Vérifier l'intégrité avant toute analyse. Ouvrez un terminal, puis tapez :
+       cd ~/preuves
+       sha256sum -c MANIFESTE_SHA256.txt
+   Chaque fichier doit afficher OK.
+
+2. Calculer la couverture de détection (détectées / total).
+
+3. Classer chaque technique en OUI (détectée, éprouvée), NON (éprouvée, non détectée), NEK (non éprouvée).
+
+4. Compter les verdicts.
+
+5. Répondre. Saisissez vos réponses dans le volet Points de contrôle de la
+   page du lab, puis enregistrez. Nombres avec un point ou une virgule
+   décimale ; codes et listes comme indiqué dans chaque question. Quand vous
+   avez terminé, cliquez sur Terminer et corriger pour obtenir votre note.
+
+Toute votre activité dans le terminal est journalisée.

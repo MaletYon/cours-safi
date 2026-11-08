@@ -1,0 +1,9 @@
+Source;Catégorie;Collectée au central;Écart d'horloge (min)
+Contrôleur de domaine DC-01;domaine;oui;0
+Contrôleur de domaine DC-02;domaine;oui;0
+Serveur de fichiers FS-01;fichiers;non;0
+Pare-feu GAROUA;réseau;oui;0
+Poste PC-GAR-07;poste;oui;40
+Serveur de messagerie;messagerie;oui;0
+Serveur Linux SRV-APP;système;non;0
+Imprimante d'étiquettes;équipement;non;0

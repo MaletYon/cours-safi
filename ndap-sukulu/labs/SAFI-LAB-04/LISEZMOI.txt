@@ -1,0 +1,26 @@
+SAFI-LAB-04, reconnaître une intrusion dans des alertes corrélées
+
+Les pièces du lab se trouvent dans le dossier preuves, en lecture seule, et
+une copie de travail modifiable dans le dossier travail (ouvert au démarrage).
+  alertes_correlees_23fev.csv   séquence d'alertes corrélées de la nuit du 23 février
+  MANIFESTE_SHA256.txt          empreintes de référence (preuves)
+
+Marche à suivre.
+
+1. Vérifier l'intégrité avant toute analyse. Ouvrez un terminal, puis tapez :
+       cd ~/preuves
+       sha256sum -c MANIFESTE_SHA256.txt
+   Chaque fichier doit afficher OK.
+
+2. Ordonner les alertes et reconstituer l'enchaînement de l'intrusion.
+
+3. Identifier le compte par lequel l'intrusion a commencé.
+
+4. Repérer le service de persistance installé.
+
+5. Répondre. Saisissez vos réponses dans le volet Points de contrôle de la
+   page du lab, puis enregistrez. Nombres avec un point ou une virgule
+   décimale ; codes et listes comme indiqué dans chaque question. Quand vous
+   avez terminé, cliquez sur Terminer et corriger pour obtenir votre note.
+
+Toute votre activité dans le terminal est journalisée.

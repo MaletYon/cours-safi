@@ -1,0 +1,7 @@
+Réf.;Description;Gravité (à vérifier);Délai de prise en charge
+I-01;Rançongiciel chiffrant FS-01, production arrêtée;critique;< 1 h
+I-02;Compte d'administration du domaine compromis;élevée;< 4 h
+I-03;Poste isolé infecté par un maliciel;moyenne;< 24 h
+I-04;Tentative d'hameçonnage bloquée par le filtre;faible;< 72 h
+I-05;Exfiltration de données clients en cours;critique;< 1 h
+I-06;Vulnérabilité détectée, non exploitée;faible;< 72 h

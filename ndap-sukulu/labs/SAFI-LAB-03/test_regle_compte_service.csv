@@ -1,0 +1,25 @@
+Compte;Poste;Classement
+svc_sql_facturation;PC-GAR-03;vrai positif
+svc_sql_facturation;PC-GAR-11;vrai positif
+svc_maj2;PC-GAR-05;vrai positif
+svc_backup;SRV-01;faux positif
+svc_backup;SRV-02;faux positif
+svc_backup;SRV-03;faux positif
+svc_backup;SRV-04;faux positif
+svc_backup;SRV-05;faux positif
+svc_backup;SRV-06;faux positif
+svc_backup;SRV-07;faux positif
+svc_backup;SRV-08;faux positif
+svc_backup;SRV-09;faux positif
+svc_backup;SRV-10;faux positif
+svc_backup;SRV-11;faux positif
+svc_backup;SRV-12;faux positif
+svc_backup;SRV-13;faux positif
+svc_backup;SRV-14;faux positif
+svc_backup;SRV-15;faux positif
+svc_backup;SRV-16;faux positif
+svc_backup;SRV-17;faux positif
+svc_backup;SRV-18;faux positif
+svc_backup;SRV-19;faux positif
+svc_backup;SRV-20;faux positif
+svc_backup;SRV-21;faux positif

@@ -1,0 +1,6 @@
+Horodatage brut;Source;Événement;Fiabilité horloge
+2026-02-23 02:14;DC-01;Connexion de svc_sql_facturation;fiable
+2026-02-24 03:10;DC-01;Création du compte svc_maj2;fiable
+2026-03-01 23:30;FS-01;Installation du service WinUpd32;avance +40 min
+2026-03-04 01:05;FS-01;Accès massif aux partages;avance +40 min
+2026-03-06 05:50;FS-01;Début du chiffrement;avance +40 min
