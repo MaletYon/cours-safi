@@ -2,7 +2,7 @@ SAFI-LAB-09, mapping d'un incident à MITRE ATT&CK
 
 Les pièces du lab se trouvent dans le dossier preuves, en lecture seule, et
 une copie de travail modifiable dans le dossier travail (ouvert au démarrage).
-  etapes_incident_LOGONE.csv   étapes observées de l'incident
+  etapes_incident_GAROUA.csv   étapes observées de l'incident
   tactiques_reference.txt      tactiques ATT&CK de référence
   MANIFESTE_SHA256.txt         empreintes de référence (preuves)
 

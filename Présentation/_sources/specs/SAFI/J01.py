@@ -32,7 +32,7 @@ SPEC = [{'k': 'title',
             "Que s'est-il exactement passé, et peut-on le prouver ?"]]},
  {'k': 'scenario',
   'title': 'Trois métiers, une seule journée',
-  'label': 'Opération LOGONE. La journée du 6 mars',
+  'label': 'Opération GAROUA. La journée du 6 mars',
   'text': ['**Constatation.** À 7 h 15, quatre systèmes chiffrés, sauvegardes hebdomadaires inaccessibles, '
            "un message de rançon. La production de l'entrepôt de Garoua est arrêtée.",
            "**Analyse** (confiance moyenne au matin, élevée après enquête). L'incident n'est pas un simple "

@@ -16,7 +16,7 @@ SAFI = {
     "n_jours": 15,
     "annee": "2026-2027",
     "dossier": COURS + r"\UG-DMI\SIS589\Présentation",
-    "fil_rouge": "LOGONE, BÉNOUÉ, FARO, MAYO",
+    "fil_rouge": "GAROUA, BÉNOUÉ, FARO, MAYO",
     "parties": [
         ("Prologue", "La découverte", "P00"),
         ("Partie I", "Superviser", "C01-C03"),

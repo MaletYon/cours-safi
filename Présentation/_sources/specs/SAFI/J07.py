@@ -101,7 +101,7 @@ SPEC = [{'k': 'title',
             'Cadre international : infractions, preuve électronique, coopération']]},
  {'k': 'scenario',
   'title': 'Les Obligations de LiZbiZ',
-  'label': 'Opération LOGONE. Les devoirs du 6 mars',
+  'label': 'Opération GAROUA. Les devoirs du 6 mars',
   'text': ['**Constatation.** LiZbiZ subit un rançongiciel avec exfiltration probable de données clients. '
            "Elle doit : conserver les journaux, signaler l'incident à l'ANTIC, documenter la violation, et…",
            '**Analyse** (confiance élevée). Ne pas disposer de journaux exploitables affaiblirait la '

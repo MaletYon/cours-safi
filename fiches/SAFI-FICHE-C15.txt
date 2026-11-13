@@ -100,7 +100,7 @@ Questions à choix multiple (une seule bonne réponse)
       c) Rétablir
       d) Détecter
 
-16. Mme MOUAFO décide d'abord de :
+16. Mme NGASSA décide d'abord de :
       a) Rétablir
       b) Payer
       c) Vendre
@@ -149,7 +149,7 @@ Vrai ou faux
 25. Isoler préserve la preuve mieux qu'éteindre.
       Vrai / Faux
 
-26. Mme MOUAFO décide d'abord d'isoler les systèmes atteints.
+26. Mme NGASSA décide d'abord d'isoler les systèmes atteints.
       Vrai / Faux
 
 27. On rétablit depuis n'importe quelle sauvegarde en ligne.

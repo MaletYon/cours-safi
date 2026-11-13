@@ -28,7 +28,7 @@ Questions à choix multiple (une seule bonne réponse)
       c) Faits
       d) Ventes
 
- 4. La cause immédiate de LOGONE est :
+ 4. La cause immédiate de GAROUA est :
       a) L'absence de SOC
       b) La météo
       c) La vente
@@ -100,7 +100,7 @@ Questions à choix multiple (une seule bonne réponse)
       c) La consigne de première intervention
       d) Une vente
 
-16. La cause intermédiaire de LOGONE est :
+16. La cause intermédiaire de GAROUA est :
       a) Un mot de passe
       b) La météo
       c) La vente
@@ -137,7 +137,7 @@ Vrai ou faux
 21. On conduit le RETEX plusieurs années après l'incident.
       Vrai / Faux
 
-22. La cause immédiate de LOGONE est l'absence totale de gouvernance.
+22. La cause immédiate de GAROUA est l'absence totale de gouvernance.
       Vrai / Faux
 
 23. Corriger la seule cause immédiate suffit à régler le problème.
@@ -170,7 +170,7 @@ Textes à trous
 
 31. On conduit le RETEX dans les ______ heures.
 
-32. La cause ______ de LOGONE est un compte de service faible.
+32. La cause ______ de GAROUA est un compte de service faible.
 
 33. La cause ______ est l'absence de détection et de gouvernance.
 

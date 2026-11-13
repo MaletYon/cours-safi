@@ -49,7 +49,7 @@ SPEC = [{'k': 'title',
   'title': 'Le Délai de Présence',
   'label': 'Opération BÉNOUÉ. Onze jours',
   'text': ["**Constatation.** Première trace le 23 février (connexion d'un compte de service à une heure "
-           'inhabituelle) ; chiffrement le 6 mars. Délai de présence : onze jours.',
+           'inhabituelle) ; chiffrement dans la nuit du 5 au 6 mars. Délai de présence : onze jours.',
            '**Analyse** (confiance élevée). Réduire ce délai de onze jours à quelques heures aurait permis '
            "de contenir l'attaque avant l'exfiltration et le chiffrement. C'est l'objectif premier de la "
            'supervision.']},

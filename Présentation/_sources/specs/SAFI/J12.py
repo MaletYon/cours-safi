@@ -55,7 +55,7 @@ SPEC = [{'k': 'title',
  {'k': 'scenario',
   'title': 'Réponse et Forensique',
   'label': "Opération MAYO. L'ordre tenu",
-  'text': ['**Constatation.** Le 6 mars, après qualification (critique), Mme MOUAFO décide : isoler les '
+  'text': ['**Constatation.** Le 6 mars, après qualification (critique), Mme NGASSA décide : isoler les '
            'systèmes atteints (confinement), capturer les preuves avant toute remise en service, éradiquer '
            'le compte svc_maj2 et le service WinUpd32…',
            '**Analyse** (confiance élevée). Le confinement a précédé le rétablissement ; la capture des '
@@ -103,7 +103,7 @@ SPEC = [{'k': 'title',
   'title': "Coopérer avec l'Extérieur",
   'label': 'Opération MAYO. La cellule de LiZbiZ',
   'text': ["**Constatation.** LiZbiZ n'avait pas de CSIRT. Le 6 mars, une cellule est constituée en urgence "
-           ': M. KOUNOU (technique), Mme MOUAFO (responsable), NYONG SÉCURITÉ (analystes), un juriste, un '
+           ': M. KOUNOU (technique), Mme NGASSA (responsable), NYONG SÉCURITÉ (analystes), un juriste, un '
            'chargé de communication…',
            "**Analyse** (confiance élevée). L'improvisation a coûté du temps. Après l'incident, LiZbiZ "
            'formalise un CSIRT minimal et des playbooks : la prochaine cellule se réunira en minutes, pas en '

@@ -38,7 +38,7 @@ SPEC = [
         ("15 × 2 h", "séances en présentiel"),
         ("10", "labs NDAP SUKULU de 60 minutes"),
         ("21", "fiches d'auto-évaluation de 40 questions"),
-        ("1 + 3", "fil rouge : LOGONE, et BÉNOUÉ, FARO, MAYO"),
+        ("1 + 3", "fil rouge : GAROUA, et BÉNOUÉ, FARO, MAYO"),
     ], "bottom": "Labs et fiches se font **à la maison**, hors des 30 heures. Code du cours : **SIS589**."},
     {"k": "table", "title": "Le calendrier (1/2)", "kicker": "Prologue, Parties I à III · jours 1 à 8", "head": ["Jour", "Thème", "Ch."], "widths": [1.3, 9.0, 1.6], "rows": [
         ["J01", "Ouverture · la découverte", "P00"],
